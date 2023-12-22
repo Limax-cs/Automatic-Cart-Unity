@@ -11,9 +11,17 @@ from ImageToGraph.utils import *
 from PIL import Image, ImageTk
 
 # ROS libraries
-import rospy
-from std_msgs.msg import String
-from automatic_cart.msg import App, Backend
+#import rospy
+#from std_msgs.msg import String
+#from automatic_cart.msg import App, Backend
+
+# Unity Libraries
+import socket
+import json
+import threading
+
+host = '127.0.0.1'  # Replace with Unity's IP address if on a different machine
+port = 8888  # Same port as defined in Unity
 
 class MyGroceryListApp:
 
@@ -113,9 +121,12 @@ class MyGroceryListApp:
         self.load_items() # load the supermarket items
 
         # ROS Configuration
-        rospy.init_node('cart_app', anonymous=True)
-        self.backend_reader()
-        self.backend_reporter()
+        #rospy.init_node('cart_app', anonymous=True)
+        #self.backend_reader()
+        #self.backend_reporter()
+
+        # Unity Communication
+        self.communication_init()
 
         self.root.mainloop()
 
@@ -287,11 +298,11 @@ class MyGroceryListApp:
         self.root.after(3000, lambda: confirmation_label.grid_forget())  
 
         # ROS Message
-        app_msg = App()
-        app_msg.status = "Item Path"
-        app_msg.pathx = [p[1] for p in paths[0]]
-        app_msg.pathy = [p[0] for p in paths[0]]
-        self.backend_pub.publish(app_msg)
+        #app_msg = App()
+        #app_msg.status = "Item Path"
+        #app_msg.pathx = [p[1] for p in paths[0]]
+        #app_msg.pathy = [p[0] for p in paths[0]]
+        #self.backend_pub.publish(app_msg)
 
         return items
     
@@ -331,18 +342,18 @@ class MyGroceryListApp:
 
         # ROS Message
         if self.paths:
-            if self.grocery_list:
-                app_msg = App()
-                app_msg.status = "Next Item"
-                app_msg.pathx = [p[0] for p in self.paths[0]]
-                app_msg.pathy = [p[1] for p in self.paths[0]]
-                self.backend_pub.publish(app_msg)
-            else:
-                app_msg = App()
-                app_msg.status = "Destination"
-                app_msg.pathx = [p[0] for p in self.paths[0]]
-                app_msg.pathy = [p[1] for p in self.paths[0]]
-                self.backend_pub.publish(app_msg)
+        #    if self.grocery_list:
+        #        app_msg = App()
+        #        app_msg.status = "Next Item"
+        #        app_msg.pathx = [p[0] for p in self.paths[0]]
+        #        app_msg.pathy = [p[1] for p in self.paths[0]]
+        #        self.backend_pub.publish(app_msg)
+        #    else:
+        #        app_msg = App()
+        #        app_msg.status = "Destination"
+        #        app_msg.pathx = [p[0] for p in self.paths[0]]
+        #        app_msg.pathy = [p[1] for p in self.paths[0]]
+        #        self.backend_pub.publish(app_msg)
 
             im = draw_path(self.image, self.paths, only_return=True)
             self.route_path_im = ImageTk.PhotoImage(image=im)
@@ -365,31 +376,64 @@ class MyGroceryListApp:
 
     def pause_robot(self):
         # ROS Message
-        app_msg = App()
-        app_msg.status = "Pause"
-        self.backend_pub.publish(app_msg)
+        #app_msg = App()
+        #app_msg.status = "Pause"
+        #self.backend_pub.publish(app_msg)
+        # Example data structure to send
+        data_to_send = {
+            "numbers": [1, 2, 3, 4, 5],
+            "message": "Hello from Python!"
+        }
+
+        # Send the data
+        self.send_data(data_to_send)
         return True
 
     def resume_robot(self):
         # ROS Message
-        app_msg = App()
-        app_msg.status = "Resume"
-        self.backend_pub.publish(app_msg)
+        #app_msg = App()
+        #app_msg.status = "Resume"
+        #self.backend_pub.publish(app_msg)
         return True
     
     # BACKEND COMMUNICATION
     
-    def backend_reader(self):
-        rospy.Subscriber("cart_backend2app", Backend, self.backend_callback)
-        
-        
-    def backend_callback(self, data):
-        print(f"Robot... Status = {data.status}, Location = ({data.x}, {data.y})")
-        self.backend_data = data
-      
-        
-    def backend_reporter(self):
-        self.backend_pub = rospy.Publisher('cart_app2backend', App, queue_size=10)
+    #def backend_reader(self):
+    #    rospy.Subscriber("cart_backend2app", Backend, self.backend_callback)
+           
+    #def backend_callback(self, data):
+    #    print(f"Robot... Status = {data.status}, Location = ({data.x}, {data.y})")
+    #    self.backend_data = data
+           
+    #def backend_reporter(self):
+    #    self.backend_pub = rospy.Publisher('cart_app2backend', App, queue_size=10)
+
+    # UNITY COMMUNICATION
+
+    def send_data(self, data):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.connect((host, port))
+            serialized_data = json.dumps(data).encode()
+            s.sendall(serialized_data)
+
+    def receive_data(self):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.bind((host, port))
+            s.listen()
+            conn, addr = s.accept()
+            with conn:
+                while True:
+                    data = conn.recv(1024)
+                    if not data:
+                        break
+                    received_data = json.loads(data.decode())
+                    print("Received data:", received_data)
+
+    def communication_init(self):
+
+        # Start receiving data in a separate thread
+        receive_thread = threading.Thread(target=self.receive_data)
+        receive_thread.start()
     
 
 MyGroceryListApp()
