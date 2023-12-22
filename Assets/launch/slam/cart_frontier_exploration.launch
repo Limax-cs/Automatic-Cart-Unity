@@ -1,0 +1,36 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="configuration_basename" default="cart_lds_2d.lua"/>
+  <arg name="sensor_range" default="1.0"/>
+  <arg name="cmd_vel_topic" default="/cmd_vel" />
+  <arg name="odom_topic" default="odom" />
+
+  <!-- Automatic cart and Gmapping -->
+  <include file="$(find automatic_cart)/launch/slam/cart_gmapping.launch">
+  </include>
+
+  <!-- AMCL -->
+  <include file="$(find automatic_cart)/launch/navigation/amcl.launch"/>
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+    <rosparam file="$(find automatic_cart)/param/navigation/costmap_common_params_cart.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find automatic_cart)/param/navigation/costmap_common_params_cart.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find automatic_cart)/param/navigation/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find automatic_cart)/param/navigation/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find automatic_cart)/param/navigation/move_base_params.yaml" command="load" />
+    <rosparam file="$(find automatic_cart)/param/navigation/dwa_local_planner_params_cart.yaml" command="load" />
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+  </node>
+
+  <!-- frontier_exploration -->
+  <node pkg="frontier_exploration" type="explore_client" name="explore_client" output="screen"/>
+  <node pkg="frontier_exploration" type="explore_server" name="explore_server" output="screen" >
+    <param name="frequency" type="double" value="1.0"/>
+    <param name="goal_aliasing" type="double" value="$(arg sensor_range)"/>
+    <rosparam file="$(find automatic_cart)/param/navigation/costmap_common_params_cart.yaml" command="load" ns="explore_costmap" />
+    <rosparam file="$(find automatic_cart)/config/slam/frontier_exploration.yaml" command="load" ns="explore_costmap" />
+  </node>
+</launch>

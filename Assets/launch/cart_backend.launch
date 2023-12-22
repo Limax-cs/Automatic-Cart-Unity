@@ -1,0 +1,4 @@
+<launch>
+<node pkg="automatic_cart" type="backend.py" name="CartBackend" output="screen">
+</node>
+</launch>

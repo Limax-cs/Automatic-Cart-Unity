@@ -1,0 +1,23 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration]"/>
+  <arg name="configuration_basename" default="cart_lds_2d.lua"/>
+  <arg name="open_rviz" default="true"/>
+
+  <!-- Shopping Cart -->
+  <include file="$(find automatic_cart)/launch/bringup/cart_remote.launch">
+  </include>
+
+  <!-- SLAM: Gmapping, Cartographer, Hector, Karto, Frontier_exploration, RTAB-Map -->
+  <include file="$(find automatic_cart)/launch/slam/cart_$(arg slam_methods).launch">
+    <arg name="configuration_basename" value="$(arg configuration_basename)"/>
+  </include>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find automatic_cart)/rviz/cart_$(arg slam_methods).rviz"/>
+  </group>
+  
+  <node pkg="tf" type="static_transform_publisher" name="cart_gmapping_boradcaster" args="1 0 0 0 0 1 link1_parent link1 100" />
+</launch>

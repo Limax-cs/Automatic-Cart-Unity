@@ -1,0 +1,288 @@
+product_name,nutriscore_score,image_url,category
+American cheese,2,https://images.openfoodfacts.org/images/products/007/989/312/4421/front_en.3.400.jpg,Dairy
+Frozen mixed vegetables,19,https://images.openfoodfacts.org/images/products/000/002/301/9027/front_fr.4.400.jpg,Frozen
+Green beans,-10,https://images.openfoodfacts.org/images/products/001/111/001/0988/front_en.3.400.jpg,Produce
+Coffee,0,https://images.openfoodfacts.org/images/products/002/550/000/5188/front_en.10.400.jpg,Drinks
+Zucchini bread,5,https://images.openfoodfacts.org/images/products/065/893/965/8863/front_es.17.400.jpg,Bakery
+Hot dog buns,4,https://images.openfoodfacts.org/images/products/001/111/003/3871/front_en.3.400.jpg,Bakery
+Ice cream,7,https://images.openfoodfacts.org/images/products/003/582/608/8796/front_en.5.400.jpg,Dairy
+Catfish fillets,0,https://images.openfoodfacts.org/images/products/00031059/front_fr.15.400.jpg,Meat
+Milkshakes,21,https://images.openfoodfacts.org/images/products/006/820/046/6552/front_fr.8.400.jpg,Drinks
+Sports drinks,21,https://images.openfoodfacts.org/images/products/004/114/309/2705/front_en.4.400.jpg,Drinks
+Buttermilk,25,https://images.openfoodfacts.org/images/products/001/111/009/9020/front_en.3.400.jpg,Dairy
+Rye bread,9,https://images.openfoodfacts.org/images/products/004/236/410/2204/front_en.3.400.jpg,Bakery
+Blueberries,6,https://images.openfoodfacts.org/images/products/00104302/front_fr.32.400.jpg,Produce
+Pepsi,14,https://images.openfoodfacts.org/images/products/001/200/000/2946/front_en.11.400.jpg,Drinks
+Oxtail,15,https://images.openfoodfacts.org/images/products/01851076/front_en.26.400.jpg,Meat
+Frozen chicken wings,-1,https://images.openfoodfacts.org/images/products/005/054/888/8103/front_en.7.400.jpg,Frozen
+Cabbage,0,https://images.openfoodfacts.org/images/products/503/272/230/5915/front_fr.3.400.jpg,Produce
+Cornbread,11,https://images.openfoodfacts.org/images/products/003/997/800/1993/front_fr.3.400.jpg,Bakery
+Frozen blueberries,12,https://images.openfoodfacts.org/images/products/00027083/front_fr.18.400.jpg,Frozen
+Sheep milk,18,https://images.openfoodfacts.org/images/products/539/153/379/0106/front_en.3.400.jpg,Dairy
+Mussels,2,https://images.openfoodfacts.org/images/products/004/902/901/3424/front_en.3.400.jpg,Seafood
+Frozen cheesecake bites,26,https://images.openfoodfacts.org/images/products/000/954/242/7894/front_en.4.400.jpg,Frozen
+Deli ham,2,https://images.openfoodfacts.org/images/products/506/005/525/1852/front_en.3.400.jpg,Meat
+Anchovies,12,https://images.openfoodfacts.org/images/products/081/844/601/0466/front_en.6.400.jpg,Seafood
+Hot dogs,4,https://images.openfoodfacts.org/images/products/376/027/861/1823/front_fr.4.400.jpg,Meat
+Radishes,-6,https://images.openfoodfacts.org/images/products/003/338/367/0003/front_en.5.400.jpg,Produce
+Feta cheese,18,https://images.openfoodfacts.org/images/products/005/549/802/7701/front_fr.3.400.jpg,Dairy
+Monterey Jack cheese,4,https://images.openfoodfacts.org/images/products/00073974/front_fr.4.400.jpg,Dairy
+Raspberries,15,https://images.openfoodfacts.org/images/products/003/582/610/8135/front_en.4.400.jpg,Produce
+Sparkling water,0,https://images.openfoodfacts.org/images/products/001/111/000/8107/front_en.9.400.jpg,Drinks
+Cupcakes,19,https://images.openfoodfacts.org/images/products/007/874/200/4099/front_en.5.400.jpg,Bakery
+Cherries,-1,https://images.openfoodfacts.org/images/products/03266175/front_fr.14.400.jpg,Produce
+Heavy cream,14,https://images.openfoodfacts.org/images/products/00212564/front_en.6.400.jpg,Dairy
+Apple pie,4,https://images.openfoodfacts.org/images/products/00100861/front_fr.4.400.jpg,Bakery
+Caviar,15,https://images.openfoodfacts.org/images/products/26006727/front_fr.16.400.jpg,Seafood
+Pound cake,21,https://images.openfoodfacts.org/images/products/003/210/003/4043/front_en.9.400.jpg,Bakery
+Frozen broccoli,-6,https://images.openfoodfacts.org/images/products/001/450/001/3453/front_en.5.400.jpg,Frozen
+Whipped cream,15,https://images.openfoodfacts.org/images/products/001/111/058/0887/front_en.9.400.jpg,Dairy
+Apple cider,-5,https://images.openfoodfacts.org/images/products/001/111/088/7818/front_en.3.400.jpg,Drinks
+King crab legs,-3,https://images.openfoodfacts.org/images/products/002/876/465/2846/front_en.4.400.jpg,Seafood
+Ground lamb,13,https://images.openfoodfacts.org/images/products/064/708/600/1349/front_en.7.400.jpg,Meat
+Frozen onion rings,13,https://images.openfoodfacts.org/images/products/00068789/front_en.37.400.jpg,Frozen
+Lamb chops,-1,https://images.openfoodfacts.org/images/products/073/995/260/1040/front_en.3.400.jpg,Meat
+Sugar cookies,17,https://images.openfoodfacts.org/images/products/00032704/front_en.3.400.jpg,Bakery
+Pollock,-4,https://images.openfoodfacts.org/images/products/002/802/925/4686/front_en.14.400.jpg,Seafood
+White bread,-1,https://images.openfoodfacts.org/images/products/001/851/301/8078/front_en.4.400.jpg,Bakery
+7UP,10,https://images.openfoodfacts.org/images/products/406/080/017/5687/front_de.3.400.jpg,Drinks
+Scallops,-2,https://images.openfoodfacts.org/images/products/007/539/100/4302/front_en.4.400.jpg,Seafood
+Ciabatta,-2,https://images.openfoodfacts.org/images/products/00015011/front_fr.9.400.jpg,Bakery
+Kaiser rolls,3,https://images.openfoodfacts.org/images/products/007/102/561/5548/front_en.6.400.jpg,Bakery
+Blue cheese,23,https://images.openfoodfacts.org/images/products/004/119/075/6421/front_en.3.400.jpg,Dairy
+Cherry pie,16,https://images.openfoodfacts.org/images/products/002/418/200/0702/front_en.4.400.jpg,Bakery
+Chicken breasts,13,https://images.openfoodfacts.org/images/products/000031/front_fr.11.400.jpg,Meat
+Irish soda bread,9,https://images.openfoodfacts.org/images/products/000/931/901/0021/front_en.4.400.jpg,Bakery
+Dungeness crab,6,https://images.openfoodfacts.org/images/products/085/951/400/7766/front_en.3.400.jpg,Seafood
+Juice,12,https://images.openfoodfacts.org/images/products/001/500/002/0842/front_en.4.400.jpg,Drinks
+Havarti cheese,5,https://images.openfoodfacts.org/images/products/000/200/000/1575/front_fr.4.400.jpg,Dairy
+Flounder,-5,https://images.openfoodfacts.org/images/products/409/910/000/1297/front_en.3.400.jpg,Seafood
+Cinnamon bread,8,https://images.openfoodfacts.org/images/products/002/700/000/0014/front_en.3.400.jpg,Bakery
+Venison steaks,13,https://images.openfoodfacts.org/images/products/002/733/102/0606/front_en.5.400.jpg,Meat
+Danish pastries,0,https://images.openfoodfacts.org/images/products/000/825/420/6001/front_en.3.400.jpg,Bakery
+Ground bison,15,https://images.openfoodfacts.org/images/products/001/182/273/4011/front_en.4.400.jpg,Meat
+Frozen fruit medley,0,https://images.openfoodfacts.org/images/products/005/786/400/0981/front_fr.4.400.jpg,Frozen
+Pumpernickel bread,5,https://images.openfoodfacts.org/images/products/001/111/008/4811/front_en.5.400.jpg,Bakery
+Gouda cheese,15,https://images.openfoodfacts.org/images/products/007/800/009/8167/front_en.4.400.jpg,Dairy
+Grape soda,19,https://images.openfoodfacts.org/images/products/001/111/049/1954/front_en.5.400.jpg,Drinks
+Frozen crab cakes,2,https://images.openfoodfacts.org/images/products/001/996/200/1819/front_en.3.400.jpg,Frozen
+Oolong tea,0,https://images.openfoodfacts.org/images/products/000/182/000/0089/front_en.3.400.jpg,Drinks
+Bananas,1,https://images.openfoodfacts.org/images/products/033/333/333/0309/front_en.3.400.jpg,Produce
+Multigrain bread,15,https://images.openfoodfacts.org/images/products/001/111/003/0726/front_en.14.400.jpg,Bakery
+Plums,1,https://images.openfoodfacts.org/images/products/004/171/254/3607/front_en.12.400.jpg,Produce
+Brownies,17,https://images.openfoodfacts.org/images/products/001/330/055/5408/front_en.7.400.jpg,Bakery
+Cream cheese,13,https://images.openfoodfacts.org/images/products/00124911/front_fr.3.400.jpg,Dairy
+Octopus,2,https://images.openfoodfacts.org/images/products/061/458/362/4258/front_en.3.400.jpg,Seafood
+Carrots,-6,https://images.openfoodfacts.org/images/products/002/392/330/0309/front_en.6.400.jpg,Produce
+Iced tea,0,https://images.openfoodfacts.org/images/products/001/115/605/0054/front_en.6.400.jpg,Drinks
+Kangaroo steak,11,https://images.openfoodfacts.org/images/products/003/927/861/2806/front_en.3.400.jpg,Meat
+Pumpkins,15,https://images.openfoodfacts.org/images/products/007/518/602/2412/front_en.3.400.jpg,Produce
+Tofu,-5,https://images.openfoodfacts.org/images/products/00124492/front_en.3.400.jpg,Meat
+Celery,0,https://images.openfoodfacts.org/images/products/000/065/151/1009/front_en.4.400.jpg,Produce
+Mahi-mahi fillets,11,https://images.openfoodfacts.org/images/products/001/111/009/1420/front_en.4.400.jpg,Meat
+Frozen popsicles,14,https://images.openfoodfacts.org/images/products/001/200/001/3812/front_en.4.400.jpg,Frozen
+Kombucha,3,https://images.openfoodfacts.org/images/products/001/541/801/4792/front_en.3.400.jpg,Drinks
+Whiskey,12,https://images.openfoodfacts.org/images/products/401/314/915/1447/front_de.3.400.jpg,Drinks
+Blue crab,14,https://images.openfoodfacts.org/images/products/801/759/600/8145/front_en.4.400.jpg,Seafood
+Frozen waffles,3,https://images.openfoodfacts.org/images/products/001/380/010/5240/front_en.4.400.jpg,Frozen
+Frozen raspberries,6,https://images.openfoodfacts.org/images/products/001/111/003/8838/front_en.3.400.jpg,Frozen
+Dr. Pepper,0,https://images.openfoodfacts.org/images/products/07832309/front_en.24.400.jpg,Drinks
+Turkey burgers,9,https://images.openfoodfacts.org/images/products/001/480/064/6979/front_en.4.400.jpg,Meat
+Frozen pizza,20,https://images.openfoodfacts.org/images/products/321/769/005/2593/front_fr.4.400.jpg,Frozen
+Herring,5,https://images.openfoodfacts.org/images/products/007/402/716/7664/front_en.5.400.jpg,Seafood
+Kiwi,-6,https://images.openfoodfacts.org/images/products/001/466/850/1007/front_en.12.400.jpg,Produce
+Meatballs,11,https://images.openfoodfacts.org/images/products/003/666/906/1380/front_en.5.400.jpg,Meat
+Swiss cheese,10,https://images.openfoodfacts.org/images/products/003/651/421/0949/front_en.13.400.jpg,Dairy
+Frozen peaches,3,https://images.openfoodfacts.org/images/products/003/225/151/9024/front_en.4.400.jpg,Frozen
+Lactose-free milk,-1,https://images.openfoodfacts.org/images/products/001/111/041/7534/front_en.3.400.jpg,Dairy
+Dinner rolls,0,https://images.openfoodfacts.org/images/products/002/113/025/2633/front_en.15.400.jpg,Bakery
+Pork ribs,3,https://images.openfoodfacts.org/images/products/00734660/front_en.3.400.jpg,Meat
+Mountain Dew,16,https://images.openfoodfacts.org/images/products/001/200/001/5939/front_en.3.400.jpg,Drinks
+Coffee creamer,26,https://images.openfoodfacts.org/images/products/00103732/front_en.6.400.jpg,Drinks
+Bagels,1,https://images.openfoodfacts.org/images/products/001/410/007/7152/front_en.13.400.jpg,Bakery
+Ricotta cheese,5,https://images.openfoodfacts.org/images/products/002/100/030/0884/front_en.4.400.jpg,Dairy
+Brussels sprouts,-10,https://images.openfoodfacts.org/images/products/002/113/024/2535/front_en.4.400.jpg,Produce
+Frozen mussels,5,https://images.openfoodfacts.org/images/products/004/122/424/0025/front_en.5.400.jpg,Frozen
+Croissants,21,https://images.openfoodfacts.org/images/products/000/023/402/2960/front_fr.4.400.jpg,Bakery
+Pretzels,11,https://images.openfoodfacts.org/images/products/000/898/200/0797/front_fr.4.400.jpg,Bakery
+Trout,12,https://images.openfoodfacts.org/images/products/934/300/500/0141/front_en.5.400.jpg,Seafood
+Greek yogurt,4,https://images.openfoodfacts.org/images/products/00038317/front_en.3.400.jpg,Dairy
+Butter,17,https://images.openfoodfacts.org/images/products/002/640/000/0204/front_en.6.400.jpg,Dairy
+Pork belly,14,https://images.openfoodfacts.org/images/products/00036351/front_en.25.400.jpg,Meat
+Banana bread,17,https://images.openfoodfacts.org/images/products/003/361/302/1155/front_en.5.400.jpg,Bakery
+Mozzarella cheese,14,https://images.openfoodfacts.org/images/products/001/111/058/6001/front_en.6.400.jpg,Dairy
+Cottage cheese,1,https://images.openfoodfacts.org/images/products/00062190/front_en.15.400.jpg,Dairy
+Raisin bread,9,https://images.openfoodfacts.org/images/products/001/330/018/7012/front_en.4.400.jpg,Bakery
+Veal cutlets,25,https://images.openfoodfacts.org/images/products/001/182/675/0116/front_en.3.400.jpg,Meat
+Flan,7,https://images.openfoodfacts.org/images/products/020/118/602/1654/front_fr.4.400.jpg,Dairy
+Apples,-6,https://images.openfoodfacts.org/images/products/003/338/308/0413/front_en.6.400.jpg,Produce
+Bacon,26,https://images.openfoodfacts.org/images/products/003/344/610/2076/front_en.3.400.jpg,Meat
+Calamari,4,https://images.openfoodfacts.org/images/products/00887694/front_fr.4.400.jpg,Seafood
+Rice milk,5,https://images.openfoodfacts.org/images/products/20034412/front_cs.14.400.jpg,Dairy
+Lemon bars,20,https://images.openfoodfacts.org/images/products/002/561/612/1031/front_en.5.400.jpg,Bakery
+Non-dairy creamer,5,https://images.openfoodfacts.org/images/products/001/111/001/6492/front_en.13.400.jpg,Dairy
+Sea bass,-1,https://images.openfoodfacts.org/images/products/505/244/952/7902/front_en.3.400.jpg,Seafood
+Chai tea,21,https://images.openfoodfacts.org/images/products/001/870/517/2069/front_en.3.400.jpg,Drinks
+Beef liver,-1,https://images.openfoodfacts.org/images/products/00012263/front_fr.18.400.jpg,Meat
+Pepper jack cheese,15,https://images.openfoodfacts.org/images/products/001/111/018/1466/front_en.4.400.jpg,Dairy
+Frozen spinach and artichoke dip,13,https://images.openfoodfacts.org/images/products/000/004/060/8754/front_fr.5.400.jpg,Frozen
+Frozen pancakes,15,https://images.openfoodfacts.org/images/products/001/111/002/6149/front_en.13.400.jpg,Frozen
+Cream soda,14,https://images.openfoodfacts.org/images/products/001/200/003/0666/front_en.16.400.jpg,Drinks
+Shortbread,21,https://images.openfoodfacts.org/images/products/00019101/front_en.32.400.jpg,Bakery
+Rabbit meat,7,https://images.openfoodfacts.org/images/products/00665469/front_fr.23.400.jpg,Meat
+Eclairs,11,https://images.openfoodfacts.org/images/products/000/024/101/3128/front_fr.4.400.jpg,Bakery
+Clams,-1,https://images.openfoodfacts.org/images/products/007/071/800/1019/front_en.5.400.jpg,Seafood
+Frozen garlic bread,12,https://images.openfoodfacts.org/images/products/001/530/020/0135/front_en.4.400.jpg,Frozen
+Frozen scallops,-3,https://images.openfoodfacts.org/images/products/002/113/016/6022/front_en.3.400.jpg,Frozen
+Oranges,-1,https://images.openfoodfacts.org/images/products/006/148/304/1508/front_fr.22.400.jpg,Produce
+Hot chocolate,0,https://images.openfoodfacts.org/images/products/001/622/992/0456/front_fr.4.400.jpg,Drinks
+Halibut,10,https://images.openfoodfacts.org/images/products/574/030/119/8734/front_fr.3.400.jpg,Seafood
+Muffins,16,https://images.openfoodfacts.org/images/products/001/111/008/3128/front_en.3.400.jpg,Bakery
+Frozen mozzarella sticks,15,https://images.openfoodfacts.org/images/products/001/070/050/7419/front_en.4.400.jpg,Frozen
+Frozen crab legs,0,https://images.openfoodfacts.org/images/products/004/227/200/0548/front_en.10.400.jpg,Frozen
+Spinach,-8,https://images.openfoodfacts.org/images/products/000/065/188/1058/front_en.5.400.jpg,Produce
+Condensed milk,20,https://images.openfoodfacts.org/images/products/001/111/084/9861/front_en.4.400.jpg,Dairy
+Soy milk,16,https://images.openfoodfacts.org/images/products/001/622/992/0517/front_fr.4.400.jpg,Dairy
+Sausage links,7,https://images.openfoodfacts.org/images/products/001/200/010/1908/front_en.5.400.jpg,Meat
+Tomato juice,-4,https://images.openfoodfacts.org/images/products/001/111/004/8851/front_en.3.400.jpg,Drinks
+Potatoes,-2,https://images.openfoodfacts.org/images/products/003/338/353/3100/front_en.11.400.jpg,Produce
+Iced coffee,0,https://images.openfoodfacts.org/images/products/003/311/930/2901/front_en.4.400.jpg,Drinks
+Lamb shanks,2,https://images.openfoodfacts.org/images/products/501/048/252/2018/front_es.26.400.jpg,Meat
+Frozen chicken nuggets,20,https://images.openfoodfacts.org/images/products/001/070/002/2912/front_en.3.400.jpg,Frozen
+Sourdough bread,2,https://images.openfoodfacts.org/images/products/002/113/011/5457/front_en.4.400.jpg,Bakery
+Frozen fish sticks,27,https://images.openfoodfacts.org/images/products/003/746/602/2697/front_en.18.400.jpg,Frozen
+Coconut water,-5,https://images.openfoodfacts.org/images/products/001/111/082/9856/front_en.4.400.jpg,Drinks
+Swordfish steaks,21,https://images.openfoodfacts.org/images/products/00025942/front_fr.4.400.jpg,Meat
+Frozen macaroni and cheese,14,https://images.openfoodfacts.org/images/products/000/200/000/3944/front_fr.4.400.jpg,Frozen
+Vodka,10,https://images.openfoodfacts.org/images/products/008/800/403/3378/front_en.3.400.jpg,Drinks
+Frozen lasagna,11,https://images.openfoodfacts.org/images/products/03846995/front_fr.4.400.jpg,Frozen
+Bison burgers,-1,https://images.openfoodfacts.org/images/products/00011600/front_en.15.400.jpg,Meat
+Amish bread,24,https://images.openfoodfacts.org/images/products/001/122/535/3888/front_en.4.400.jpg,Bakery
+Ginger ale,14,https://images.openfoodfacts.org/images/products/00044743/front_en.3.400.jpg,Drinks
+Mushrooms,-7,https://images.openfoodfacts.org/images/products/004/119/005/5876/front_en.5.400.jpg,Produce
+Cucumbers,-1,https://images.openfoodfacts.org/images/products/068/826/713/9994/front_en.5.400.jpg,Produce
+Haddock,4,https://images.openfoodfacts.org/images/products/024/060/903/0118/front_fr.3.400.jpg,Seafood
+Frozen tater tots,-4,https://images.openfoodfacts.org/images/products/001/115/245/5266/front_en.4.400.jpg,Frozen
+Muenster cheese,4,https://images.openfoodfacts.org/images/products/00256872/front_en.5.400.jpg,Dairy
+Olive bread,1,https://images.openfoodfacts.org/images/products/042/345/892/3453/front_fr.3.400.jpg,Bakery
+Broccoli,-8,https://images.openfoodfacts.org/images/products/000/065/170/0229/front_en.4.400.jpg,Produce
+Green tea,0,https://images.openfoodfacts.org/images/products/00379397/front_fr.4.400.jpg,Drinks
+Nectarines,0,https://images.openfoodfacts.org/images/products/089/535/900/2658/front_en.5.400.jpg,Produce
+Oat milk,0,https://images.openfoodfacts.org/images/products/002/500/013/0748/front_en.3.400.jpg,Dairy
+Whole wheat bread,1,https://images.openfoodfacts.org/images/products/00016056/front_en.12.400.jpg,Bakery
+Salmon fillets,-3,https://images.openfoodfacts.org/images/products/000/206/038/03020006071/front_es.3.400.jpg,Meat
+Baguette,-2,https://images.openfoodfacts.org/images/products/000/058/401/9351/front_fr.3.400.jpg,Bakery
+Tomatoes,-6,https://images.openfoodfacts.org/images/products/002/700/038/0086/front_en.20.400.jpg,Produce
+Frozen taquitos,0,https://images.openfoodfacts.org/images/products/490/210/208/4178/front_en.5.400.jpg,Frozen
+Champagne,8,https://images.openfoodfacts.org/images/products/002/253/105/2556/front_en.5.400.jpg,Drinks
+White wine,0,https://images.openfoodfacts.org/images/products/004/149/825/5053/front_en.4.400.jpg,Drinks
+Frozen pot stickers,36,https://images.openfoodfacts.org/images/products/000/004/014/4078/front_fr.16.400.jpg,Frozen
+Quail eggs,-2,https://images.openfoodfacts.org/images/products/001/622/900/0585/front_en.15.400.jpg,Meat
+Frozen oysters,1,https://images.openfoodfacts.org/images/products/004/800/000/0675/front_en.5.400.jpg,Frozen
+Pita bread,-3,https://images.openfoodfacts.org/images/products/00146333/front_en.12.400.jpg,Bakery
+Goat milk,20,https://images.openfoodfacts.org/images/products/00622356/front_en.3.400.jpg,Dairy
+Black tea,0,https://images.openfoodfacts.org/images/products/001/115/605/8050/front_en.9.400.jpg,Drinks
+Flavored water,0,https://images.openfoodfacts.org/images/products/001/111/004/8820/front_en.4.400.jpg,Drinks
+Frozen yogurt,5,https://images.openfoodfacts.org/images/products/001/111/056/0537/front_en.7.400.jpg,Dairy
+Chocolate milk,1,https://images.openfoodfacts.org/images/products/001/111/040/1472/front_en.3.400.jpg,Dairy
+Sardines,3,https://images.openfoodfacts.org/images/products/002/857/101/0358/front_en.3.400.jpg,Seafood
+Pork tenderloin,21,https://images.openfoodfacts.org/images/products/00011754/front_fr.10.400.jpg,Meat
+Sirloin steak,10,https://images.openfoodfacts.org/images/products/003/504/610/7321/front_en.3.400.jpg,Meat
+Pork chops,12,https://images.openfoodfacts.org/images/products/006/410/077/9716/front_en.72.400.jpg,Meat
+Ground pork,18,https://images.openfoodfacts.org/images/products/001/111/097/2750/front_en.5.400.jpg,Meat
+Elk steak,22,https://images.openfoodfacts.org/images/products/471/048/701/1548/front_fr.18.400.jpg,Meat
+Lemonade,6,https://images.openfoodfacts.org/images/products/00030083/front_en.3.400.jpg,Drinks
+Eggs,25,https://images.openfoodfacts.org/images/products/002/113/003/1528/front_en.3.400.jpg,Dairy
+Goat cheese,11,https://images.openfoodfacts.org/images/products/00197519/front_en.3.400.jpg,Dairy
+Ribeye steak,12,https://images.openfoodfacts.org/images/products/001/111/097/7632/front_en.6.400.jpg,Meat
+Egg nog,7,https://images.openfoodfacts.org/images/products/002/073/509/2392/front_en.5.400.jpg,Dairy
+Pears,-2,https://images.openfoodfacts.org/images/products/004/171/294/4909/front_en.32.400.jpg,Produce
+Frozen french fries,20,https://images.openfoodfacts.org/images/products/002/100/064/3462/front_en.5.400.jpg,Frozen
+Provolone cheese,18,https://images.openfoodfacts.org/images/products/001/111/001/3873/front_en.16.400.jpg,Dairy
+Brie cheese,19,https://images.openfoodfacts.org/images/products/073/654/756/6722/front_en.5.400.jpg,Dairy
+Energy drinks,12,https://images.openfoodfacts.org/images/products/001/122/500/1963/front_en.9.400.jpg,Drinks
+Frozen spinach,-6,https://images.openfoodfacts.org/images/products/00132176/front_en.11.400.jpg,Frozen
+Cinnamon rolls,-1,https://images.openfoodfacts.org/images/products/001/111/000/9210/front_en.3.400.jpg,Bakery
+Camembert cheese,-6,https://images.openfoodfacts.org/images/products/003/338/365/0203/front_en.19.400.jpg,Dairy
+Squid,13,https://images.openfoodfacts.org/images/products/475/102/696/0064/front_en.3.400.jpg,Seafood
+Frozen lobster tail,1,https://images.openfoodfacts.org/images/products/000/800/595/9101/front_en.18.400.jpg,Frozen
+Frozen ice cream bars,26,https://images.openfoodfacts.org/images/products/000/954/201/6432/front_en.20.400.jpg,Frozen
+Cheesecake,20,https://images.openfoodfacts.org/images/products/00031103/front_fr.4.400.jpg,Dairy
+Pork sausages,13,https://images.openfoodfacts.org/images/products/00060738/front_fr.4.400.jpg,Meat
+Frozen corn,18,https://images.openfoodfacts.org/images/products/002/222/400/6200/front_en.3.400.jpg,Frozen
+Mangoes,-4,https://images.openfoodfacts.org/images/products/01291681/front_en.27.400.jpg,Produce
+Rabbit stew,-8,https://images.openfoodfacts.org/images/products/338/563/001/6469/front_fr.5.400.jpg,Meat
+Fruit punch,16,https://images.openfoodfacts.org/images/products/001/111/085/1994/front_en.4.400.jpg,Drinks
+Acorn squash,2,https://images.openfoodfacts.org/images/products/007/789/041/8543/front_en.3.400.jpg,Produce
+Frozen hash browns,-10,https://images.openfoodfacts.org/images/products/00087445/front_en.4.400.jpg,Frozen
+Frozen fruit bars,6,https://images.openfoodfacts.org/images/products/001/111/081/1554/front_en.4.400.jpg,Frozen
+Tilapia fillets,1,https://images.openfoodfacts.org/images/products/00181358/front_en.8.400.jpg,Meat
+King cake,24,https://images.openfoodfacts.org/images/products/400/861/570/7617/front_fr.4.400.jpg,Bakery
+Baklava,17,https://images.openfoodfacts.org/images/products/003/239/450/0118/front_en.3.400.jpg,Bakery
+Root beer,12,https://images.openfoodfacts.org/images/products/000/000/702/0254/front_fr.16.400.jpg,Drinks
+Bison jerky,22,https://images.openfoodfacts.org/images/products/004/902/280/5309/front_en.4.400.jpg,Meat
+Margarine,16,https://images.openfoodfacts.org/images/products/001/111/500/1202/front_en.19.400.jpg,Dairy
+Ground beef,5,https://images.openfoodfacts.org/images/products/001/111/004/9360/front_en.3.400.jpg,Meat
+Milk,-1,https://images.openfoodfacts.org/images/products/00062145/front_en.17.400.jpg,Dairy
+Challah bread,14,https://images.openfoodfacts.org/images/products/004/113/021/0211/front_en.5.400.jpg,Bakery
+Parmesan cheese,19,https://images.openfoodfacts.org/images/products/002/100/002/3806/front_en.12.400.jpg,Dairy
+Frozen burritos,-7,https://images.openfoodfacts.org/images/products/002/113/098/3353/front_en.14.400.jpg,Frozen
+Duck breast,2,https://images.openfoodfacts.org/images/products/001/111/086/5625/front_en.3.400.jpg,Meat
+Butternut squash,12,https://images.openfoodfacts.org/images/products/00011150/front_fr.19.400.jpg,Produce
+Frozen octopus,14,https://images.openfoodfacts.org/images/products/002/070/901/2319/front_en.5.400.jpg,Frozen
+Cauliflower,-7,https://images.openfoodfacts.org/images/products/00109871/front_en.12.400.jpg,Produce
+Frozen peas,-1,https://images.openfoodfacts.org/images/products/003/940/001/3808/front_en.7.400.jpg,Frozen
+Tuna,1,https://images.openfoodfacts.org/images/products/004/800/000/0989/front_fr.10.400.jpg,Seafood
+Watermelons,12,https://images.openfoodfacts.org/images/products/000/980/030/6084/front_en.3.400.jpg,Produce
+Herbal tea,4,https://images.openfoodfacts.org/images/products/000/010/500/0066/front_en.3.400.jpg,Drinks
+Hamburger buns,2,https://images.openfoodfacts.org/images/products/001/111/005/1837/front_en.7.400.jpg,Bakery
+Almond milk,0,https://images.openfoodfacts.org/images/products/001/002/800/07243625800/front_en.3.400.jpg,Dairy
+Turkey sausage,11,https://images.openfoodfacts.org/images/products/000/002/753/3024/front_en.9.400.jpg,Meat
+Frozen strawberries,13,https://images.openfoodfacts.org/images/products/000/200/000/4712/front_fr.4.400.jpg,Frozen
+Sour cream,12,https://images.openfoodfacts.org/images/products/00062237/front_en.16.400.jpg,Dairy
+Italian sausage,15,https://images.openfoodfacts.org/images/products/00019347/front_de.4.400.jpg,Meat
+Frozen pierogies,19,https://images.openfoodfacts.org/images/products/002/000/979/9613/front_fr.4.400.jpg,Frozen
+Yogurt,2,https://images.openfoodfacts.org/images/products/001/138/410/4208/front_en.3.400.jpg,Dairy
+Grapes,-2,https://images.openfoodfacts.org/images/products/003/977/900/2144/front_en.3.400.jpg,Produce
+Evaporated milk,20,https://images.openfoodfacts.org/images/products/000/010/101/9680/front_fr.3.400.jpg,Dairy
+Sweet potatoes,-2,https://images.openfoodfacts.org/images/products/001/111/002/4633/front_en.4.400.jpg,Produce
+Donuts,21,https://images.openfoodfacts.org/images/products/000/058/001/9355/front_fr.3.400.jpg,Bakery
+Mackerel,14,https://images.openfoodfacts.org/images/products/00262088/front_en.14.400.jpg,Seafood
+Cornish hens,15,https://images.openfoodfacts.org/images/products/00073899/front_fr.10.400.jpg,Meat
+Kefir,8,https://images.openfoodfacts.org/images/products/001/707/700/2509/front_fr.3.400.jpg,Dairy
+Shrimp,-3,https://images.openfoodfacts.org/images/products/001/541/800/3383/front_en.3.400.jpg,Seafood
+Focaccia,10,https://images.openfoodfacts.org/images/products/201/882/209/9995/front_fr.16.400.jpg,Bakery
+Colby cheese,17,https://images.openfoodfacts.org/images/products/001/111/058/6025/front_en.7.400.jpg,Dairy
+White tea,6,https://images.openfoodfacts.org/images/products/376/027/156/0029/front_fr.23.400.jpg,Drinks
+Frozen mini quiches,-4,https://images.openfoodfacts.org/images/products/00087223/front_fr.4.400.jpg,Frozen
+French bread,17,https://images.openfoodfacts.org/images/products/007/218/010/1365/front_en.9.400.jpg,Bakery
+Frozen calamari,6,https://images.openfoodfacts.org/images/products/009/385/699/4692/front_en.3.400.jpg,Frozen
+Blackberries,-8,https://images.openfoodfacts.org/images/products/001/111/008/3289/front_en.3.400.jpg,Produce
+Fruit smoothies,-4,https://images.openfoodfacts.org/images/products/001/097/822/1017/front_en.4.400.jpg,Drinks
+Earl Grey,0,https://images.openfoodfacts.org/images/products/000/182/100/0071/front_en.3.400.jpg,Drinks
+Chocolate chip cookies,21,https://images.openfoodfacts.org/images/products/000/060/201/3125/front_fr.4.400.jpg,Bakery
+Ground turkey,-1,https://images.openfoodfacts.org/images/products/002/265/570/2054/front_en.5.400.jpg,Meat
+Lettuce,-5,https://images.openfoodfacts.org/images/products/002/791/830/2149/front_en.6.400.jpg,Produce
+Strawberries,-5,https://images.openfoodfacts.org/images/products/00096300/front_en.3.400.jpg,Produce
+Chicken thighs,-2,https://images.openfoodfacts.org/images/products/002/133/322/5007/front_en.3.400.jpg,Meat
+Pineapples,15,https://images.openfoodfacts.org/images/products/002/113/031/3792/front_en.4.400.jpg,Produce
+Cheddar cheese,15,https://images.openfoodfacts.org/images/products/00078115/front_fr.5.400.jpg,Dairy
+Avocados,-3,https://images.openfoodfacts.org/images/products/20229030/front_en.9.400.jpg,Produce
+Frozen meatballs,14,https://images.openfoodfacts.org/images/products/00181136/front_en.5.400.jpg,Frozen
+Pudding,4,https://images.openfoodfacts.org/images/products/002/100/041/9074/front_en.7.400.jpg,Dairy
+Orange soda,16,https://images.openfoodfacts.org/images/products/002/113/025/2657/front_en.5.400.jpg,Drinks
+Bell peppers,0,https://images.openfoodfacts.org/images/products/008/370/352/0037/front_en.3.400.jpg,Produce
+Frozen shrimp,-1,https://images.openfoodfacts.org/images/products/002/473/224/4938/front_en.4.400.jpg,Frozen
+Frozen cherries,8,https://images.openfoodfacts.org/images/products/002/113/000/8995/front_en.5.400.jpg,Frozen
+Frozen fish fillets,-1,https://images.openfoodfacts.org/images/products/00184571/front_en.19.400.jpg,Frozen
+Limes,-8,https://images.openfoodfacts.org/images/products/009/582/911/0054/front_en.10.400.jpg,Produce
+Asparagus,-7,https://images.openfoodfacts.org/images/products/001/450/001/3514/front_en.8.400.jpg,Produce
+Biscuits,15,https://images.openfoodfacts.org/images/products/001/600/046/6791/front_en.9.400.jpg,Bakery
+Chicken wings,10,https://images.openfoodfacts.org/images/products/00125628/front_en.10.400.jpg,Meat
+Gingerbread,20,https://images.openfoodfacts.org/images/products/000/945/005/2379/front_en.3.400.jpg,Bakery
+Anadama bread,2,https://images.openfoodfacts.org/images/products/005/488/100/7696/front_en.3.400.jpg,Bakery
+Tri-tip roast,16,https://images.openfoodfacts.org/images/products/004/122/051/7282/front_en.5.400.jpg,Meat
+Eggplant,-3,https://images.openfoodfacts.org/images/products/019/056/912/4542/front_en.4.400.jpg,Produce
+Half and half,7,https://images.openfoodfacts.org/images/products/001/154/781/0267/front_en.3.400.jpg,Dairy
+Frozen mango chunks,19,https://images.openfoodfacts.org/images/products/001/265/670/7387/front_fr.27.400.jpg,Frozen
+Artichokes,-2,https://images.openfoodfacts.org/images/products/085/751/300/7312/front_en.9.400.jpg,Produce

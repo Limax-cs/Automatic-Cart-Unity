@@ -1,0 +1,4 @@
+<launch>
+<node pkg="automatic_cart" type="cart_app_ros.py" name="CartAppRos" output="screen">
+</node>
+</launch>

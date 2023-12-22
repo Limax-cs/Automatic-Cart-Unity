@@ -1,0 +1,5 @@
+<launch>
+  <node name="rqt_cart_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
+    <param name="default_topic" value="/cart_diff_drive_controller/cmd_vel"/>
+  </node>
+</launch>

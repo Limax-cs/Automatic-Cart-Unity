@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot name="shop1" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  
+  <!-- Shop1 Design -->
+  
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://automatic_cart/models/shop1/shop1.dae"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://automatic_cart/models/shop1/shop1.dae"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+    </collision>
+  </link>
+
+</robot>

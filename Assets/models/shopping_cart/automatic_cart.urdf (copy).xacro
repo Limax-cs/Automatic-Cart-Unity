@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<robot name="automatic_cart" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Robot Body -->
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  
+  <xacro:property name="baseshift" value="0.2" />
+  <xacro:property name="wheellen" value="0.025" />
+  <xacro:property name="wheelrad" value="0.08" />
+  <xacro:property name="wheellen2" value="0.02" />
+  <xacro:property name="wheelrad2" value="0.047" />
+  <xacro:property name="xwheel" value="0.25" />
+  <xacro:property name="ywheel" value="0.2" />
+  <xacro:property name="zwheel" value="-0.11" />
+  <xacro:property name="ywheel2" value="-0.2" />
+  <xacro:property name="zwheel2" value="-0.15" />
+  <xacro:property name="pi" value="3.1415" />
+  
+  
+  
+  <xacro:macro name="default_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+  </xacro:macro>
+  
+  <xacro:macro name="wheel_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+  </xacro:macro>
+  
+  
+  
+  
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://automatic_cart/models/shopping_cart/meshes/shopping_cart_base.dae"/>
+      </geometry>
+      <origin rpy="0 0 ${pi}" xyz="0.0 0.0 ${baseshift}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://automatic_cart/models/shopping_cart/meshes/shopping_cart_base.dae"/>
+      </geometry>
+      <origin rpy="0 0 ${pi}" xyz="0.0 0.0 ${baseshift}"/>
+    </collision>
+    <xacro:default_inertial mass="30"/>
+  </link>
+  
+  <link name="basket">
+    <visual>
+      <geometry>
+        <mesh filename="package://automatic_cart/models/shopping_cart/meshes/shopping_cart_basket.dae"/>
+      </geometry>
+      <origin rpy="0 0 ${pi}" xyz="0.0 0.0 ${-baseshift}"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://automatic_cart/models/shopping_cart/meshes/shopping_cart_basket.dae"/>
+      </geometry>
+      <origin rpy="0 0 ${pi}" xyz="0.0 0.0 ${-baseshift}"/>
+    </collision>
+    <xacro:default_inertial mass="10"/>
+  </link>
+  
+  <joint name="base_to_basket" type="prismatic">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-0.07" upper="0.07" velocity="0.5"/>
+    <parent link="base_link"/>
+    <child link="basket"/>
+    <origin xyz="0.0 0.0 ${2*baseshift}"/>
+  </joint>
+  
+  <transmission name="base_to_basket_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <actuator name="base_to_basket_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    <joint name="base_to_basket">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+  </transmission>
+  
+
+
+  
+  <!-- Wheels -->
+  <xacro:macro name="wheel" params="prefix reflect">
+  <link name="${prefix}_wheel">
+    <visual>
+      <origin rpy="0 ${pi/2} 0" xyz="0 0 0"/>
+      <geometry>
+	<cylinder length="${wheellen}" radius="${wheelrad}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 ${pi/2} 0" xyz="0 0 0"/>
+      <geometry>
+	<cylinder length="${wheellen}" radius="${wheelrad}"/>
+      </geometry>
+    </collision>
+    <xacro:wheel_inertial mass="2"/>
+  </link>
+  <joint name="${prefix}_wheel_joint" type="continuous">
+    <axis rpy="0 0 0" xyz="1 0 0"/>
+    <parent link="base_link"/>
+    <child link="${prefix}_wheel"/>
+    <origin rpy="0 0 0" xyz="${xwheel*reflect} ${ywheel} ${zwheel}"/>
+  </joint>
+	  
+    <!-- This block provides the simulator (Gazebo) with information on a few additional
+    physical properties. See http://gazebosim.org/tutorials/?tut=ros_urdf for more-->
+    <gazebo reference="${prefix}_wheel">
+      <mu1 value="200.0"/>
+      <mu2 value="100.0"/>
+      <kp value="10000000.0" />
+      <kd value="1.0" />
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <!-- This block connects the wheel joint to an actuator (motor), which informs both
+    simulation and visualization of the robot -->
+    <transmission name="${prefix}_wheel_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="${prefix}_wheel_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="${prefix}_wheel_joint">
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      </joint>
+    </transmission>
+  </xacro:macro>
+  <xacro:wheel prefix="right" reflect="-1"/>
+  <xacro:wheel prefix="left" reflect="1"/>
+  
+  
+  
+  <!-- Front Wheel -->
+  <link name="front_wheel">
+    <visual>
+      <origin rpy="0 ${pi/2} 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="${wheellen2}" radius="${wheelrad2}"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 ${pi/2} 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="${wheellen2}" radius="${wheelrad2}"/>
+      </geometry>
+    </collision>
+    <xacro:wheel_inertial mass="1"/>
+  </link>
+  <joint name="front_wheel_joint" type="continuous">
+    <axis rpy="0 0 0" xyz="1 0 0"/>
+    <parent link="base_link"/>
+    <child link="front_wheel"/>
+    <origin rpy="0 0 0" xyz="0 ${ywheel2} ${zwheel2}"/>
+  </joint>
+  <!-- This block provides the simulator (Gazebo) with information on a few additional
+    physical properties. See http://gazebosim.org/tutorials/?tut=ros_urdf for more-->
+    <gazebo reference="front_wheel">
+      <mu1 value="200.0"/>
+      <mu2 value="100.0"/>
+      <kp value="10000000.0" />
+      <kd value="1.0" />
+      <material>Gazebo/Grey</material>
+    </gazebo>
+    <!-- This block connects the wheel joint to an actuator (motor), which informs both
+    simulation and visualization of the robot -->
+    <transmission name="front_wheel_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <actuator name="front_wheel_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+      <joint name="front_wheel_joint">
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      </joint>
+    </transmission>
+
+
+
+  
+  <!-- Gazebo plugin for ROS Control -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+</robot>

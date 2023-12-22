@@ -1,0 +1,2298 @@
+{
+  "7UP": {
+    "nutriscore_score": [
+      10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/406/080/017/5687/front_de.3.400.jpg"
+    ]
+  },
+  "Acorn squash": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/789/041/8543/front_en.3.400.jpg"
+    ]
+  },
+  "Almond milk": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/002/800/07243625800/front_en.3.400.jpg"
+    ]
+  },
+  "American cheese": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/989/312/4421/front_en.3.400.jpg"
+    ]
+  },
+  "Amish bread": {
+    "nutriscore_score": [
+      24
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/122/535/3888/front_en.4.400.jpg"
+    ]
+  },
+  "Anadama bread": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/005/488/100/7696/front_en.3.400.jpg"
+    ]
+  },
+  "Anchovies": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/081/844/601/0466/front_en.6.400.jpg"
+    ]
+  },
+  "Apple cider": {
+    "nutriscore_score": [
+      -5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/088/7818/front_en.3.400.jpg"
+    ]
+  },
+  "Apple pie": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00100861/front_fr.4.400.jpg"
+    ]
+  },
+  "Apples": {
+    "nutriscore_score": [
+      -6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/338/308/0413/front_en.6.400.jpg"
+    ]
+  },
+  "Artichokes": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/085/751/300/7312/front_en.9.400.jpg"
+    ]
+  },
+  "Asparagus": {
+    "nutriscore_score": [
+      -7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/450/001/3514/front_en.8.400.jpg"
+    ]
+  },
+  "Avocados": {
+    "nutriscore_score": [
+      -3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/20229030/front_en.9.400.jpg"
+    ]
+  },
+  "Bacon": {
+    "nutriscore_score": [
+      26
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/344/610/2076/front_en.3.400.jpg"
+    ]
+  },
+  "Bagels": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/410/007/7152/front_en.13.400.jpg"
+    ]
+  },
+  "Baguette": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/058/401/9351/front_fr.3.400.jpg"
+    ]
+  },
+  "Baklava": {
+    "nutriscore_score": [
+      17
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/239/450/0118/front_en.3.400.jpg"
+    ]
+  },
+  "Banana bread": {
+    "nutriscore_score": [
+      17
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/361/302/1155/front_en.5.400.jpg"
+    ]
+  },
+  "Bananas": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/033/333/333/0309/front_en.3.400.jpg"
+    ]
+  },
+  "Beef liver": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00012263/front_fr.18.400.jpg"
+    ]
+  },
+  "Bell peppers": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/008/370/352/0037/front_en.3.400.jpg"
+    ]
+  },
+  "Biscuits": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/600/046/6791/front_en.9.400.jpg"
+    ]
+  },
+  "Bison burgers": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00011600/front_en.15.400.jpg"
+    ]
+  },
+  "Bison jerky": {
+    "nutriscore_score": [
+      22
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/902/280/5309/front_en.4.400.jpg"
+    ]
+  },
+  "Black tea": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/115/605/8050/front_en.9.400.jpg"
+    ]
+  },
+  "Blackberries": {
+    "nutriscore_score": [
+      -8
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/008/3289/front_en.3.400.jpg"
+    ]
+  },
+  "Blue cheese": {
+    "nutriscore_score": [
+      23
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/119/075/6421/front_en.3.400.jpg"
+    ]
+  },
+  "Blue crab": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/801/759/600/8145/front_en.4.400.jpg"
+    ]
+  },
+  "Blueberries": {
+    "nutriscore_score": [
+      6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00104302/front_fr.32.400.jpg"
+    ]
+  },
+  "Brie cheese": {
+    "nutriscore_score": [
+      19
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/073/654/756/6722/front_en.5.400.jpg"
+    ]
+  },
+  "Broccoli": {
+    "nutriscore_score": [
+      -8
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/065/170/0229/front_en.4.400.jpg"
+    ]
+  },
+  "Brownies": {
+    "nutriscore_score": [
+      17
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/330/055/5408/front_en.7.400.jpg"
+    ]
+  },
+  "Brussels sprouts": {
+    "nutriscore_score": [
+      -10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/113/024/2535/front_en.4.400.jpg"
+    ]
+  },
+  "Butter": {
+    "nutriscore_score": [
+      17
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/640/000/0204/front_en.6.400.jpg"
+    ]
+  },
+  "Buttermilk": {
+    "nutriscore_score": [
+      25
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/009/9020/front_en.3.400.jpg"
+    ]
+  },
+  "Butternut squash": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00011150/front_fr.19.400.jpg"
+    ]
+  },
+  "Cabbage": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/503/272/230/5915/front_fr.3.400.jpg"
+    ]
+  },
+  "Calamari": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00887694/front_fr.4.400.jpg"
+    ]
+  },
+  "Camembert cheese": {
+    "nutriscore_score": [
+      -6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/338/365/0203/front_en.19.400.jpg"
+    ]
+  },
+  "Carrots": {
+    "nutriscore_score": [
+      -6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/392/330/0309/front_en.6.400.jpg"
+    ]
+  },
+  "Catfish fillets": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00031059/front_fr.15.400.jpg"
+    ]
+  },
+  "Cauliflower": {
+    "nutriscore_score": [
+      -7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00109871/front_en.12.400.jpg"
+    ]
+  },
+  "Caviar": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/26006727/front_fr.16.400.jpg"
+    ]
+  },
+  "Celery": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/065/151/1009/front_en.4.400.jpg"
+    ]
+  },
+  "Chai tea": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/870/517/2069/front_en.3.400.jpg"
+    ]
+  },
+  "Challah bread": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/113/021/0211/front_en.5.400.jpg"
+    ]
+  },
+  "Champagne": {
+    "nutriscore_score": [
+      8
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/253/105/2556/front_en.5.400.jpg"
+    ]
+  },
+  "Cheddar cheese": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00078115/front_fr.5.400.jpg"
+    ]
+  },
+  "Cheesecake": {
+    "nutriscore_score": [
+      20
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00031103/front_fr.4.400.jpg"
+    ]
+  },
+  "Cherries": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/03266175/front_fr.14.400.jpg"
+    ]
+  },
+  "Cherry pie": {
+    "nutriscore_score": [
+      16
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/418/200/0702/front_en.4.400.jpg"
+    ]
+  },
+  "Chicken breasts": {
+    "nutriscore_score": [
+      13
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000031/front_fr.11.400.jpg"
+    ]
+  },
+  "Chicken thighs": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/133/322/5007/front_en.3.400.jpg"
+    ]
+  },
+  "Chicken wings": {
+    "nutriscore_score": [
+      10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00125628/front_en.10.400.jpg"
+    ]
+  },
+  "Chocolate chip cookies": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/060/201/3125/front_fr.4.400.jpg"
+    ]
+  },
+  "Chocolate milk": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/040/1472/front_en.3.400.jpg"
+    ]
+  },
+  "Ciabatta": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00015011/front_fr.9.400.jpg"
+    ]
+  },
+  "Cinnamon bread": {
+    "nutriscore_score": [
+      8
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/700/000/0014/front_en.3.400.jpg"
+    ]
+  },
+  "Cinnamon rolls": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/000/9210/front_en.3.400.jpg"
+    ]
+  },
+  "Clams": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/071/800/1019/front_en.5.400.jpg"
+    ]
+  },
+  "Coconut water": {
+    "nutriscore_score": [
+      -5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/082/9856/front_en.4.400.jpg"
+    ]
+  },
+  "Coffee": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/550/000/5188/front_en.10.400.jpg"
+    ]
+  },
+  "Coffee creamer": {
+    "nutriscore_score": [
+      26
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00103732/front_en.6.400.jpg"
+    ]
+  },
+  "Colby cheese": {
+    "nutriscore_score": [
+      17
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/058/6025/front_en.7.400.jpg"
+    ]
+  },
+  "Condensed milk": {
+    "nutriscore_score": [
+      20
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/084/9861/front_en.4.400.jpg"
+    ]
+  },
+  "Cornbread": {
+    "nutriscore_score": [
+      11
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/997/800/1993/front_fr.3.400.jpg"
+    ]
+  },
+  "Cornish hens": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00073899/front_fr.10.400.jpg"
+    ]
+  },
+  "Cottage cheese": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00062190/front_en.15.400.jpg"
+    ]
+  },
+  "Cream cheese": {
+    "nutriscore_score": [
+      13
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00124911/front_fr.3.400.jpg"
+    ]
+  },
+  "Cream soda": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/200/003/0666/front_en.16.400.jpg"
+    ]
+  },
+  "Croissants": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/023/402/2960/front_fr.4.400.jpg"
+    ]
+  },
+  "Cucumbers": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/068/826/713/9994/front_en.5.400.jpg"
+    ]
+  },
+  "Cupcakes": {
+    "nutriscore_score": [
+      19
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/874/200/4099/front_en.5.400.jpg"
+    ]
+  },
+  "Danish pastries": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/825/420/6001/front_en.3.400.jpg"
+    ]
+  },
+  "Deli ham": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/506/005/525/1852/front_en.3.400.jpg"
+    ]
+  },
+  "Dinner rolls": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/113/025/2633/front_en.15.400.jpg"
+    ]
+  },
+  "Donuts": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/058/001/9355/front_fr.3.400.jpg"
+    ]
+  },
+  "Dr. Pepper": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/07832309/front_en.24.400.jpg"
+    ]
+  },
+  "Duck breast": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/086/5625/front_en.3.400.jpg"
+    ]
+  },
+  "Dungeness crab": {
+    "nutriscore_score": [
+      6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/085/951/400/7766/front_en.3.400.jpg"
+    ]
+  },
+  "Earl Grey": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/182/100/0071/front_en.3.400.jpg"
+    ]
+  },
+  "Eclairs": {
+    "nutriscore_score": [
+      11
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/024/101/3128/front_fr.4.400.jpg"
+    ]
+  },
+  "Egg nog": {
+    "nutriscore_score": [
+      7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/073/509/2392/front_en.5.400.jpg"
+    ]
+  },
+  "Eggplant": {
+    "nutriscore_score": [
+      -3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/019/056/912/4542/front_en.4.400.jpg"
+    ]
+  },
+  "Eggs": {
+    "nutriscore_score": [
+      25
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/113/003/1528/front_en.3.400.jpg"
+    ]
+  },
+  "Elk steak": {
+    "nutriscore_score": [
+      22
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/471/048/701/1548/front_fr.18.400.jpg"
+    ]
+  },
+  "Energy drinks": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/122/500/1963/front_en.9.400.jpg"
+    ]
+  },
+  "Evaporated milk": {
+    "nutriscore_score": [
+      20
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/010/101/9680/front_fr.3.400.jpg"
+    ]
+  },
+  "Feta cheese": {
+    "nutriscore_score": [
+      18
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/005/549/802/7701/front_fr.3.400.jpg"
+    ]
+  },
+  "Flan": {
+    "nutriscore_score": [
+      7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/020/118/602/1654/front_fr.4.400.jpg"
+    ]
+  },
+  "Flavored water": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/004/8820/front_en.4.400.jpg"
+    ]
+  },
+  "Flounder": {
+    "nutriscore_score": [
+      -5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/409/910/000/1297/front_en.3.400.jpg"
+    ]
+  },
+  "Focaccia": {
+    "nutriscore_score": [
+      10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/201/882/209/9995/front_fr.16.400.jpg"
+    ]
+  },
+  "French bread": {
+    "nutriscore_score": [
+      17
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/218/010/1365/front_en.9.400.jpg"
+    ]
+  },
+  "Frozen blueberries": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00027083/front_fr.18.400.jpg"
+    ]
+  },
+  "Frozen broccoli": {
+    "nutriscore_score": [
+      -6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/450/001/3453/front_en.5.400.jpg"
+    ]
+  },
+  "Frozen burritos": {
+    "nutriscore_score": [
+      -7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/113/098/3353/front_en.14.400.jpg"
+    ]
+  },
+  "Frozen calamari": {
+    "nutriscore_score": [
+      6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/009/385/699/4692/front_en.3.400.jpg"
+    ]
+  },
+  "Frozen cheesecake bites": {
+    "nutriscore_score": [
+      26
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/954/242/7894/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen cherries": {
+    "nutriscore_score": [
+      8
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/113/000/8995/front_en.5.400.jpg"
+    ]
+  },
+  "Frozen chicken nuggets": {
+    "nutriscore_score": [
+      20
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/070/002/2912/front_en.3.400.jpg"
+    ]
+  },
+  "Frozen chicken wings": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/005/054/888/8103/front_en.7.400.jpg"
+    ]
+  },
+  "Frozen corn": {
+    "nutriscore_score": [
+      18
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/222/400/6200/front_en.3.400.jpg"
+    ]
+  },
+  "Frozen crab cakes": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/996/200/1819/front_en.3.400.jpg"
+    ]
+  },
+  "Frozen crab legs": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/227/200/0548/front_en.10.400.jpg"
+    ]
+  },
+  "Frozen fish fillets": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00184571/front_en.19.400.jpg"
+    ]
+  },
+  "Frozen fish sticks": {
+    "nutriscore_score": [
+      27
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/746/602/2697/front_en.18.400.jpg"
+    ]
+  },
+  "Frozen french fries": {
+    "nutriscore_score": [
+      20
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/100/064/3462/front_en.5.400.jpg"
+    ]
+  },
+  "Frozen fruit bars": {
+    "nutriscore_score": [
+      6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/081/1554/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen fruit medley": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/005/786/400/0981/front_fr.4.400.jpg"
+    ]
+  },
+  "Frozen garlic bread": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/530/020/0135/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen hash browns": {
+    "nutriscore_score": [
+      -10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00087445/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen ice cream bars": {
+    "nutriscore_score": [
+      26
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/954/201/6432/front_en.20.400.jpg"
+    ]
+  },
+  "Frozen lasagna": {
+    "nutriscore_score": [
+      11
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/03846995/front_fr.4.400.jpg"
+    ]
+  },
+  "Frozen lobster tail": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/800/595/9101/front_en.18.400.jpg"
+    ]
+  },
+  "Frozen macaroni and cheese": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/200/000/3944/front_fr.4.400.jpg"
+    ]
+  },
+  "Frozen mango chunks": {
+    "nutriscore_score": [
+      19
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/265/670/7387/front_fr.27.400.jpg"
+    ]
+  },
+  "Frozen meatballs": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00181136/front_en.5.400.jpg"
+    ]
+  },
+  "Frozen mini quiches": {
+    "nutriscore_score": [
+      -4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00087223/front_fr.4.400.jpg"
+    ]
+  },
+  "Frozen mixed vegetables": {
+    "nutriscore_score": [
+      19
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/002/301/9027/front_fr.4.400.jpg"
+    ]
+  },
+  "Frozen mozzarella sticks": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/070/050/7419/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen mussels": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/122/424/0025/front_en.5.400.jpg"
+    ]
+  },
+  "Frozen octopus": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/070/901/2319/front_en.5.400.jpg"
+    ]
+  },
+  "Frozen onion rings": {
+    "nutriscore_score": [
+      13
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00068789/front_en.37.400.jpg"
+    ]
+  },
+  "Frozen oysters": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/800/000/0675/front_en.5.400.jpg"
+    ]
+  },
+  "Frozen pancakes": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/002/6149/front_en.13.400.jpg"
+    ]
+  },
+  "Frozen peaches": {
+    "nutriscore_score": [
+      3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/225/151/9024/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen peas": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/940/001/3808/front_en.7.400.jpg"
+    ]
+  },
+  "Frozen pierogies": {
+    "nutriscore_score": [
+      19
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/000/979/9613/front_fr.4.400.jpg"
+    ]
+  },
+  "Frozen pizza": {
+    "nutriscore_score": [
+      20
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/321/769/005/2593/front_fr.4.400.jpg"
+    ]
+  },
+  "Frozen popsicles": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/200/001/3812/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen pot stickers": {
+    "nutriscore_score": [
+      36
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/004/014/4078/front_fr.16.400.jpg"
+    ]
+  },
+  "Frozen raspberries": {
+    "nutriscore_score": [
+      6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/003/8838/front_en.3.400.jpg"
+    ]
+  },
+  "Frozen scallops": {
+    "nutriscore_score": [
+      -3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/113/016/6022/front_en.3.400.jpg"
+    ]
+  },
+  "Frozen shrimp": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/473/224/4938/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen spinach": {
+    "nutriscore_score": [
+      -6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00132176/front_en.11.400.jpg"
+    ]
+  },
+  "Frozen spinach and artichoke dip": {
+    "nutriscore_score": [
+      13
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/004/060/8754/front_fr.5.400.jpg"
+    ]
+  },
+  "Frozen strawberries": {
+    "nutriscore_score": [
+      13
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/200/000/4712/front_fr.4.400.jpg"
+    ]
+  },
+  "Frozen taquitos": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/490/210/208/4178/front_en.5.400.jpg"
+    ]
+  },
+  "Frozen tater tots": {
+    "nutriscore_score": [
+      -4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/115/245/5266/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen waffles": {
+    "nutriscore_score": [
+      3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/380/010/5240/front_en.4.400.jpg"
+    ]
+  },
+  "Frozen yogurt": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/056/0537/front_en.7.400.jpg"
+    ]
+  },
+  "Fruit punch": {
+    "nutriscore_score": [
+      16
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/085/1994/front_en.4.400.jpg"
+    ]
+  },
+  "Fruit smoothies": {
+    "nutriscore_score": [
+      -4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/097/822/1017/front_en.4.400.jpg"
+    ]
+  },
+  "Ginger ale": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00044743/front_en.3.400.jpg"
+    ]
+  },
+  "Gingerbread": {
+    "nutriscore_score": [
+      20
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/945/005/2379/front_en.3.400.jpg"
+    ]
+  },
+  "Goat cheese": {
+    "nutriscore_score": [
+      11
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00197519/front_en.3.400.jpg"
+    ]
+  },
+  "Goat milk": {
+    "nutriscore_score": [
+      20
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00622356/front_en.3.400.jpg"
+    ]
+  },
+  "Gouda cheese": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/800/009/8167/front_en.4.400.jpg"
+    ]
+  },
+  "Grape soda": {
+    "nutriscore_score": [
+      19
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/049/1954/front_en.5.400.jpg"
+    ]
+  },
+  "Grapes": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/977/900/2144/front_en.3.400.jpg"
+    ]
+  },
+  "Greek yogurt": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00038317/front_en.3.400.jpg"
+    ]
+  },
+  "Green beans": {
+    "nutriscore_score": [
+      -10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/001/0988/front_en.3.400.jpg"
+    ]
+  },
+  "Green tea": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00379397/front_fr.4.400.jpg"
+    ]
+  },
+  "Ground beef": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/004/9360/front_en.3.400.jpg"
+    ]
+  },
+  "Ground bison": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/182/273/4011/front_en.4.400.jpg"
+    ]
+  },
+  "Ground lamb": {
+    "nutriscore_score": [
+      13
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/064/708/600/1349/front_en.7.400.jpg"
+    ]
+  },
+  "Ground pork": {
+    "nutriscore_score": [
+      18
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/097/2750/front_en.5.400.jpg"
+    ]
+  },
+  "Ground turkey": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/265/570/2054/front_en.5.400.jpg"
+    ]
+  },
+  "Haddock": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/024/060/903/0118/front_fr.3.400.jpg"
+    ]
+  },
+  "Half and half": {
+    "nutriscore_score": [
+      7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/154/781/0267/front_en.3.400.jpg"
+    ]
+  },
+  "Halibut": {
+    "nutriscore_score": [
+      10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/574/030/119/8734/front_fr.3.400.jpg"
+    ]
+  },
+  "Hamburger buns": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/005/1837/front_en.7.400.jpg"
+    ]
+  },
+  "Havarti cheese": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/200/000/1575/front_fr.4.400.jpg"
+    ]
+  },
+  "Heavy cream": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00212564/front_en.6.400.jpg"
+    ]
+  },
+  "Herbal tea": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/010/500/0066/front_en.3.400.jpg"
+    ]
+  },
+  "Herring": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/402/716/7664/front_en.5.400.jpg"
+    ]
+  },
+  "Hot chocolate": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/622/992/0456/front_fr.4.400.jpg"
+    ]
+  },
+  "Hot dog buns": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/003/3871/front_en.3.400.jpg"
+    ]
+  },
+  "Hot dogs": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/376/027/861/1823/front_fr.4.400.jpg"
+    ]
+  },
+  "Ice cream": {
+    "nutriscore_score": [
+      7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/582/608/8796/front_en.5.400.jpg"
+    ]
+  },
+  "Iced coffee": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/311/930/2901/front_en.4.400.jpg"
+    ]
+  },
+  "Iced tea": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/115/605/0054/front_en.6.400.jpg"
+    ]
+  },
+  "Irish soda bread": {
+    "nutriscore_score": [
+      9
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/931/901/0021/front_en.4.400.jpg"
+    ]
+  },
+  "Italian sausage": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00019347/front_de.4.400.jpg"
+    ]
+  },
+  "Juice": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/500/002/0842/front_en.4.400.jpg"
+    ]
+  },
+  "Kaiser rolls": {
+    "nutriscore_score": [
+      3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/102/561/5548/front_en.6.400.jpg"
+    ]
+  },
+  "Kangaroo steak": {
+    "nutriscore_score": [
+      11
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/927/861/2806/front_en.3.400.jpg"
+    ]
+  },
+  "Kefir": {
+    "nutriscore_score": [
+      8
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/707/700/2509/front_fr.3.400.jpg"
+    ]
+  },
+  "King cake": {
+    "nutriscore_score": [
+      24
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/400/861/570/7617/front_fr.4.400.jpg"
+    ]
+  },
+  "King crab legs": {
+    "nutriscore_score": [
+      -3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/876/465/2846/front_en.4.400.jpg"
+    ]
+  },
+  "Kiwi": {
+    "nutriscore_score": [
+      -6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/466/850/1007/front_en.12.400.jpg"
+    ]
+  },
+  "Kombucha": {
+    "nutriscore_score": [
+      3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/541/801/4792/front_en.3.400.jpg"
+    ]
+  },
+  "Lactose-free milk": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/041/7534/front_en.3.400.jpg"
+    ]
+  },
+  "Lamb chops": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/073/995/260/1040/front_en.3.400.jpg"
+    ]
+  },
+  "Lamb shanks": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/501/048/252/2018/front_es.26.400.jpg"
+    ]
+  },
+  "Lemon bars": {
+    "nutriscore_score": [
+      20
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/561/612/1031/front_en.5.400.jpg"
+    ]
+  },
+  "Lemonade": {
+    "nutriscore_score": [
+      6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00030083/front_en.3.400.jpg"
+    ]
+  },
+  "Lettuce": {
+    "nutriscore_score": [
+      -5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/791/830/2149/front_en.6.400.jpg"
+    ]
+  },
+  "Limes": {
+    "nutriscore_score": [
+      -8
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/009/582/911/0054/front_en.10.400.jpg"
+    ]
+  },
+  "Mackerel": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00262088/front_en.14.400.jpg"
+    ]
+  },
+  "Mahi-mahi fillets": {
+    "nutriscore_score": [
+      11
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/009/1420/front_en.4.400.jpg"
+    ]
+  },
+  "Mangoes": {
+    "nutriscore_score": [
+      -4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/01291681/front_en.27.400.jpg"
+    ]
+  },
+  "Margarine": {
+    "nutriscore_score": [
+      16
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/500/1202/front_en.19.400.jpg"
+    ]
+  },
+  "Meatballs": {
+    "nutriscore_score": [
+      11
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/666/906/1380/front_en.5.400.jpg"
+    ]
+  },
+  "Milk": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00062145/front_en.17.400.jpg"
+    ]
+  },
+  "Milkshakes": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/006/820/046/6552/front_fr.8.400.jpg"
+    ]
+  },
+  "Monterey Jack cheese": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00073974/front_fr.4.400.jpg"
+    ]
+  },
+  "Mountain Dew": {
+    "nutriscore_score": [
+      16
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/200/001/5939/front_en.3.400.jpg"
+    ]
+  },
+  "Mozzarella cheese": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/058/6001/front_en.6.400.jpg"
+    ]
+  },
+  "Muenster cheese": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00256872/front_en.5.400.jpg"
+    ]
+  },
+  "Muffins": {
+    "nutriscore_score": [
+      16
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/008/3128/front_en.3.400.jpg"
+    ]
+  },
+  "Multigrain bread": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/003/0726/front_en.14.400.jpg"
+    ]
+  },
+  "Mushrooms": {
+    "nutriscore_score": [
+      -7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/119/005/5876/front_en.5.400.jpg"
+    ]
+  },
+  "Mussels": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/902/901/3424/front_en.3.400.jpg"
+    ]
+  },
+  "Nectarines": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/089/535/900/2658/front_en.5.400.jpg"
+    ]
+  },
+  "Non-dairy creamer": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/001/6492/front_en.13.400.jpg"
+    ]
+  },
+  "Oat milk": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/500/013/0748/front_en.3.400.jpg"
+    ]
+  },
+  "Octopus": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/061/458/362/4258/front_en.3.400.jpg"
+    ]
+  },
+  "Olive bread": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/042/345/892/3453/front_fr.3.400.jpg"
+    ]
+  },
+  "Oolong tea": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/182/000/0089/front_en.3.400.jpg"
+    ]
+  },
+  "Orange soda": {
+    "nutriscore_score": [
+      16
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/113/025/2657/front_en.5.400.jpg"
+    ]
+  },
+  "Oranges": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/006/148/304/1508/front_fr.22.400.jpg"
+    ]
+  },
+  "Oxtail": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/01851076/front_en.26.400.jpg"
+    ]
+  },
+  "Parmesan cheese": {
+    "nutriscore_score": [
+      19
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/100/002/3806/front_en.12.400.jpg"
+    ]
+  },
+  "Pears": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/171/294/4909/front_en.32.400.jpg"
+    ]
+  },
+  "Pepper jack cheese": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/018/1466/front_en.4.400.jpg"
+    ]
+  },
+  "Pepsi": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/200/000/2946/front_en.11.400.jpg"
+    ]
+  },
+  "Pineapples": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/113/031/3792/front_en.4.400.jpg"
+    ]
+  },
+  "Pita bread": {
+    "nutriscore_score": [
+      -3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00146333/front_en.12.400.jpg"
+    ]
+  },
+  "Plums": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/171/254/3607/front_en.12.400.jpg"
+    ]
+  },
+  "Pollock": {
+    "nutriscore_score": [
+      -4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/802/925/4686/front_en.14.400.jpg"
+    ]
+  },
+  "Pork belly": {
+    "nutriscore_score": [
+      14
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00036351/front_en.25.400.jpg"
+    ]
+  },
+  "Pork chops": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/006/410/077/9716/front_en.72.400.jpg"
+    ]
+  },
+  "Pork ribs": {
+    "nutriscore_score": [
+      3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00734660/front_en.3.400.jpg"
+    ]
+  },
+  "Pork sausages": {
+    "nutriscore_score": [
+      13
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00060738/front_fr.4.400.jpg"
+    ]
+  },
+  "Pork tenderloin": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00011754/front_fr.10.400.jpg"
+    ]
+  },
+  "Potatoes": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/338/353/3100/front_en.11.400.jpg"
+    ]
+  },
+  "Pound cake": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/210/003/4043/front_en.9.400.jpg"
+    ]
+  },
+  "Pretzels": {
+    "nutriscore_score": [
+      11
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/898/200/0797/front_fr.4.400.jpg"
+    ]
+  },
+  "Provolone cheese": {
+    "nutriscore_score": [
+      18
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/001/3873/front_en.16.400.jpg"
+    ]
+  },
+  "Pudding": {
+    "nutriscore_score": [
+      4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/100/041/9074/front_en.7.400.jpg"
+    ]
+  },
+  "Pumpernickel bread": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/008/4811/front_en.5.400.jpg"
+    ]
+  },
+  "Pumpkins": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/518/602/2412/front_en.3.400.jpg"
+    ]
+  },
+  "Quail eggs": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/622/900/0585/front_en.15.400.jpg"
+    ]
+  },
+  "Rabbit meat": {
+    "nutriscore_score": [
+      7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00665469/front_fr.23.400.jpg"
+    ]
+  },
+  "Rabbit stew": {
+    "nutriscore_score": [
+      -8
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/338/563/001/6469/front_fr.5.400.jpg"
+    ]
+  },
+  "Radishes": {
+    "nutriscore_score": [
+      -6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/338/367/0003/front_en.5.400.jpg"
+    ]
+  },
+  "Raisin bread": {
+    "nutriscore_score": [
+      9
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/330/018/7012/front_en.4.400.jpg"
+    ]
+  },
+  "Raspberries": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/582/610/8135/front_en.4.400.jpg"
+    ]
+  },
+  "Ribeye steak": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/097/7632/front_en.6.400.jpg"
+    ]
+  },
+  "Rice milk": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/20034412/front_cs.14.400.jpg"
+    ]
+  },
+  "Ricotta cheese": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/100/030/0884/front_en.4.400.jpg"
+    ]
+  },
+  "Root beer": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/000/702/0254/front_fr.16.400.jpg"
+    ]
+  },
+  "Rye bread": {
+    "nutriscore_score": [
+      9
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/236/410/2204/front_en.3.400.jpg"
+    ]
+  },
+  "Salmon fillets": {
+    "nutriscore_score": [
+      -3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/206/038/03020006071/front_es.3.400.jpg"
+    ]
+  },
+  "Sardines": {
+    "nutriscore_score": [
+      3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/857/101/0358/front_en.3.400.jpg"
+    ]
+  },
+  "Sausage links": {
+    "nutriscore_score": [
+      7
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/200/010/1908/front_en.5.400.jpg"
+    ]
+  },
+  "Scallops": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/007/539/100/4302/front_en.4.400.jpg"
+    ]
+  },
+  "Sea bass": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/505/244/952/7902/front_en.3.400.jpg"
+    ]
+  },
+  "Sheep milk": {
+    "nutriscore_score": [
+      18
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/539/153/379/0106/front_en.3.400.jpg"
+    ]
+  },
+  "Shortbread": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00019101/front_en.32.400.jpg"
+    ]
+  },
+  "Shrimp": {
+    "nutriscore_score": [
+      -3
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/541/800/3383/front_en.3.400.jpg"
+    ]
+  },
+  "Sirloin steak": {
+    "nutriscore_score": [
+      10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/504/610/7321/front_en.3.400.jpg"
+    ]
+  },
+  "Sour cream": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00062237/front_en.16.400.jpg"
+    ]
+  },
+  "Sourdough bread": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/113/011/5457/front_en.4.400.jpg"
+    ]
+  },
+  "Soy milk": {
+    "nutriscore_score": [
+      16
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/622/992/0517/front_fr.4.400.jpg"
+    ]
+  },
+  "Sparkling water": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/000/8107/front_en.9.400.jpg"
+    ]
+  },
+  "Spinach": {
+    "nutriscore_score": [
+      -8
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/065/188/1058/front_en.5.400.jpg"
+    ]
+  },
+  "Sports drinks": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/114/309/2705/front_en.4.400.jpg"
+    ]
+  },
+  "Squid": {
+    "nutriscore_score": [
+      13
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/475/102/696/0064/front_en.3.400.jpg"
+    ]
+  },
+  "Strawberries": {
+    "nutriscore_score": [
+      -5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00096300/front_en.3.400.jpg"
+    ]
+  },
+  "Sugar cookies": {
+    "nutriscore_score": [
+      17
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00032704/front_en.3.400.jpg"
+    ]
+  },
+  "Sweet potatoes": {
+    "nutriscore_score": [
+      -2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/002/4633/front_en.4.400.jpg"
+    ]
+  },
+  "Swiss cheese": {
+    "nutriscore_score": [
+      10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/003/651/421/0949/front_en.13.400.jpg"
+    ]
+  },
+  "Swordfish steaks": {
+    "nutriscore_score": [
+      21
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00025942/front_fr.4.400.jpg"
+    ]
+  },
+  "Tilapia fillets": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00181358/front_en.8.400.jpg"
+    ]
+  },
+  "Tofu": {
+    "nutriscore_score": [
+      -5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00124492/front_en.3.400.jpg"
+    ]
+  },
+  "Tomato juice": {
+    "nutriscore_score": [
+      -4
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/004/8851/front_en.3.400.jpg"
+    ]
+  },
+  "Tomatoes": {
+    "nutriscore_score": [
+      -6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/700/038/0086/front_en.20.400.jpg"
+    ]
+  },
+  "Tri-tip roast": {
+    "nutriscore_score": [
+      16
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/122/051/7282/front_en.5.400.jpg"
+    ]
+  },
+  "Trout": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/934/300/500/0141/front_en.5.400.jpg"
+    ]
+  },
+  "Tuna": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/800/000/0989/front_fr.10.400.jpg"
+    ]
+  },
+  "Turkey burgers": {
+    "nutriscore_score": [
+      9
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/480/064/6979/front_en.4.400.jpg"
+    ]
+  },
+  "Turkey sausage": {
+    "nutriscore_score": [
+      11
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/002/753/3024/front_en.9.400.jpg"
+    ]
+  },
+  "Veal cutlets": {
+    "nutriscore_score": [
+      25
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/182/675/0116/front_en.3.400.jpg"
+    ]
+  },
+  "Venison steaks": {
+    "nutriscore_score": [
+      13
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/002/733/102/0606/front_en.5.400.jpg"
+    ]
+  },
+  "Vodka": {
+    "nutriscore_score": [
+      10
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/008/800/403/3378/front_en.3.400.jpg"
+    ]
+  },
+  "Watermelons": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/000/980/030/6084/front_en.3.400.jpg"
+    ]
+  },
+  "Whipped cream": {
+    "nutriscore_score": [
+      15
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/111/058/0887/front_en.9.400.jpg"
+    ]
+  },
+  "Whiskey": {
+    "nutriscore_score": [
+      12
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/401/314/915/1447/front_de.3.400.jpg"
+    ]
+  },
+  "White bread": {
+    "nutriscore_score": [
+      -1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/851/301/8078/front_en.4.400.jpg"
+    ]
+  },
+  "White tea": {
+    "nutriscore_score": [
+      6
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/376/027/156/0029/front_fr.23.400.jpg"
+    ]
+  },
+  "White wine": {
+    "nutriscore_score": [
+      0
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/004/149/825/5053/front_en.4.400.jpg"
+    ]
+  },
+  "Whole wheat bread": {
+    "nutriscore_score": [
+      1
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/00016056/front_en.12.400.jpg"
+    ]
+  },
+  "Yogurt": {
+    "nutriscore_score": [
+      2
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/001/138/410/4208/front_en.3.400.jpg"
+    ]
+  },
+  "Zucchini bread": {
+    "nutriscore_score": [
+      5
+    ],
+    "image_url": [
+      "https://images.openfoodfacts.org/images/products/065/893/965/8863/front_es.17.400.jpg"
+    ]
+  }
+}
