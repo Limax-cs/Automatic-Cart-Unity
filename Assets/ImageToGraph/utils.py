@@ -7,6 +7,7 @@ import random
 import os
 from gtts import gTTS
 from playsound import playsound
+import time
 
 imagetograph_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -18,10 +19,12 @@ def say(text: str, to_file:bool=True):
         text (str): Text to be spoken
         to_file (bool, optional): Decide if to save the file or speak it. Defaults to True.
     """
-    tts = gTTS(text)
-    tts.save('text.mp3')
+    tts = gTTS(text) 
+    filename = f'{time.time()}.mp3'
+    tts.save(filename)
     if not to_file:
-        playsound('text.mp3')
+        playsound(filename)
+        os.remove(filename)
         
 
 def get_neighbours(x: int, y: int, adjacency_8: bool) -> np.array:
@@ -282,7 +285,7 @@ def hamiltonian_path(graph: nx.Graph, items:np.array) -> (np.array,np.array,floa
         row_indices, col_indices = np.unravel_index(flat_indices, adj_mat.shape)
         i = 0
         
-        while len(graph.edges) < len(coordinates)-1:#Chech smallest edge weight at each iteration, need to avoid that edge connect start and end index
+        while len(graph.edges) < len(coordinates)-1:#Check smallest edge weight at each iteration, need to avoid that edge connect start and end index
             row_index = row_indices[i]
             col_index = col_indices[i] 
             if visited[row_index] == 2 or visited[col_index] == 2 or (visited[0] == 1 and min(row_index, col_index) == 0) or (visited[-1] == 1 and max(row_index, col_index) == len(coordinates)-1):
