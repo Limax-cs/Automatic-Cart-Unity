@@ -20,9 +20,6 @@ import socket
 import json
 import threading
 
-host = '127.0.0.1'  # Replace with Unity's IP address if on a different machine
-port = 8888  # Same port as defined in Unity
-
 class MyGroceryListApp:
 
     def __init__(self):
@@ -126,6 +123,11 @@ class MyGroceryListApp:
         #self.backend_reporter()
 
         # Unity Communication
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)  # Bind closing event
+
+        self.host = '127.0.0.1'
+        self.port = 8888
+        self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.communication_init()
 
         self.root.mainloop()
@@ -304,6 +306,18 @@ class MyGroceryListApp:
         #app_msg.pathy = [p[0] for p in paths[0]]
         #self.backend_pub.publish(app_msg)
 
+        # TCP Message
+        app_data = {
+                    "status": "Item Path",
+                    "pathx": [int(p[0]) for p in self.paths[0]],
+                    "pathy": [int(p[1]) for p in self.paths[0]],
+                    "wallsx": [],
+                    "wallsy": []
+                }
+
+        # Send the data
+        self.send_data(app_data)
+
         return items
     
 
@@ -342,18 +356,41 @@ class MyGroceryListApp:
 
         # ROS Message
         if self.paths:
-        #    if self.grocery_list:
+            if self.grocery_list:
         #        app_msg = App()
         #        app_msg.status = "Next Item"
         #        app_msg.pathx = [p[0] for p in self.paths[0]]
         #        app_msg.pathy = [p[1] for p in self.paths[0]]
         #        self.backend_pub.publish(app_msg)
-        #    else:
+                
+                app_data = {
+                    "status": "Next Item",
+                    "pathx": [int(p[0]) for p in self.paths[0]],
+                    "pathy": [int(p[1]) for p in self.paths[0]],
+                    "wallsx": [],
+                    "wallsy": []
+                }
+
+                # Send the data
+                self.send_data(app_data)
+            else:
         #        app_msg = App()
         #        app_msg.status = "Destination"
         #        app_msg.pathx = [p[0] for p in self.paths[0]]
         #        app_msg.pathy = [p[1] for p in self.paths[0]]
         #        self.backend_pub.publish(app_msg)
+                
+                app_data = {
+                    "status": "Destination",
+                    "pathx": [int(p[0]) for p in self.paths[0]],
+                    "pathy": [int(p[1]) for p in self.paths[0]],
+                    "wallsx": [],
+                    "wallsy": []
+                }
+
+                # Send the data
+                self.send_data(app_data)
+        
 
             im = draw_path(self.image, self.paths, only_return=True)
             self.route_path_im = ImageTk.PhotoImage(image=im)
@@ -379,14 +416,18 @@ class MyGroceryListApp:
         #app_msg = App()
         #app_msg.status = "Pause"
         #self.backend_pub.publish(app_msg)
-        # Example data structure to send
-        data_to_send = {
-            "numbers": [1, 2, 3, 4, 5],
-            "message": "Hello from Python!"
+
+        # Application Data to send
+        app_data = {
+            "status": "Pause",
+            "pathx": [],
+            "pathy": [],
+            "wallsx": [],
+            "wallsy": []
         }
 
         # Send the data
-        self.send_data(data_to_send)
+        self.send_data(app_data)
         return True
 
     def resume_robot(self):
@@ -394,6 +435,19 @@ class MyGroceryListApp:
         #app_msg = App()
         #app_msg.status = "Resume"
         #self.backend_pub.publish(app_msg)
+
+        # Application Data to send
+        app_data = {
+            "status": "Resume",
+            "pathx": [],
+            "pathy": [],
+            "wallsx": [],
+            "wallsy": []
+        }
+
+        # Send the data
+        self.send_data(app_data)
+
         return True
     
     # BACKEND COMMUNICATION
@@ -410,30 +464,71 @@ class MyGroceryListApp:
 
     # UNITY COMMUNICATION
 
-    def send_data(self, data):
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.connect((host, port))
-            serialized_data = json.dumps(data).encode()
-            s.sendall(serialized_data)
+    #def send_data(self, data):
+    #    serialized_data = json.dumps(data).encode()
+    #    self.s.sendall(serialized_data)
 
-    def receive_data(self):
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.bind((host, port))
-            s.listen()
-            conn, addr = s.accept()
-            with conn:
-                while True:
-                    data = conn.recv(1024)
-                    if not data:
-                        break
-                    received_data = json.loads(data.decode())
-                    print("Received data:", received_data)
+    #def receive_data(self):
+    #    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    #        s.bind((host, port))
+    #        s.listen()
+    #        conn, addr = s.accept()
+    #        with conn:
+    #            while True:
+    #                data = conn.recv(1024)
+    #                if not data:
+    #                    break
+    #                received_data = json.loads(data.decode())
+    #                print("Received data:", received_data)
 
-    def communication_init(self):
+    #def communication_init(self):
 
         # Start receiving data in a separate thread
-        receive_thread = threading.Thread(target=self.receive_data)
-        receive_thread.start()
+    #    receive_thread = threading.Thread(target=self.receive_data)
+    #    receive_thread.start()
+
+        # Create socket connection
+    #    self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #    self.s.connect((host, port))
+
+    def send_data(self, data):
+        serialized_data = json.dumps(data).encode()
+        self.s.sendall(serialized_data)
+
+    def receive_data(self):
+        while True:
+            try:
+                data = self.s.recv(1024)
+                if not data:
+                    break
+                received_data = json.loads(data.decode())
+                print("Received data:", received_data)
+            except ConnectionResetError:
+                print("Connection with server closed.")
+                break
+            except json.JSONDecodeError:
+                print("Error decoding JSON data.")
+                break
+
+    def communication_init(self):
+        try:
+            # Create socket connection
+            self.s.connect((self.host, self.port))
+
+            # Start receiving data in a separate thread
+            receive_thread = threading.Thread(target=self.receive_data)
+            receive_thread.start()
+
+            # Start sending data (replace 'data_to_send' with your actual data)
+            #data_to_send = {"message": "Hello from Python"}
+            #self.send_data(data_to_send)
+
+        except ConnectionRefusedError:
+            print("Connection refused. Unity server might not be running or listening.")
+
     
+    def on_closing(self):
+        self.root.destroy()  # Destroy the tkinter window
+        self.s.close()  # Close the socket connection
 
 MyGroceryListApp()
