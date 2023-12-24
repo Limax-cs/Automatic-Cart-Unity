@@ -9,13 +9,14 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(current_path)
 from ImageToGraph.utils import *
 from PIL import Image, ImageTk
+import networkx as nx
 
 # ROS libraries
 #import rospy
 #from std_msgs.msg import String
 #from automatic_cart.msg import App, Backend
 
-# Unity Libraries
+# Unity Communication Libraries
 import socket
 import json
 import threading
@@ -152,6 +153,22 @@ class MyGroceryListApp:
         self.set_button_color(self.map1_button, 'green')
         self.set_button_color(self.map2_button, 'gray85') # Reset color for the other button
         self.imagedir = self.dir + 'Model3.png'
+
+        # TCP Message
+        app_data = {
+                    "status": "World Init",
+                    "pathx": [111],
+                    "pathy": [98],
+                    "productsx": [],
+                    "productsy": [],
+                    "productNames": [],
+                    "mapName": "Model3"
+                }
+
+        # Send the data
+        self.send_data(app_data)
+
+        # Update App
         self.update_supermarket()
 
         
@@ -163,6 +180,22 @@ class MyGroceryListApp:
         self.set_button_color(self.map2_button, 'green')
         self.set_button_color(self.map1_button, 'gray85') # Reset color for the other button
         self.imagedir = self.dir + 'Model4.png'
+
+        # TCP Message
+        app_data = {
+                    "status": "World Init",
+                    "pathx": [83],
+                    "pathy": [96],
+                    "productsx": [],
+                    "productsy": [],
+                    "productNames": [],
+                    "mapName": "Model4"
+                }
+
+        # Send the data
+        self.send_data(app_data)
+
+        # Update App
         self.update_supermarket()
         
 
@@ -263,11 +296,13 @@ class MyGroceryListApp:
         """
 
         print(self.grocery_list)
-        items, coordinates, length = hamiltonian_path(self.graph, list(set(self.grocery_list)))
+        items, coordinates, length = hamiltonian_path(self.graph, list(set(self.grocery_list)), origin=(int(self.robot_data["x"]), int(self.robot_data["y"])))
         self.grocery_list = items
         print(self.grocery_list)
 
         paths = [nx.dijkstra_path(self.graph, coordinates[i], coordinates[i+1]) for i in range(len(coordinates)-1)]
+        item_coords = get_coordinates(self.grocery_list, graph=self.graph)
+        print(self.grocery_list)
         im = draw_path(self.image, paths, only_return=True)
         self.paths = paths
 
@@ -311,8 +346,10 @@ class MyGroceryListApp:
                     "status": "Item Path",
                     "pathx": [int(p[0]) for p in self.paths[0]],
                     "pathy": [int(p[1]) for p in self.paths[0]],
-                    "wallsx": [],
-                    "wallsy": []
+                    "productsx": [int(p[0]) for p in item_coords[1:-1]],
+                    "productsy": [int(p[1]) for p in item_coords[1:-1]],
+                    "productNames": self.grocery_list,
+                    "mapName": ""
                 }
 
         # Send the data
@@ -328,31 +365,38 @@ class MyGroceryListApp:
         Show which item is next on the Route Page.
         """
 
-        say(f"Collected {self.grocery_list[0]}", to_file=False) # use TTS to inform user about picked item
-
-        if self.grocery_list:
-            self.grocery_list.pop(0)
-            self.paths.pop(0)
-            self.shopping_listbox.delete(0)
+        if (self.robot_data["status"] == "Destination"):
         
+
+            say(f"Collected {self.grocery_list[0]}", to_file=False) # use TTS to inform user about picked item
+
+            if self.grocery_list:
+                self.grocery_list.pop(0)
+                self.paths.pop(0)
+                self.shopping_listbox.delete(0)
             
-        elif self.paths:
-            self.paths.pop(0)
-            self.shopping_listbox.delete(0)
+                
+            elif self.paths:
+                self.paths.pop(0)
+                self.shopping_listbox.delete(0)
 
-        print(self.grocery_list)
-        print(self.paths)
+            print(self.grocery_list)
+            print(self.paths)
 
-        # Update the next item on the route page
-        
-        if self.grocery_list:
-            next_item = self.grocery_list[0]
-            self.next_item_label.config(text=f"Next Item: {next_item}", font=('Kozuka Gothic Pro H', 10))
-            say(f"Next item: {next_item}", to_file=False) # use TTS to inform user about the next item
+            # Update the next item on the route page
+            
+            if self.grocery_list:
+                next_item = self.grocery_list[0]
+                self.next_item_label.config(text=f"Next Item: {next_item}", font=('Kozuka Gothic Pro H', 10))
+                say(f"Next item: {next_item}", to_file=False) # use TTS to inform user about the next item
+
+            else:
+                self.next_item_label.config(text="Done! Let's pay", font=('Kozuka Gothic Pro H', 10))
+                say(f"That was it! Time to pay", to_file=False)
 
         else:
-            self.next_item_label.config(text="Done! Let's pay", font=('Kozuka Gothic Pro H', 10))
-            say(f"That was it! Time to pay", to_file=False)
+            say(f"Robot on the way. Next Item: {self.grocery_list[0]}", to_file=False) # use TTS to inform user about process
+
 
         # ROS Message
         if self.paths:
@@ -363,12 +407,18 @@ class MyGroceryListApp:
         #        app_msg.pathy = [p[1] for p in self.paths[0]]
         #        self.backend_pub.publish(app_msg)
                 
+                # Update path
+                self.paths[0] = nx.dijkstra_path(self.graph, (int(self.robot_data["x"]), int(self.robot_data["y"])), self.paths[0][-1])
+
+                # Prepare message
                 app_data = {
                     "status": "Next Item",
                     "pathx": [int(p[0]) for p in self.paths[0]],
                     "pathy": [int(p[1]) for p in self.paths[0]],
-                    "wallsx": [],
-                    "wallsy": []
+                    "productsx": [],
+                    "productsy": [],
+                    "productNames": [],
+                    "mapName": ""
                 }
 
                 # Send the data
@@ -380,12 +430,18 @@ class MyGroceryListApp:
         #        app_msg.pathy = [p[1] for p in self.paths[0]]
         #        self.backend_pub.publish(app_msg)
                 
+                # Update path
+                self.paths[0] = nx.dijkstra_path(self.graph, (int(self.robot_data["x"]), int(self.robot_data["y"])), self.paths[0][-1])
+                
+                # Prepare message
                 app_data = {
                     "status": "Destination",
                     "pathx": [int(p[0]) for p in self.paths[0]],
                     "pathy": [int(p[1]) for p in self.paths[0]],
-                    "wallsx": [],
-                    "wallsy": []
+                    "productsx": [],
+                    "productsy": [],
+                    "productNames": [],
+                    "mapName": ""
                 }
 
                 # Send the data
@@ -422,8 +478,10 @@ class MyGroceryListApp:
             "status": "Pause",
             "pathx": [],
             "pathy": [],
-            "wallsx": [],
-            "wallsy": []
+            "productsx": [],
+            "productsy": [],
+            "productNames": [],
+            "mapName": ""
         }
 
         # Send the data
@@ -441,8 +499,10 @@ class MyGroceryListApp:
             "status": "Resume",
             "pathx": [],
             "pathy": [],
-            "wallsx": [],
-            "wallsy": []
+            "productsx": [],
+            "productsy": [],
+            "productNames": [],
+            "mapName": ""
         }
 
         # Send the data
@@ -464,33 +524,6 @@ class MyGroceryListApp:
 
     # UNITY COMMUNICATION
 
-    #def send_data(self, data):
-    #    serialized_data = json.dumps(data).encode()
-    #    self.s.sendall(serialized_data)
-
-    #def receive_data(self):
-    #    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    #        s.bind((host, port))
-    #        s.listen()
-    #        conn, addr = s.accept()
-    #        with conn:
-    #            while True:
-    #                data = conn.recv(1024)
-    #                if not data:
-    #                    break
-    #                received_data = json.loads(data.decode())
-    #                print("Received data:", received_data)
-
-    #def communication_init(self):
-
-        # Start receiving data in a separate thread
-    #    receive_thread = threading.Thread(target=self.receive_data)
-    #    receive_thread.start()
-
-        # Create socket connection
-    #    self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    #    self.s.connect((host, port))
-
     def send_data(self, data):
         serialized_data = json.dumps(data).encode()
         self.s.sendall(serialized_data)
@@ -501,8 +534,9 @@ class MyGroceryListApp:
                 data = self.s.recv(1024)
                 if not data:
                     break
-                received_data = json.loads(data.decode())
-                print("Received data:", received_data)
+                self.robot_data = json.loads(data.decode())
+                print("Received data:", self.robot_data)
+                print("Received data status: ", self.robot_data["status"])
             except ConnectionResetError:
                 print("Connection with server closed.")
                 break
@@ -522,6 +556,9 @@ class MyGroceryListApp:
             # Start sending data (replace 'data_to_send' with your actual data)
             #data_to_send = {"message": "Hello from Python"}
             #self.send_data(data_to_send)
+
+            # Initialize data from Unity Environment
+            self.robot_data = {"status": "Stop", "x": 0.0, "y": 0.0, "xUser": 0.0, "yUser": 0.0}
 
         except ConnectionRefusedError:
             print("Connection refused. Unity server might not be running or listening.")

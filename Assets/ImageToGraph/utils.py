@@ -238,7 +238,7 @@ def permute_third_list(first_list, second_list, third_list):
 
     return permuted_third_list
 
-def hamiltonian_path(graph: nx.Graph, items:np.array) -> (np.array,np.array,float):    
+def hamiltonian_path(graph: nx.Graph, items:np.array, origin: tuple = None) -> (np.array,np.array,float):    
     """Given a list of items finds the shortest path along the supermarket that visits all these items, for more than 11 nodes
     it will compute an approximation. That the path will always start from the first element of the coordinates and end in the last
 
@@ -250,6 +250,9 @@ def hamiltonian_path(graph: nx.Graph, items:np.array) -> (np.array,np.array,floa
         (np.array,np.array,int): Returns two numpy arrays containing items and nodes in the correct order and path length
     """
     coordinates = get_coordinates(items, graph)
+    if origin is not None:
+        coordinates[0] = origin
+
     adj_mat = np.empty((len(coordinates),len(coordinates)), dtype = np.float16)
     for i,node_coords in enumerate(coordinates):
         lengths = nx.single_source_dijkstra_path_length(graph,node_coords)

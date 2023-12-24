@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class User : MonoBehaviour
 {
@@ -28,11 +31,20 @@ public class User : MonoBehaviour
     public float InAirFriction = 0.995f;
     public float InertiaContribution = 0.9f;
 
+    // Status
+    public List<string> productList;
+    public List<string> productCollected;
+    public int productCount = 0;
+    public int productCollCount = 0;
+    public TextMeshProUGUI statusUI;
+
 
     // Start is called before the first frame update
     void Start()
     {
         user = GetComponent<CharacterController>();
+        productList = new List<string>();
+        productCollected = new List<string>();
     }
 
     // Update is called once per frame
@@ -67,6 +79,9 @@ public class User : MonoBehaviour
         // Move the user
         user.Move(moveUser * Time.deltaTime);
         this.transform.Rotate(new Vector3(0,mouseX*1000,0)*Time.deltaTime);
+
+        // Update Products Collected
+        statusUI.text = "Products Collected: " + productCollCount + "/ " + productCount + " \n Products: " + string.Join(",", productList) + " \n Products Collected: " + string.Join(",", productCollected);
     }
 
     public void CamDirection()
@@ -97,5 +112,17 @@ public class User : MonoBehaviour
         }
 
         
+    }
+
+    public void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("Product"))
+        {
+            productCollected.Add(collider.name.Substring(0, collider.name.Length -7));
+            productCollCount = productCollCount + 1;
+
+            Debug.Log("User collide with " + collider.name.Substring(0, collider.name.Length -7));
+            Destroy(collider.gameObject);
+        }
     }
 }

@@ -25,14 +25,17 @@ public class AppData
     public string status;
     public int[] pathx;
     public int[] pathy;
-    public int[] wallsx;
-    public int[] wallsy;
+    public int[] productsx;
+    public int[] productsy;
+    public string[] productNames;
+    public string mapName;
 }
 
 public class BackendData
 {
     public string status;
     public float x, y;
+    public float xUser, yUser;
 }
 
 public class backend : MonoBehaviour
@@ -44,6 +47,12 @@ public class backend : MonoBehaviour
     public Vector2 imageSize = new Vector2(300.0f, 220.0f);
     public Vector2 mapOrigin = new Vector2(10.0f, 10.0f);
     public float imageScale = 1.0f;
+    public GameObject user;
+    public GameObject[] maps;
+    public GameObject productPrefab;
+    private GameObject[] shelves3;
+    private GameObject[] shelves4;
+    private string shopName="Model3";
 
     // Velocity Params
     public Vector3 robotOrientation;
@@ -62,6 +71,7 @@ public class backend : MonoBehaviour
     public List<float> pathyMap;
     public string status;
     public float distThreshold;
+    public float distThresholdLast;
     public float P, I, D;
     List<float> linearVel;
     List<float> angularVel;
@@ -83,11 +93,14 @@ public class backend : MonoBehaviour
 
     private void Start()
     {
+        /*
+            Initialize the robot configuration and communication when the Unity Environment starts
+        */
 
         // Initialization of variables (corresponding to Python constructor)
-        origin = new Coordinates(41.5f, 0.0f, 11.5f, 0.0f, 0.0f, 0.0f);
-        factor = new Coordinates(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f);
-        robot = new Coordinates(41.5f, 0.0f, 11.5f, 0.0f, 0.0f, 0.0f);
+        // origin = new Coordinates(41.5f, 0.0f, 11.5f, 0.0f, 0.0f, 0.0f);
+        // factor = new Coordinates(1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f);
+        // robot = new Coordinates(41.5f, 0.0f, 11.5f, 0.0f, 0.0f, 0.0f);
 
         // Initialize lists and other variables as needed
         pathxApp = new List<int>();
@@ -95,7 +108,8 @@ public class backend : MonoBehaviour
         pathxMap = new List<float>();
         pathyMap = new List<float>();
         status = "Stop";
-        distThreshold = 1.0f;
+        distThreshold = 0.1f;
+        distThresholdLast = 1.4f;
         P = 1.0f;
         I = 0.0f;
         D = 0.0f;
@@ -104,11 +118,22 @@ public class backend : MonoBehaviour
 
         // Define Rigidbody
         cart_rb = GetComponent<Rigidbody>();
-        robotOrientation = new Vector3(-90,0,90);
+        maps = GameObject.FindGameObjectsWithTag("Shop");
+        shelves3 = GameObject.FindGameObjectsWithTag("shelve_shop3");
+        shelves4 = GameObject.FindGameObjectsWithTag("shelve_shop4");
+        foreach(GameObject goMap in maps)
+        {
+            if (goMap.name == "shop3")
+            {
+                goMap.SetActive(true);
+            }
+            else
+            {
+                goMap.SetActive(false);
+            }
+        }
 
-        // Start listening for connections in a separate thread
-        //tcpListenerThread = new System.Threading.Thread(ListenForTCP);
-        //tcpListenerThread.Start();
+        robotOrientation = new Vector3(-90,0,90);
 
         server = new TcpListener(IPAddress.Any, port);
         //server = new TcpListener(System.Net.IPAddress.Parse(TCPaddress), port);
@@ -126,6 +151,10 @@ public class backend : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
+            Control the robot during each cycle of Unity
+        */
+
         // Update Goal Position
         if (pathxMap.Count > 0 && pathyMap.Count > 0)
         {
@@ -140,6 +169,8 @@ public class backend : MonoBehaviour
             data2update.status = status;
             data2update.y = (float)((-this.transform.position[0]/imageScale - 0.5 + imageSize[0]/2 ) - mapOrigin[0]);
             data2update.x = (float)((this.transform.position[2]/imageScale - 0.5 + imageSize[1]/2 ) - mapOrigin[1]);
+            data2update.yUser = (float)((-user.transform.position[0]/imageScale - 0.5 + imageSize[0]/2 ) - mapOrigin[0]);
+            data2update.xUser = (float)((user.transform.position[2]/imageScale - 0.5 + imageSize[1]/2 ) - mapOrigin[1]);
             SendData(data2update);
             timeAcc = 0;
         }
@@ -163,6 +194,13 @@ public class backend : MonoBehaviour
                 float angle = (float) (Math.Atan2(diry, dirx)*180/Math.PI);
 
                 // Remove graph node if it close to certain threshold
+                if (pathxMap.Count == 1 && pathyMap.Count == 1 && distance < distThresholdLast)
+                {
+                    pathxApp.RemoveAt(0);
+                    pathyApp.RemoveAt(0);
+                    pathxMap.RemoveAt(0);
+                    pathyMap.RemoveAt(0);
+                }
                 if (distance < distThreshold)
                 {
                     pathxApp.RemoveAt(0);
@@ -173,6 +211,15 @@ public class backend : MonoBehaviour
 
             
                 float yaw = (float)(-angle + 90 - (robotOrientation[2]));
+                if (yaw > 180)
+                {
+                    yaw = yaw - 360;
+                }
+                else if (yaw < -180)
+                {
+                    yaw = 360 + yaw;
+                }
+
                 Debug.Log("Direction = (" + dirx + "," +diry + ") | Distance = " + distance + " | Angle = " + angle + " Rotation Z = " + (robotOrientation[2]) + "| Yaw = " + yaw);
 
                 /*
@@ -189,7 +236,14 @@ public class backend : MonoBehaviour
                 // Pid
                 if (Math.Sqrt(yaw*yaw) < 180/16)
                 {
-                    linear_velocity = P*(float)Math.Min(Math.Max(distance, 0.2), 1.4);
+                    if (pathxMap.Count > 1 && pathyMap.Count > 1)
+                    {
+                        linear_velocity = P*1.4f;
+                    }
+                    else
+                    {
+                        linear_velocity = P*(float)Math.Min(Math.Max(distance, 0.2), 1.4);
+                    }
                 }
                 else
                 {
@@ -249,6 +303,10 @@ public class backend : MonoBehaviour
 
     private async void WaitForClient()
     {
+        /*
+            Waits for a client in a different thread to start the robot's communication with the application
+        */
+
         try
         {
             client = await server.AcceptTcpClientAsync();
@@ -266,6 +324,10 @@ public class backend : MonoBehaviour
 
     private async void ReceiveData()
     {
+        /*
+            Receives data from the application and updates the internal state of the robot
+        */
+
         try
         {
             while (clientConnected)
@@ -284,7 +346,47 @@ public class backend : MonoBehaviour
                         // Process the received data
                         status = data.status;
 
-                        if (data.status == "Next Item" || data.status == "Item Path" || data.status == "Destination")
+                        if (data.status == "World Init")
+                        {
+                            shopName = data.mapName;
+
+                            // Enable maps
+                            foreach(GameObject goMap in maps)
+                            {
+                                if (data.mapName == "Model3" && goMap.name == "shop3")
+                                {
+                                    goMap.SetActive(true);
+                                }
+                                else if (data.mapName == "Model4" && goMap.name == "shop4")
+                                {
+                                    goMap.SetActive(true);
+                                }
+                                else
+                                {
+                                    goMap.SetActive(false);
+                                }
+                            }
+
+                            // Place Robot and user
+                            float posX = (float)(-((data.pathy[0] + mapOrigin[0]) - imageSize[0]/2 + 0.5)*imageScale);
+                            float posY = (float)(-((-data.pathx[0] - mapOrigin[1]) + imageSize[1]/2 - 0.5)*imageScale);
+
+                            if (data.mapName == "Model3")
+                            {
+                                this.transform.position = new Vector3(posX, 1.0f, posY);
+                                user.transform.position = new Vector3(posX, 1.0f, posY - 2);
+                            }
+                            else if (data.mapName == "Model4")
+                            {
+                                this.transform.position = new Vector3(posX, 1.0f, posY);
+                                user.transform.position = new Vector3(posX, 1.0f, posY + 2);
+                            }
+
+
+                            // Update robot status
+                            status = "Stop";
+                        }
+                        else if (data.status == "Next Item" || data.status == "Item Path" || data.status == "Destination")
                         {
                             // Clear lists
                             pathxApp.Clear();
@@ -301,9 +403,100 @@ public class backend : MonoBehaviour
                                 pathyMap.Add((float)(-((-data.pathx[i] - mapOrigin[1]) + imageSize[1]/2 - 0.5)*imageScale));
                             }
 
+                            // Remove first position
+                            pathxApp.RemoveAt(0);
+                            pathyApp.RemoveAt(0);
+                            pathxMap.RemoveAt(0);
+                            pathyMap.RemoveAt(0);
+
                             // Update robot status
                             if (data.status == "Item Path"){status = "Stop";}
                             else {status = "Continue";}
+
+                            if (data.status == "Item Path")
+                            {
+                                // Place the products if product list
+                                GameObject[] products = GameObject.FindGameObjectsWithTag("Product");
+                                foreach(GameObject goprod in products)
+                                {
+                                    Destroy(goprod);
+                                }
+                                Debug.Log("Previous products removed");
+
+                                for(int p=0; p < Math.Min(Math.Min(data.productsx.Length, data.productsy.Length), data.productNames.Length); p++)
+                                {
+                                    productPrefab.name = data.productNames[p];
+                                    productPrefab.tag = "Product";
+
+                                    float posXprod = (float)(-((data.productsy[p] + mapOrigin[0]) - imageSize[0]/2 + 0.5)*imageScale);
+                                    float posYprod = (float)(-((-data.productsx[p] - mapOrigin[1]) + imageSize[1]/2 - 0.5)*imageScale);
+                                    float posXshelf = posXprod;
+                                    float posYshelf = posYprod;
+
+                                    
+                                    if (shopName == "Model3")
+                                    {
+                                        float dist = 3.0f;
+                                        foreach (GameObject shelf in shelves3)
+                                        {
+                                            float shelf2prod = (float)Math.Sqrt(Math.Pow(posXprod - shelf.transform.position[0], 2) + Math.Pow(posYprod - shelf.transform.position[2], 2));
+                                            if (dist > shelf2prod)
+                                            {
+                                                dist = shelf2prod;
+                                                posXshelf = shelf.transform.position[0];
+                                                posYshelf = shelf.transform.position[2];
+
+                                                if (shelf2prod < 1.0f)
+                                                {
+                                                    posXshelf = posXprod;
+                                                    posYshelf = posYprod;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else if (shopName == "Model4")
+                                    {
+                                        float dist = 10.0f;
+                                        foreach (GameObject shelf in shelves4)
+                                        {
+                                            float shelf2prod = (float)Math.Sqrt(Math.Pow(posXprod - shelf.transform.position[0], 2) + Math.Pow(posYprod - shelf.transform.position[2], 2));
+                                            if (dist > shelf2prod)
+                                            {
+                                                dist = shelf2prod;
+                                                posXshelf = shelf.transform.position[0];
+                                                posYshelf = shelf.transform.position[2];
+
+                                                if (shelf2prod < 1.0f)
+                                                {
+                                                    posXshelf = posXprod;
+                                                    posYshelf = posYprod;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    Instantiate(productPrefab, 
+                                                new Vector3(posXshelf, 
+                                                            1.0f, 
+                                                            posYshelf) , 
+                                                Quaternion.identity);
+                                    Debug.Log("Current products instantiated");
+
+                                    // Update user products
+                                    User userScript = user.GetComponent<User>();
+                                    userScript.productCollected.Clear();
+                                    userScript.productList.Clear();
+                                    foreach(string pN in data.productNames)
+                                    {
+                                        userScript.productList.Add(pN);
+                                    }
+                                    userScript.productCollCount = 0;
+                                    userScript.productCount = data.productNames.Length;
+                                }
+                            }
+
                         }
 
                         // Update robot status
@@ -363,6 +556,7 @@ public class backend : MonoBehaviour
         server.Stop();
     }
 
+    // Detects when the robot is colliding the floor
     private void OnCollisionStay(Collision collision)
     {
         
