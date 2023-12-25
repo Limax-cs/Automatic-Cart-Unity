@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Floor
   - Shop
+  - Product
+  - shelve_shop3
+  - shelve_shop4
+  - User
   layers:
   - Default
   - TransparentFX

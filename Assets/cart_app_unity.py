@@ -10,6 +10,8 @@ sys.path.append(current_path)
 from ImageToGraph.utils import *
 from PIL import Image, ImageTk
 import networkx as nx
+import time
+import math
 
 # ROS libraries
 #import rospy
@@ -90,22 +92,24 @@ class MyGroceryListApp:
         self.route_page = Frame(self.root, bg=app_background_color) 
         self.route_page.grid(row=0, column=0, sticky="nsew")
         route_lb = Label(self.route_page, text="Your Route", font=('Kozuka Gothic Pro H', 10), bg=app_background_color)
-        route_lb.grid(row=0, column=0, padx=120, pady=20)
+        route_lb.grid(row=0, column=0, columnspan=2, padx=120, pady=20)
 
         self.route_path_im = self.map1_image
         self.route_path_lb = Label(self.route_page, image=self.route_path_im)
-        self.route_path_lb.grid(row=1, column=0, pady=0)
+        self.route_path_lb.grid(row=1, column=0, columnspan=2, pady=0)
 
         self.next_item_label = Label(self.route_page, text="No shopping list known", bg=app_background_color)
-        self.next_item_label.grid(row=2, column=0, pady=20)
+        self.next_item_label.grid(row=2, column=0, columnspan=2, pady=20)
 
-        self.picked_button = tk.Button(self.route_page, text= "Next", font=('Kozuka Gothic Pro H', 12), command=self.picked_item) # user lets know they picked the current item
+        self.picked_button = tk.Button(self.route_page, text= "Next", font=('Kozuka Gothic Pro H', 12), command=self.picked_item, fg="white", bg="#114B5F", width=15) # user lets know they picked the current item
         self.picked_button.grid(row=3, column=0)
 
-        pause_button =  tk.Button(self.route_page, text="Pause", font=('Kozuka Gothic Pro H', 12), command=self.pause_robot) # pause the shopping cart
-        pause_button.grid(row=4, column=0)
-        continue_button =  tk.Button(self.route_page, text="Continue", font=('Kozuka Gothic Pro H', 12), command=self.resume_robot) # continue the shopping cart
-        continue_button.grid(row=5, column=0)
+        pause_button =  tk.Button(self.route_page, text="Pause", font=('Kozuka Gothic Pro H', 12), command=self.pause_robot, fg="white", bg="#114B5F", width=15) # pause the shopping cart
+        pause_button.grid(row=3, column=1)
+        continue_button =  tk.Button(self.route_page, text="Continue", font=('Kozuka Gothic Pro H', 12), command=self.resume_robot, fg="white", bg="#114B5F", width=15) # continue the shopping cart
+        continue_button.grid(row=4, column=1)
+        following_button =  tk.Button(self.route_page, text="Follow Me", font=('Kozuka Gothic Pro H', 12), command=self.follow_me, fg="white", bg="#114B5F", width=15) # continue the shopping cart
+        following_button.grid(row=4, column=0)
 
 
         # App startup
@@ -130,6 +134,11 @@ class MyGroceryListApp:
         self.port = 8888
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.communication_init()
+
+        # Robot communication
+        self.userInPathCounter = 0
+        self.sayDestination = True
+        self.following = False
 
         self.root.mainloop()
 
@@ -302,13 +311,36 @@ class MyGroceryListApp:
 
         paths = [nx.dijkstra_path(self.graph, coordinates[i], coordinates[i+1]) for i in range(len(coordinates)-1)]
         item_coords = get_coordinates(self.grocery_list, graph=self.graph)
-        print(self.grocery_list)
         im = draw_path(self.image, paths, only_return=True)
         self.paths = paths
 
+        # Order groceries according to paths
+        ordered_grocery_list = []
+        ordered_coordinates = []
+        for i in range(len(self.paths)):
+            ordered_coordinates.append(self.paths[i][-1])
+
+        i = 0
+        while (i < len(ordered_coordinates[:-1])):
+            found = False
+            for j in range(len(item_coords[1:-1])):
+                if ordered_coordinates[i][0] == item_coords[j+1][0] and ordered_coordinates[i][1] == item_coords[j+1][1]:
+                    ordered_grocery_list.append(self.grocery_list[j])
+                    found = True
+            if found == False:
+                ordered_coordinates.pop(i)
+                print("Item out of the path")
+            else:
+                i = i +1
+
+        self.grocery_list = ordered_grocery_list
+        item_coords = [item_coords[0]] + ordered_coordinates
+        print(self.grocery_list)
+
+        # Update data
         self.route_path_im = ImageTk.PhotoImage(image=im)
         self.route_path_lb = Label(self.route_page, image= self.route_path_im)
-        self.route_path_lb.grid(row=1, column=0, pady=0)
+        self.route_path_lb.grid(row=1, column=0, columnspan=2, pady=0)
 
 
         # Update the next item on the route page
@@ -355,6 +387,11 @@ class MyGroceryListApp:
         # Send the data
         self.send_data(app_data)
 
+        # Cancel following
+        if self.following:
+            self.following = False
+            say(f"Following mode Cancelled", to_file=False) # use TTS to inform user about calcelling following mode
+
         return items
     
 
@@ -365,6 +402,13 @@ class MyGroceryListApp:
         Show which item is next on the Route Page.
         """
 
+        # Cancel following
+        if self.following:
+            self.following = False
+            say(f"Following mode Cancelled", to_file=False) # use TTS to inform user about calcelling following mode
+
+    
+        # Picking Item
         if (self.robot_data["status"] == "Destination"):
         
 
@@ -408,7 +452,7 @@ class MyGroceryListApp:
         #        self.backend_pub.publish(app_msg)
                 
                 # Update path
-                self.paths[0] = nx.dijkstra_path(self.graph, (int(self.robot_data["x"]), int(self.robot_data["y"])), self.paths[0][-1])
+                self.paths[0] = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), self.paths[0][-1])
 
                 # Prepare message
                 app_data = {
@@ -431,7 +475,7 @@ class MyGroceryListApp:
         #        self.backend_pub.publish(app_msg)
                 
                 # Update path
-                self.paths[0] = nx.dijkstra_path(self.graph, (int(self.robot_data["x"]), int(self.robot_data["y"])), self.paths[0][-1])
+                self.paths[0] = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), self.paths[0][-1])
                 
                 # Prepare message
                 app_data = {
@@ -451,7 +495,7 @@ class MyGroceryListApp:
             im = draw_path(self.image, self.paths, only_return=True)
             self.route_path_im = ImageTk.PhotoImage(image=im)
             self.route_path_lb = Label(self.route_page, image= self.route_path_im)
-            self.route_path_lb.grid(row=1, column=0, pady=0)
+            self.route_path_lb.grid(row=1, column=0, columnspan=2, pady=0)
             
         else:
             # Default image
@@ -472,6 +516,11 @@ class MyGroceryListApp:
         #app_msg = App()
         #app_msg.status = "Pause"
         #self.backend_pub.publish(app_msg)
+
+        # Cancel following
+        if self.following:
+            self.following = False
+            say(f"Following mode Cancelled", to_file=False) # use TTS to inform user about calcelling following mode
 
         # Application Data to send
         app_data = {
@@ -494,11 +543,20 @@ class MyGroceryListApp:
         #app_msg.status = "Resume"
         #self.backend_pub.publish(app_msg)
 
-        # Application Data to send
+        # Cancel following
+        if self.following:
+            self.following = False
+            say(f"Following mode Cancelled", to_file=False) # use TTS to inform user about calcelling following mode
+
+                
+        # Update path
+        self.paths[0] = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), self.paths[0][-1])
+
+        # Prepare message
         app_data = {
             "status": "Resume",
-            "pathx": [],
-            "pathy": [],
+            "pathx": [int(p[0]) for p in self.paths[0]],
+            "pathy": [int(p[1]) for p in self.paths[0]],
             "productsx": [],
             "productsy": [],
             "productNames": [],
@@ -509,6 +567,55 @@ class MyGroceryListApp:
         self.send_data(app_data)
 
         return True
+    
+    def follow_me(self):
+
+        # Activating following Mode
+        if self.following == False:
+            self.following = True
+            say(f"OK! I will follow you!", to_file=False) # use TTS to inform user about activating following mode
+            following_thread = threading.Thread(target=self.following_mode)
+            following_thread.start()
+        else:
+            say(f"Sure! Sure! I'm coming now!", to_file=False)
+
+    def following_mode(self):
+    
+        time_now = time.time()
+        count = 0
+        while (self.following):
+
+            try:
+                if(time_now + 1 < time.time()):
+                    # FOllow Path
+                    follow_me_path = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), (int(round(self.robot_data["xUser"])), int(round(self.robot_data["yUser"]))))
+
+                    # Application Data to send
+                    app_data = {
+                        "status": "FollowMe",
+                        "pathx": [int(p[0]) for p in follow_me_path[1:]],
+                        "pathy": [int(p[1]) for p in follow_me_path[1:]],
+                        "productsx": [],
+                        "productsy": [],
+                        "productNames": [],
+                        "mapName": ""
+                    }
+
+                    # Send the data
+                    self.send_data(app_data)
+                    time_now = time.time()
+
+                    # Count
+                    if (len(follow_me_path) > 10):
+                        say(f"Wait for me! I can't catch up with you!", to_file=False)
+                    count = count + 1
+
+            except:
+                print("Robot or user not in the map")
+                self.following = False
+
+            
+
     
     # BACKEND COMMUNICATION
     
@@ -536,13 +643,45 @@ class MyGroceryListApp:
                     break
                 self.robot_data = json.loads(data.decode())
                 print("Received data:", self.robot_data)
-                print("Received data status: ", self.robot_data["status"])
+                #print("Received data status: ", self.robot_data["status"])
+
+                # Notify user to get away from the path
+                if self.robot_data["status"] == "UserInPath":
+
+                    # Message
+                    if self.userInPathCounter == 5:
+                        move_thread = threading.Thread(target=self.sayThreadMoveAway) # use TTS to inform user to get away from the path
+                        move_thread.start()
+
+                    # Counter
+                    self.userInPathCounter = self.userInPathCounter + 1
+                    if self.userInPathCounter > 10:
+                        self.userInPathCounter = 0
+                else:
+                    self.userInPathCounter = 0
+
+                # Notify user of reaching the destination
+                if (self.robot_data["status"] == "Destination"):
+                    if (len(self.grocery_list) > 0) and self.sayDestination:
+                        collect_thread = threading.Thread(target=self.sayThreadDestination) # use TTS to inform user about picking the item
+                        collect_thread.start()
+                        self.sayDestination = False
+                else:
+                    self.sayDestination = True
+
             except ConnectionResetError:
                 print("Connection with server closed.")
                 break
             except json.JSONDecodeError:
                 print("Error decoding JSON data.")
                 break
+
+    def sayThreadDestination(self):
+        say(f"We are at {self.grocery_list[0]}. Please, collect it!", to_file=False) # use TTS to inform user about picking the item
+
+    def sayThreadMoveAway(self):
+        say(f"Excuse me! Would you mind stepping aside? I need to path through.", to_file=False) # use TTS to inform user about picking the item
+                        
 
     def communication_init(self):
         try:

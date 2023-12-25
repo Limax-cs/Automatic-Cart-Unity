@@ -4,6 +4,11 @@ using System.Net.Sockets;
 using System.Text;
 using UnityEngine;
 using System.Collections.Generic;
+using System.IO;
+
+/*
+    CLASS PARAMETERS
+*/
 
 public class Coordinates
 {
@@ -38,6 +43,10 @@ public class BackendData
     public float xUser, yUser;
 }
 
+/*
+    BACKEND
+*/
+
 public class backend : MonoBehaviour
 {
     // World Parameters
@@ -48,6 +57,7 @@ public class backend : MonoBehaviour
     public Vector2 mapOrigin = new Vector2(10.0f, 10.0f);
     public float imageScale = 1.0f;
     public GameObject user;
+    public User userBehaviour;
     public GameObject[] maps;
     public GameObject productPrefab;
     private GameObject[] shelves3;
@@ -60,8 +70,27 @@ public class backend : MonoBehaviour
     public Vector3 robotAngularVelocity;
     public float linear_velocity = 1.0f;
     public float angular_velocity = 1.0f;
+    public float linearVelMax = 1.4f;
     public float gravity = 9.81f;
     public bool onFloor = false;
+
+    // Lidar
+    [SerializeField]
+    private LayerMask layerMask;
+    [SerializeField]
+    [Min(1)]
+    public float range = 7.0f;
+    private RaycastHit hit1;
+    private RaycastHit hit2;
+    private RaycastHit hit3;
+    private RaycastHit hit4;
+    private RaycastHit hit5;
+    private RaycastHit hit1b;
+    private RaycastHit hit2b;
+    private RaycastHit hit3b;
+    private RaycastHit hit4b;
+    private RaycastHit hit5b;
+
     
 
     // Communication Parameters 
@@ -73,15 +102,13 @@ public class backend : MonoBehaviour
     public float distThreshold;
     public float distThresholdLast;
     public float P, I, D;
-    List<float> linearVel;
-    List<float> angularVel;
     public GameObject goal;
     public GameObject next_point;
     public Rigidbody cart_rb;
     private float timeAcc = 0.0f;
     public float updateRate = 1.0f;
 
-    // Communcation Information
+    // Communication Information
     public int port = 8888; // Port to listen on
     public string TCPaddress = "127.0.0.1";
     private bool clientConnected = true;
@@ -90,6 +117,10 @@ public class backend : MonoBehaviour
     private NetworkStream stream;
     private byte[] buffer = new byte[1024*4];
     //System.Threading.Thread tcpListenerThread;
+
+    // Log Files
+    private string logFilePath;
+    private string logFilePathApp;
 
     private void Start()
     {
@@ -113,8 +144,7 @@ public class backend : MonoBehaviour
         P = 1.0f;
         I = 0.0f;
         D = 0.0f;
-        linearVel = new List<float>();
-        angularVel = new List<float>();
+        userBehaviour = user.GetComponent<User>();
 
         // Define Rigidbody
         cart_rb = GetComponent<Rigidbody>();
@@ -135,10 +165,33 @@ public class backend : MonoBehaviour
 
         robotOrientation = new Vector3(-90,0,90);
 
+        // Initialize Log File
+        DateTime currentTime = DateTime.UtcNow;
+        Debug.Log(String.Format("Log_{0:dMyyyy_HHmmss}", currentTime));
+        logFilePath = Application.dataPath + "/LogFiles/" + String.Format("Log_{0:dMyyyy_HHmmss}.txt", currentTime);
+        logFilePathApp = Application.dataPath + "/LogFiles/" + String.Format("LogApp_{0:dMyyyy_HHmmss}.txt", currentTime);
+        LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Environment Initialization");
+        LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Environment Initialization (App Communication)");
+
+
+        // Initialize App Communication
         server = new TcpListener(IPAddress.Any, port);
         //server = new TcpListener(System.Net.IPAddress.Parse(TCPaddress), port);
         server.Start();
         Debug.Log("Socket listener started.");
+        
+        currentTime = DateTime.UtcNow;
+        LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Socket listener started");
+        LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Socket listener started");
+        LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Socket Conf |ip:" + TCPaddress + "|port:" + port );
+        LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Socket Conf |ip:" + TCPaddress + "|port:" + port);
+
+        // Update data
+        currentTime = DateTime.UtcNow;
+        LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Configuration |imageSize:" + imageSize +
+                                "|mapOrigin:" + mapOrigin + "|imageScale:" + imageScale + "|linearVelMax:" + linearVelMax +
+                                "|gravity:" + gravity + "|range:" + range + "|distThr:" + distThreshold + "|distThrLast:" + distThresholdLast +
+                                "|P:" + P + "|I" + I + "|D" + D + "|updateRate:" + updateRate);
 
 
         // Start listening for connections in a separate thread
@@ -160,6 +213,92 @@ public class backend : MonoBehaviour
         {
             goal.transform.position = new Vector3(pathxMap[pathxMap.Count - 1], 0.0f, pathyMap[pathyMap.Count - 1]);
             next_point.transform.position = new Vector3(pathxMap[0], 0.0f, pathyMap[0]);
+
+            if (status == "FollowMe" || status == "FollowMeWait" || status == "FollowMeBack")
+            {
+                goal.SetActive(false);
+                next_point.SetActive(false);
+            }
+            else
+            {
+                goal.SetActive(true);
+                next_point.SetActive(true);
+            }
+        }
+
+        // Lidar Draws        
+        Debug.DrawRay(transform.position, (-transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.red);
+        Debug.DrawRay(transform.position, (-(float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up) * range, Color.red);
+        Debug.DrawRay(transform.position, transform.up * range, Color.red);
+        Debug.DrawRay(transform.position, ((float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up) * range, Color.red);
+        Debug.DrawRay(transform.position, (transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.red);
+        Debug.DrawRay(transform.position, -(-transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.blue);
+        Debug.DrawRay(transform.position, -(-(float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up) * range, Color.blue);
+        Debug.DrawRay(transform.position, -transform.up * range, Color.blue);
+        Debug.DrawRay(transform.position, -((float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up) * range, Color.blue);
+        Debug.DrawRay(transform.position, -(transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.blue);
+
+        // Lidar detections
+        bool detect1 = Physics.Raycast(transform.position, (-transform.right + transform.up) / (float)Math.Sqrt(2), out hit1, range, layerMask);
+        bool detect2 = Physics.Raycast(transform.position, (-(float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up), out hit2, range, layerMask);
+        bool detect3 = Physics.Raycast(transform.position, transform.up, out hit3, range, layerMask);
+        bool detect4 = Physics.Raycast(transform.position, ((float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up), out hit4, range, layerMask);
+        bool detect5 = Physics.Raycast(transform.position, (transform.right + transform.up) / (float)Math.Sqrt(2), out hit5, range, layerMask);
+        bool detect1b = Physics.Raycast(transform.position, -(-transform.right + transform.up) / (float)Math.Sqrt(2), out hit1b, range, layerMask);
+        bool detect2b = Physics.Raycast(transform.position, -(-(float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up), out hit2b, range, layerMask);
+        bool detect3b = Physics.Raycast(transform.position, -transform.up, out hit3b, range, layerMask);
+        bool detect4b = Physics.Raycast(transform.position, -((float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up), out hit4b, range, layerMask);
+        bool detect5b = Physics.Raycast(transform.position, -(transform.right + transform.up) / (float)Math.Sqrt(2), out hit5b, range, layerMask);
+
+
+        bool userInPath = false;
+        bool sthBack = false;
+        if (status == "UserInPath")
+        {
+            status = "Continue";
+        }
+        else if (status == "FollowMeWait")
+        {
+            status = "FollowMe";
+        }
+
+        // Lidar detects
+        if(detect1)
+        { if (hit1.collider.tag == "User")
+            { userInPath = true;}}
+        if(detect2)
+        { if (hit2.collider.tag == "User")
+            { userInPath = true;}}
+        if(detect3)
+        { if (hit3.collider.tag == "User")
+            { userInPath = true;}}
+        if(detect4)
+        { if (hit4.collider.tag == "User")
+            { userInPath = true;}}
+        if(detect5)
+        { if (hit5.collider.tag == "User")
+            { userInPath = true;}}
+        if(detect1b || detect2b || detect3b || detect4b || detect5b)
+        { sthBack = true;}
+
+        // Lidar Update status
+        if (userInPath && status == "Continue")
+        {
+            status = "UserInPath";
+        }
+        else if (userInPath && status == "FollowMe")
+        {
+            Vector3 distFollow = this.transform.position - user.transform.position;
+            float distFollowValue = (float) Math.Sqrt(Math.Pow(distFollow[0], 2) + Math.Pow(distFollow[2], 2));
+
+            if((distFollowValue < range - 0.5) && (sthBack == false))
+            {
+                status = "FollowMeBack";
+            }
+            else 
+            {
+                status = "FollowMeWait";
+            }      
         }
 
         // Send Robot Position
@@ -174,12 +313,11 @@ public class backend : MonoBehaviour
             SendData(data2update);
             timeAcc = 0;
         }
-        timeAcc += Time.deltaTime;
 
         // Move Robot
 
         
-        if (status == "Continue")
+        if (status == "Continue" || status == "FollowMe")
         {
             
             // Compute distance and angle of next node
@@ -220,17 +358,7 @@ public class backend : MonoBehaviour
                     yaw = 360 + yaw;
                 }
 
-                Debug.Log("Direction = (" + dirx + "," +diry + ") | Distance = " + distance + " | Angle = " + angle + " Rotation Z = " + (robotOrientation[2]) + "| Yaw = " + yaw);
-
-                /*
-                if (yaw > Math.PI) // Convert the range to -pi to pi
-                {
-                    yaw = yaw - 2*Math.PI;
-                }
-                else if (yaw  < -Math.PI)
-                {
-                    yaw = yaw + 2*Math.PI;
-                }*/
+                //Debug.Log("Direction = (" + dirx + "," +diry + ") | Distance = " + distance + " | Angle = " + angle + " Rotation Z = " + (robotOrientation[2]) + "| Yaw = " + yaw);
 
                 
                 // Pid
@@ -238,11 +366,11 @@ public class backend : MonoBehaviour
                 {
                     if (pathxMap.Count > 1 && pathyMap.Count > 1)
                     {
-                        linear_velocity = P*1.4f;
+                        linear_velocity = P*linearVelMax;
                     }
                     else
                     {
-                        linear_velocity = P*(float)Math.Min(Math.Max(distance, 0.2), 1.4);
+                        linear_velocity = P*(float)Math.Min(Math.Max(distance, 0.2), linearVelMax);
                     }
                 }
                 else
@@ -271,10 +399,15 @@ public class backend : MonoBehaviour
 
                 
             }
-            else
+            else if (status == "Continue")
             {
                 status = "Destination";
             }
+        }
+        else if (status == "FollowMeBack")
+        {
+            linear_velocity = -P*linearVelMax;
+            angular_velocity = 0.0f;
         }
         else
         {
@@ -292,6 +425,27 @@ public class backend : MonoBehaviour
         {
             cart_rb.velocity = - this.transform.forward * gravity;
         }
+
+        // Update data
+        DateTime currentTime = DateTime.UtcNow;
+        LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Robot data |status:" + status +
+                                "|robotOrientationX:" + robotOrientation[0] + "|robotOrientationY:" + robotOrientation[1] + "|robotOrientationZ:" + robotOrientation[2] +
+                                "|robotLocX:" + this.transform.position[0] + "|robotLocY:" + this.transform.position[1] + "|robotLocZ:" + this.transform.position[2] +
+                                "|grounded:" + onFloor + "|linearVel:" + linear_velocity + "|angularVel:" + angular_velocity);
+        LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Path data " +
+                                "|pathXapp:" + string.Join("&",pathxApp) + "|pathYapp:" + string.Join("&",pathyApp) + "|pathXmap:" + string.Join("&",pathxMap) + "|pathYmap:" + string.Join("&",pathyMap));
+        LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Lidar data|userInPath:" + userInPath + "|sthBack:" + sthBack +
+                                "|detect1:" + detect1 + "|detect2:" + detect2 + "|detect3:" + detect3 + "|detect4:" + detect4 + "|detect5:" + detect5 +
+                                "|detect1b:" + detect1b + "|detect2b:" + detect2b + "|detect3b:" + detect3b + "|detect4b:" + detect4b + "|detect5b:" + detect5b);
+        LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - User data |userSpeed:" + userBehaviour.userSpeed +
+                                "|userRotX:" + user.transform.rotation[0] + "|userRotY:" + user.transform.rotation[1] + "|userRotZ:" + user.transform.rotation[2] + "|userRotW:" + user.transform.rotation[3] +
+                                "|userLocX:" + user.transform.position[0] + "|userLocX:" + user.transform.position[1] + "|userLocX:" + user.transform.position[2]);
+        LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Product data " +
+                                "|Count:" + userBehaviour.productCount + "|CollCount:" + userBehaviour.productCollCount +
+                                "|List:" + string.Join("&",userBehaviour.productList) + "|Collected:" + string.Join("&",userBehaviour.productCollected));
+
+        
+        timeAcc += Time.deltaTime;
         
         
     }
@@ -313,12 +467,18 @@ public class backend : MonoBehaviour
             stream = client.GetStream();
             Debug.Log("Client connected.");
 
+            DateTime currentTime = DateTime.UtcNow;
+            LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Client Connected");
+
             // Start receiving data from the Python application
             ReceiveData();
         }
         catch (Exception ex)
         {
             Debug.LogError("Error connecting to client: " + ex.Message);
+
+            DateTime currentTime = DateTime.UtcNow;
+            LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Error Connecting the Client");
         }
     }
 
@@ -345,6 +505,15 @@ public class backend : MonoBehaviour
                         
                         // Process the received data
                         status = data.status;
+
+                        //Update data
+
+                        DateTime currentTime = DateTime.UtcNow;
+                        LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + 
+                                    " - App Data |status:" +data.status + 
+                                    "|pathx:" + string.Join("&",data.pathx) + "|pathy:" + string.Join("&",data.pathy) + 
+                                    "|productsx:" + string.Join("&",data.productsx) + "|productsy:" + string.Join("&",data.productsy) + "|products:" + string.Join("&",data.productNames) + 
+                                    "|map:" + data.mapName) ;
 
                         if (data.status == "World Init")
                         {
@@ -386,6 +555,32 @@ public class backend : MonoBehaviour
                             // Update robot status
                             status = "Stop";
                         }
+                        else if (data.status == "FollowMe")
+                        {
+                            // Clear lists
+                            pathxApp.Clear();
+                            pathyApp.Clear();
+                            pathxMap.Clear();
+                            pathyMap.Clear();
+
+                            // Update paths
+                            for (int i=0; i < Math.Min(data.pathx.Length, data.pathy.Length); i++)
+                            {
+                                pathxApp.Add((int) data.pathy[i]);
+                                pathyApp.Add((int) data.pathx[i]);
+                                pathxMap.Add((float)(-((data.pathy[i] + mapOrigin[0]) - imageSize[0]/2 + 0.5)*imageScale));
+                                pathyMap.Add((float)(-((-data.pathx[i] - mapOrigin[1]) + imageSize[1]/2 - 0.5)*imageScale));
+                            }
+
+                            // Remove first position
+                            pathxApp.RemoveAt(0);
+                            pathyApp.RemoveAt(0);
+                            pathxMap.RemoveAt(0);
+                            pathyMap.RemoveAt(0);
+
+                            // Update Status
+                            status = "FollowMe";
+                        }
                         else if (data.status == "Next Item" || data.status == "Item Path" || data.status == "Destination")
                         {
                             // Clear lists
@@ -422,6 +617,10 @@ public class backend : MonoBehaviour
                                     Destroy(goprod);
                                 }
                                 Debug.Log("Previous products removed");
+
+                                currentTime = DateTime.UtcNow;
+                                LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + 
+                                    " - Previous products removed") ;
 
                                 for(int p=0; p < Math.Min(Math.Min(data.productsx.Length, data.productsy.Length), data.productNames.Length); p++)
                                 {
@@ -484,6 +683,10 @@ public class backend : MonoBehaviour
                                                 Quaternion.identity);
                                     Debug.Log("Current products instantiated");
 
+                                    currentTime = DateTime.UtcNow;
+                                    LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + 
+                                                " - Current products instantiated") ;
+
                                     // Update user products
                                     User userScript = user.GetComponent<User>();
                                     userScript.productCollected.Clear();
@@ -506,11 +709,20 @@ public class backend : MonoBehaviour
                     catch (Exception e)
                     {
                         Debug.LogError("Error deserializing JSON: " + e.Message);
+
+                        DateTime currentTime = DateTime.UtcNow;
+                        LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + 
+                                    " - Error JSON") ;
                     }
                 }
                 else
                 {
                     Debug.Log("Client disconnected.");
+
+                    DateTime currentTime = DateTime.UtcNow;
+                    LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + 
+                                " - Client disconnected") ;
+
                     HandleDisconnect();
                     break; 
                 }
@@ -567,6 +779,23 @@ public class backend : MonoBehaviour
         else
         {
             onFloor = false;
+        }
+    }
+
+    // Save log files
+    private void LogToFile(string logmsg)
+    {
+        using (StreamWriter writer = new StreamWriter(logFilePath, true))
+        {
+            writer.WriteLine(logmsg);
+        }
+    }
+
+    private void LogToFileApp(string logmsg)
+    {
+        using (StreamWriter writer = new StreamWriter(logFilePathApp, true))
+        {
+            writer.WriteLine(logmsg);
         }
     }
 }

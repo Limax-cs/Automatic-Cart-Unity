@@ -1,0 +1,20 @@
+25/12/2023_18:49:33 - Environment Initialization (App Communication)
+25/12/2023_18:49:33 - Socket listener started
+25/12/2023_18:49:33 - Socket Conf |ip:127.0.0.1|port:8888
+25/12/2023_18:49:39 - Client Connected
+25/12/2023_18:49:48 - App Data |status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+25/12/2023_18:49:57 - App Data |status:Item Path|pathx:111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&96&95&94&93&92&91&90&89&88|pathy:97&98&99&100&101&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102|productsx:88&93&97&100&103&108|productsy:102&83&87&87&81&75|products:Sour cream&Swordfish steaks&Sausage links&Squid&Shortbread&Sourdough bread|map:
+25/12/2023_18:49:57 - Previous products removed
+25/12/2023_18:49:57 - Current products instantiated
+25/12/2023_18:49:57 - Current products instantiated
+25/12/2023_18:49:57 - Current products instantiated
+25/12/2023_18:49:57 - Current products instantiated
+25/12/2023_18:49:57 - Current products instantiated
+25/12/2023_18:49:57 - Current products instantiated
+25/12/2023_18:50:02 - App Data |status:Resume|pathx:111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&96&95&94&93&92&91&90&89&88|pathy:98&98&99&100&101&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102&102|productsx:|productsy:|products:|map:
+25/12/2023_18:50:37 - App Data |status:Next Item|pathx:89&89&89&89&89&89&89&90&91&91&91&91&91&91&91&91&92&92&93&93|pathy:102&101&100&99&98&97&96&95&94&93&92&91&90&89&88&87&86&85&84&83|productsx:|productsy:|products:|map:
+25/12/2023_18:51:07 - App Data |status:Next Item|pathx:93&94&95&96&97&97|pathy:84&84&84&85&86&87|productsx:|productsy:|products:|map:
+25/12/2023_18:51:19 - App Data |status:Next Item|pathx:97&98&99&100&100|pathy:86&86&86&86&87|productsx:|productsy:|products:|map:
+25/12/2023_18:51:29 - App Data |status:Next Item|pathx:100&101&102&103&104&105&106&107&107&107&106&105&104&103&103|pathy:86&86&86&86&86&85&84&83&82&81&80&80&80&80&81|productsx:|productsy:|products:|map:
+25/12/2023_18:51:52 - App Data |status:Next Item|pathx:103&104&105&106&107&108&109&109&108|pathy:80&80&80&79&78&77&76&75&75|productsx:|productsy:|products:|map:
+25/12/2023_18:52:12 - App Data |status:Destination|pathx:109&109&109&109&109&109&109&109&109&109&109&109&109&109&109&110&111|pathy:75&76&77&78&79&80&81&82&83&84&85&86&87&88&89&90&91|productsx:|productsy:|products:|map:
