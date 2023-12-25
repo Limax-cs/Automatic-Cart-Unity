@@ -26,6 +26,11 @@ import threading
 class MyGroceryListApp:
 
     def __init__(self):
+
+        # Hyperparameters
+        self.test_mode = "A" # Mode: A - Works fine, B - Go to wrong places
+
+        # Application initialization
         self.root = tk.Tk()
         self.menubar = tk.Menu(self.root) # create a menu
         self.grocery_list = [] # start with an empty shopping list
@@ -165,6 +170,7 @@ class MyGroceryListApp:
 
         # TCP Message
         app_data = {
+                    "mode": self.test_mode,
                     "status": "World Init",
                     "pathx": [111],
                     "pathy": [98],
@@ -192,6 +198,7 @@ class MyGroceryListApp:
 
         # TCP Message
         app_data = {
+                    "mode": self.test_mode,
                     "status": "World Init",
                     "pathx": [83],
                     "pathy": [96],
@@ -373,16 +380,36 @@ class MyGroceryListApp:
         #app_msg.pathy = [p[0] for p in paths[0]]
         #self.backend_pub.publish(app_msg)
 
-        # TCP Message
-        app_data = {
-                    "status": "Item Path",
-                    "pathx": [int(p[0]) for p in self.paths[0]],
-                    "pathy": [int(p[1]) for p in self.paths[0]],
-                    "productsx": [int(p[0]) for p in item_coords[1:-1]],
-                    "productsy": [int(p[1]) for p in item_coords[1:-1]],
-                    "productNames": self.grocery_list,
-                    "mapName": ""
-                }
+        # Modify paths according to modes
+        if (self.test_mode == "B") and (np.random.randint(3) >= 1):
+            random_coords = get_random_product_location(self.graph)
+            print("New coordinates: " + str(random_coords))
+            # Update path
+            new_path = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), random_coords)
+
+            # TCP Message
+            app_data = {
+                        "mode": self.test_mode,
+                        "status": "Item Path",
+                        "pathx": [int(p[0]) for p in new_path],
+                        "pathy": [int(p[1]) for p in new_path],
+                        "productsx": [int(p[0]) for p in item_coords[1:-1]],
+                        "productsy": [int(p[1]) for p in item_coords[1:-1]],
+                        "productNames": self.grocery_list,
+                        "mapName": ""
+                    }
+        else:
+            # TCP Message
+            app_data = {
+                        "mode": self.test_mode,
+                        "status": "Item Path",
+                        "pathx": [int(p[0]) for p in self.paths[0]],
+                        "pathy": [int(p[1]) for p in self.paths[0]],
+                        "productsx": [int(p[0]) for p in item_coords[1:-1]],
+                        "productsy": [int(p[1]) for p in item_coords[1:-1]],
+                        "productNames": self.grocery_list,
+                        "mapName": ""
+                    }
 
         # Send the data
         self.send_data(app_data)
@@ -411,36 +438,38 @@ class MyGroceryListApp:
         # Picking Item
         if (self.robot_data["status"] == "Destination"):
         
+            if len(self.grocery_list) > 0:
+                say(f"Collected {self.grocery_list[0]}", to_file=False) # use TTS to inform user about picked item
 
-            say(f"Collected {self.grocery_list[0]}", to_file=False) # use TTS to inform user about picked item
-
-            if self.grocery_list:
-                self.grocery_list.pop(0)
-                self.paths.pop(0)
-                self.shopping_listbox.delete(0)
-            
+                if self.grocery_list:
+                    self.grocery_list.pop(0)
+                    self.paths.pop(0)
+                    self.shopping_listbox.delete(0)
                 
-            elif self.paths:
-                self.paths.pop(0)
-                self.shopping_listbox.delete(0)
+                    
+                elif self.paths:
+                    self.paths.pop(0)
+                    self.shopping_listbox.delete(0)
 
-            print(self.grocery_list)
-            print(self.paths)
+                print(self.grocery_list)
+                print(self.paths)
 
-            # Update the next item on the route page
-            
-            if self.grocery_list:
-                next_item = self.grocery_list[0]
-                self.next_item_label.config(text=f"Next Item: {next_item}", font=('Kozuka Gothic Pro H', 10))
-                say(f"Next item: {next_item}", to_file=False) # use TTS to inform user about the next item
+                # Update the next item on the route page
+                
+                if self.grocery_list:
+                    next_item = self.grocery_list[0]
+                    self.next_item_label.config(text=f"Next Item: {next_item}", font=('Kozuka Gothic Pro H', 10))
+                    say(f"Next item: {next_item}", to_file=False) # use TTS to inform user about the next item
+
+                else:
+                    self.next_item_label.config(text="Done! Let's pay", font=('Kozuka Gothic Pro H', 10))
+                    say(f"That was it! Time to pay", to_file=False)
 
             else:
-                self.next_item_label.config(text="Done! Let's pay", font=('Kozuka Gothic Pro H', 10))
-                say(f"That was it! Time to pay", to_file=False)
+                say(f"Robot on the way. Next Item: {self.grocery_list[0]}", to_file=False) # use TTS to inform user about process
 
         else:
-            say(f"Robot on the way. Next Item: {self.grocery_list[0]}", to_file=False) # use TTS to inform user about process
-
+            say(f"Everthing was already collected. Time to pay!", to_file=False) # use TTS to inform user about picked item
 
         # ROS Message
         if self.paths:
@@ -454,16 +483,37 @@ class MyGroceryListApp:
                 # Update path
                 self.paths[0] = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), self.paths[0][-1])
 
-                # Prepare message
-                app_data = {
-                    "status": "Next Item",
-                    "pathx": [int(p[0]) for p in self.paths[0]],
-                    "pathy": [int(p[1]) for p in self.paths[0]],
-                    "productsx": [],
-                    "productsy": [],
-                    "productNames": [],
-                    "mapName": ""
-                }
+                # Modify paths according to modes
+                if (self.test_mode == "B") and (np.random.randint(3) >= 1):
+                    random_coords = get_random_product_location(self.graph)
+                    print("New coordinates: " + str(random_coords))
+                    # Update path
+                    new_path = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), random_coords)
+
+                    # Prepare message
+                    app_data = {
+                        "mode": self.test_mode,
+                        "status": "Next Item",
+                        "pathx": [int(p[0]) for p in new_path],
+                        "pathy": [int(p[1]) for p in new_path],
+                        "productsx": [],
+                        "productsy": [],
+                        "productNames": [],
+                        "mapName": ""
+                    }
+                
+                else:
+                    # Prepare message
+                    app_data = {
+                        "mode": self.test_mode,
+                        "status": "Next Item",
+                        "pathx": [int(p[0]) for p in self.paths[0]],
+                        "pathy": [int(p[1]) for p in self.paths[0]],
+                        "productsx": [],
+                        "productsy": [],
+                        "productNames": [],
+                        "mapName": ""
+                    }
 
                 # Send the data
                 self.send_data(app_data)
@@ -479,6 +529,7 @@ class MyGroceryListApp:
                 
                 # Prepare message
                 app_data = {
+                    "mode": self.test_mode,
                     "status": "Destination",
                     "pathx": [int(p[0]) for p in self.paths[0]],
                     "pathy": [int(p[1]) for p in self.paths[0]],
@@ -524,6 +575,7 @@ class MyGroceryListApp:
 
         # Application Data to send
         app_data = {
+            "mode": self.test_mode,
             "status": "Pause",
             "pathx": [],
             "pathy": [],
@@ -552,16 +604,37 @@ class MyGroceryListApp:
         # Update path
         self.paths[0] = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), self.paths[0][-1])
 
-        # Prepare message
-        app_data = {
-            "status": "Resume",
-            "pathx": [int(p[0]) for p in self.paths[0]],
-            "pathy": [int(p[1]) for p in self.paths[0]],
-            "productsx": [],
-            "productsy": [],
-            "productNames": [],
-            "mapName": ""
-        }
+        # Modify paths according to modes
+        if (self.test_mode == "B") and (np.random.randint(3) >= 1) and (len(self.grocery_list) > 0):
+            random_coords = get_random_product_location(self.graph)
+            print("New coordinates: " + str(random_coords))
+            # Update path
+            new_path = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), random_coords)
+
+            # Prepare message
+            app_data = {
+                "mode": self.test_mode,
+                "status": "Resume",
+                "pathx": [int(p[0]) for p in new_path],
+                "pathy": [int(p[1]) for p in new_path],
+                "productsx": [],
+                "productsy": [],
+                "productNames": [],
+                "mapName": ""
+            }
+        
+        else:
+            # Prepare message
+            app_data = {
+                "mode": self.test_mode,
+                "status": "Resume",
+                "pathx": [int(p[0]) for p in self.paths[0]],
+                "pathy": [int(p[1]) for p in self.paths[0]],
+                "productsx": [],
+                "productsy": [],
+                "productNames": [],
+                "mapName": ""
+            }
 
         # Send the data
         self.send_data(app_data)
@@ -592,6 +665,7 @@ class MyGroceryListApp:
 
                     # Application Data to send
                     app_data = {
+                        "mode": self.test_mode,
                         "status": "FollowMe",
                         "pathx": [int(p[0]) for p in follow_me_path[1:]],
                         "pathy": [int(p[1]) for p in follow_me_path[1:]],

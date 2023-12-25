@@ -27,6 +27,7 @@ public class Coordinates
 
 public class AppData
 {
+    public string mode;
     public string status;
     public int[] pathx;
     public int[] pathy;
@@ -439,7 +440,7 @@ public class backend : MonoBehaviour
                                 "|detect1b:" + detect1b + "|detect2b:" + detect2b + "|detect3b:" + detect3b + "|detect4b:" + detect4b + "|detect5b:" + detect5b);
         LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - User data |userSpeed:" + userBehaviour.userSpeed +
                                 "|userRotX:" + user.transform.rotation[0] + "|userRotY:" + user.transform.rotation[1] + "|userRotZ:" + user.transform.rotation[2] + "|userRotW:" + user.transform.rotation[3] +
-                                "|userLocX:" + user.transform.position[0] + "|userLocX:" + user.transform.position[1] + "|userLocX:" + user.transform.position[2]);
+                                "|userLocX:" + user.transform.position[0] + "|userLocY:" + user.transform.position[1] + "|userLocZ:" + user.transform.position[2]);
         LogToFile(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + " - Product data " +
                                 "|Count:" + userBehaviour.productCount + "|CollCount:" + userBehaviour.productCollCount +
                                 "|List:" + string.Join("&",userBehaviour.productList) + "|Collected:" + string.Join("&",userBehaviour.productCollected));
@@ -510,7 +511,7 @@ public class backend : MonoBehaviour
 
                         DateTime currentTime = DateTime.UtcNow;
                         LogToFileApp(String.Format("{0:d/M/yyyy_HH:mm:ss}", currentTime) + 
-                                    " - App Data |status:" +data.status + 
+                                    " - App Data |mode:" + data.mode + "|status:" +data.status + 
                                     "|pathx:" + string.Join("&",data.pathx) + "|pathy:" + string.Join("&",data.pathy) + 
                                     "|productsx:" + string.Join("&",data.productsx) + "|productsy:" + string.Join("&",data.productsy) + "|products:" + string.Join("&",data.productNames) + 
                                     "|map:" + data.mapName) ;

@@ -215,6 +215,26 @@ def get_coordinates(shopping_list: list, graph: nx.Graph, with_start=True)->list
 
     return coordinates
 
+def get_random_product_location(graph: nx.Graph)->list:
+    """Return a random product location.
+
+    Args:
+        graph (nx.Graph): Supermarket Graph.
+
+    Returns:
+        list: List a possible random destination
+    """
+    section_colors = {'Meat': [255,126,121],'Bakery': [252,168,78],'Dairy' : [250,225,80],
+                    'Frozen' : [78,235,239],'Seafood' : [80,156,218], 'Produce' : [148,214,105],
+                    'Tools': [172,165,142],'Drinks' : [132,92,85],'Grocery' : [124,124,124]}
+    
+    coordinates = []
+    for coord,attributes in graph.nodes(data = True): 
+        if (attributes['section'] in section_colors.keys()):
+            coordinates.append(coord)
+
+    return coordinates[np.random.choice(range(len(coordinates)))]
+
 def permute_third_list(first_list, second_list, third_list):
     """
     Permutes the third list in the same way as the second list, based on the permutation of the first list.
