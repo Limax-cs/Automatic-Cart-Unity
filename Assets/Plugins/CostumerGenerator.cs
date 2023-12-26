@@ -39,7 +39,7 @@ public class CostumerGenerator : MonoBehaviour
                     }
                 }
                 Instantiate(entityPrefab, doorsEnable[0].transform.position, Quaternion.identity);
-                randTime = Random.Range(2,20);
+                randTime = Random.Range(2,15);
                 accTime = 0;
             }
         }

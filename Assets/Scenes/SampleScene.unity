@@ -19185,7 +19185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityPrefab: {fileID: 3034972330244713938, guid: 1d4e66823924d5c4a8d765e4c37031d4, type: 3}
-  generateCustomers: 1
+  generateCustomers: 0
   doors: []
   doorsEnable: []
   accTime: 0

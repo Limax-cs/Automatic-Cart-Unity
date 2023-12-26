@@ -58,6 +58,18 @@ public class CostumerBehaviour : MonoBehaviour
     {
         if (goals.Count > 0)
         {
+
+            
+            if(Vector3.Distance(this.transform.position, goals[0].transform.position) < 2.0f)
+            {
+                animator.SetFloat("velocityFront", 0.0f);
+            }
+            else
+            {
+                animator.SetFloat("velocityFront", 3.0f);
+            }
+
+            
             //animator.SetFloat("velocityFront", 3.0f);
             agent.destination = goals[0].transform.position;
 
@@ -75,15 +87,6 @@ public class CostumerBehaviour : MonoBehaviour
                     
                 }
 
-            }
-
-            if(Vector3.Distance(this.transform.position, goals[0].transform.position) < 2.0f)
-            {
-                animator.SetFloat("velocityFront", 0.0f);
-            }
-            else
-            {
-                animator.SetFloat("velocityFront", 3.0f);
             }
         }
         else
