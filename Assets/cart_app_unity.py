@@ -464,12 +464,13 @@ class MyGroceryListApp:
                 else:
                     self.next_item_label.config(text="Done! Let's pay", font=('Kozuka Gothic Pro H', 10))
                     say(f"That was it! Time to pay", to_file=False)
-
             else:
-                say(f"Robot on the way. Next Item: {self.grocery_list[0]}", to_file=False) # use TTS to inform user about process
+                say(f"Everthing was already collected. Time to pay!", to_file=False) # use TTS to inform user about picked item
 
         else:
-            say(f"Everthing was already collected. Time to pay!", to_file=False) # use TTS to inform user about picked item
+            say(f"Robot on the way. Next Item: {self.grocery_list[0]}", to_file=False) # use TTS to inform user about process
+
+        
 
         # ROS Message
         if self.paths:

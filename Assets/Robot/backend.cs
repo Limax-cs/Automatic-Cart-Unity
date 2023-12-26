@@ -253,6 +253,7 @@ public class backend : MonoBehaviour
 
 
         bool userInPath = false;
+        bool costumerInPath = false;
         bool sthBack = false;
         if (status == "UserInPath")
         {
@@ -266,19 +267,29 @@ public class backend : MonoBehaviour
         // Lidar detects
         if(detect1)
         { if (hit1.collider.tag == "User")
-            { userInPath = true;}}
+            { userInPath = true;}
+            else if (hit1.collider.tag == "Costumer")
+            { costumerInPath = true;}}
         if(detect2)
         { if (hit2.collider.tag == "User")
-            { userInPath = true;}}
+            { userInPath = true;}
+          else if (hit2.collider.tag == "Costumer")
+            { costumerInPath = true;}}
         if(detect3)
         { if (hit3.collider.tag == "User")
-            { userInPath = true;}}
+            { userInPath = true;}
+          else if (hit3.collider.tag == "Costumer")
+            { costumerInPath = true;}}
         if(detect4)
         { if (hit4.collider.tag == "User")
-            { userInPath = true;}}
+            { userInPath = true;}
+          else if (hit4.collider.tag == "Costumer")
+            { costumerInPath = true;}}
         if(detect5)
         { if (hit5.collider.tag == "User")
-            { userInPath = true;}}
+            { userInPath = true;}
+          else if (hit5.collider.tag == "Costumer")
+            { costumerInPath = true;}}
         if(detect1b || detect2b || detect3b || detect4b || detect5b)
         { sthBack = true;}
 
@@ -318,7 +329,7 @@ public class backend : MonoBehaviour
         // Move Robot
 
         
-        if (status == "Continue" || status == "FollowMe")
+        if ((status == "Continue" || status == "FollowMe") && (costumerInPath == false))
         {
             
             // Compute distance and angle of next node

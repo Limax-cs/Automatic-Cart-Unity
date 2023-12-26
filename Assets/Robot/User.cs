@@ -13,6 +13,7 @@ public class User : MonoBehaviour
     public float mouseX;
     public float mouseY;
     public CharacterController user;
+    public Animator animator;
     private Vector3 userInput;
 
     //Camera
@@ -45,6 +46,7 @@ public class User : MonoBehaviour
         user = GetComponent<CharacterController>();
         productList = new List<string>();
         productCollected = new List<string>();
+        mainCamera.transform.localEulerAngles = new Vector3(0,0,0);
     }
 
     // Update is called once per frame
@@ -79,6 +81,24 @@ public class User : MonoBehaviour
         // Move the user
         user.Move(moveUser * Time.deltaTime);
         this.transform.Rotate(new Vector3(0,mouseX*1000,0)*Time.deltaTime);
+
+        // Move Camera
+        Vector3 newCamAngles = mainCamera.transform.localEulerAngles + new Vector3(mouseY*500*Time.deltaTime, 0 ,0);
+        //Debug.Log(newCamAngles);
+        if (newCamAngles[0]> 40 && newCamAngles[0] <= 180)
+        {newCamAngles[0] = 40;}
+        else if (newCamAngles[0] < 340 && newCamAngles[0] > 180)
+        {newCamAngles[0] = 340;}
+        newCamAngles[1] = 0.0f;
+        newCamAngles[2] = 0.0f;
+        mainCamera.transform.localEulerAngles = newCamAngles;
+
+        // Animator
+        animator.SetFloat("velocityFront", verticalMove*100);
+        animator.SetFloat("velocityBack", -verticalMove*100);
+        animator.SetFloat("velocitySide1", horizontalMove*100);
+        animator.SetFloat("velocitySide2", -horizontalMove*100);
+
 
         // Update Products Collected
         statusUI.text = "Products Collected: " + productCollCount + "/ " + productCount + " \n Products: " + string.Join(",", productList) + " \n Products Collected: " + string.Join(",", productCollected);
