@@ -1,0 +1,21 @@
+26/12/2023_17:03:14 - Environment Initialization (App Communication)
+26/12/2023_17:03:14 - Socket listener started
+26/12/2023_17:03:14 - Socket Conf |ip:127.0.0.1|port:8888
+26/12/2023_17:03:22 - Client Connected
+26/12/2023_17:03:44 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+26/12/2023_17:04:31 - App Data |mode:B|status:Item Path|pathx:111&110&109&108&107&106&105&104&103&103|pathy:97&96&95&94&93&92&92&91&90&89|productsx:103&98&88&95&96|productsy:89&89&94&81&76|products:Ground turkey&Brisket&Oat milk&Biscuits&Apple pie|map:
+26/12/2023_17:04:31 - Previous products removed
+26/12/2023_17:04:31 - Current products instantiated
+26/12/2023_17:04:31 - Current products instantiated
+26/12/2023_17:04:31 - Current products instantiated
+26/12/2023_17:04:31 - Current products instantiated
+26/12/2023_17:04:31 - Current products instantiated
+26/12/2023_17:04:59 - App Data |mode:B|status:Next Item|pathx:111&111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&97|pathy:98&97&96&95&94&93&92&92&92&92&92&92&92&92&91&90&89|productsx:|productsy:|products:|map:
+26/12/2023_17:05:29 - App Data |mode:B|status:Resume|pathx:97&98&99&100&101&102&103&103|pathy:90&90&90&90&90&90&90&89|productsx:|productsy:|products:|map:
+26/12/2023_17:05:40 - App Data |mode:B|status:Next Item|pathx:97&98&99&100&101&102&103&103|pathy:90&90&90&90&90&90&90&89|productsx:|productsy:|products:|map:
+26/12/2023_17:06:14 - App Data |mode:B|status:Next Item|pathx:103&102&101&100&99&98&97&96&95&94&93&92&91&91&90&89&88|pathy:90&90&90&90&90&90&90&91&92&92&92&92&93&94&95&96&96|productsx:|productsy:|products:|map:
+26/12/2023_17:06:20 - App Data |mode:B|status:Next Item|pathx:103&104&105&106&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&106&105&104&103&102&101&100&99&98&97&97|pathy:90&90&91&92&93&94&95&96&97&98&99&100&101&102&103&104&105&106&107&108&108&108&108&108&108&108&108&109&110&111|productsx:|productsy:|products:|map:
+26/12/2023_17:06:27 - App Data |mode:B|status:Next Item|pathx:103&104&105&106&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&106&105&104&104|pathy:90&90&91&92&93&94&95&96&97&98&99&100&101&102&103&104&105&106&107&108&109&110&111&112&113&114&114&114&113|productsx:|productsy:|products:|map:
+26/12/2023_17:06:44 - App Data |mode:B|status:Next Item|pathx:103&102&101&100&99&98&97&96&95&94&93&92&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&91&90&89&88|pathy:90&90&90&90&90&90&90&91&92&92&92&92&93&94&95&96&97&98&99&100&101&102&103&104&105&106&107&108&109&110&111&112&113&114&115&116&117&118&119&120&120|productsx:|productsy:|products:|map:
+26/12/2023_17:06:59 - App Data |mode:B|status:FollowMe|pathx:104&105&106|pathy:90&90&91|productsx:|productsy:|products:|map:
+26/12/2023_17:07:08 - App Data |mode:B|status:Next Item|pathx:103&102&101&100&99&98&97&96&95&94&93&92&91&91&91&91&91&91&91&91&91&92&93&94&95&95|pathy:90&90&90&90&90&90&90&90&90&90&90&90&89&88&87&86&85&84&83&82&81&80&80&80&80&81|productsx:|productsy:|products:|map:

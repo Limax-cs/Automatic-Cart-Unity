@@ -7,6 +7,7 @@ import random
 import os
 from gtts import gTTS
 from playsound import playsound
+import time
 
 imagetograph_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -18,10 +19,12 @@ def say(text: str, to_file:bool=True):
         text (str): Text to be spoken
         to_file (bool, optional): Decide if to save the file or speak it. Defaults to True.
     """
-    tts = gTTS(text)
-    tts.save('text.mp3')
+    tts = gTTS(text) 
+    filename = f'{time.time()}.mp3'
+    tts.save(filename)
     if not to_file:
-        playsound('text.mp3')
+        playsound(filename)
+        os.remove(filename)
         
 
 def get_neighbours(x: int, y: int, adjacency_8: bool) -> np.array:
@@ -212,6 +215,26 @@ def get_coordinates(shopping_list: list, graph: nx.Graph, with_start=True)->list
 
     return coordinates
 
+def get_random_product_location(graph: nx.Graph)->list:
+    """Return a random product location.
+
+    Args:
+        graph (nx.Graph): Supermarket Graph.
+
+    Returns:
+        list: List a possible random destination
+    """
+    section_colors = {'Meat': [255,126,121],'Bakery': [252,168,78],'Dairy' : [250,225,80],
+                    'Frozen' : [78,235,239],'Seafood' : [80,156,218], 'Produce' : [148,214,105],
+                    'Tools': [172,165,142],'Drinks' : [132,92,85],'Grocery' : [124,124,124]}
+    
+    coordinates = []
+    for coord,attributes in graph.nodes(data = True): 
+        if (attributes['section'] in section_colors.keys()):
+            coordinates.append(coord)
+
+    return coordinates[np.random.choice(range(len(coordinates)))]
+
 def permute_third_list(first_list, second_list, third_list):
     """
     Permutes the third list in the same way as the second list, based on the permutation of the first list.
@@ -235,7 +258,7 @@ def permute_third_list(first_list, second_list, third_list):
 
     return permuted_third_list
 
-def hamiltonian_path(graph: nx.Graph, items:np.array) -> (np.array,np.array,float):    
+def hamiltonian_path(graph: nx.Graph, items:np.array, origin: tuple = None) -> (np.array,np.array,float):    
     """Given a list of items finds the shortest path along the supermarket that visits all these items, for more than 11 nodes
     it will compute an approximation. That the path will always start from the first element of the coordinates and end in the last
 
@@ -247,10 +270,13 @@ def hamiltonian_path(graph: nx.Graph, items:np.array) -> (np.array,np.array,floa
         (np.array,np.array,int): Returns two numpy arrays containing items and nodes in the correct order and path length
     """
     coordinates = get_coordinates(items, graph)
+    if origin is not None:
+        coordinates[0] = origin
+
     adj_mat = np.empty((len(coordinates),len(coordinates)), dtype = np.float16)
     for i,node_coords in enumerate(coordinates):
         lengths = nx.single_source_dijkstra_path_length(graph,node_coords)
-        lengths = [lengths[key] for key in coordinates] #Assign distances
+        lengths = [lengths[key] if key in lengths.keys() else 10000 for key in coordinates] #Assign distances, avoid non-existing paths
         adj_mat[i,:] = lengths #Could also just fill upper diag and optimize search
         adj_mat[i,i] = 10000 #Avoid finding only self loops (arbitrary value here)
     adj_mat[0,len(coordinates)-1] = adj_mat[len(coordinates)-1,0] = 10000 #Avoid considering edge from start to end node
@@ -281,8 +307,14 @@ def hamiltonian_path(graph: nx.Graph, items:np.array) -> (np.array,np.array,floa
         flat_indices = np.argsort(adj_mat, axis=None)[:-len(coordinates)-2:2] #Drop diagonal, upper triangular and corners
         row_indices, col_indices = np.unravel_index(flat_indices, adj_mat.shape)
         i = 0
+        #print("flat indices: " + str(flat_indices) + " | adj mat: " + str(adj_mat.shape))
+        #print("coordinates: " + str(coordinates) + " | len = " + str(len(coordinates)))
+        #print("row_indices: " + str(row_indices) + " | len = " + str(len(row_indices)))
+        #print("col_indices: " + str(col_indices) + " | len = " + str(len(col_indices)))
         
-        while len(graph.edges) < len(coordinates)-1:#Chech smallest edge weight at each iteration, need to avoid that edge connect start and end index
+        while (len(graph.edges) < len(coordinates)-1) and (i < len(row_indices)):#Check smallest edge weight at each iteration, need to avoid that edge connect start and end index
+            #print(f"Condition: len(graph.edges) [{len(graph.edges)}], len(coordinates)-1 [{len(coordinates)-1}], {len(graph.edges) < len(coordinates)-1} ")
+            #print(f"i = {i}")
             row_index = row_indices[i]
             col_index = col_indices[i] 
             if visited[row_index] == 2 or visited[col_index] == 2 or (visited[0] == 1 and min(row_index, col_index) == 0) or (visited[-1] == 1 and max(row_index, col_index) == len(coordinates)-1):

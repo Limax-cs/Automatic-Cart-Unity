@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Floor
+  - Shop
+  - Product
+  - shelve_shop3
+  - shelve_shop4
+  - User
+  - Costumer
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -11,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - MinimapIcons
+  - SceneItem
   - 
   - 
   - 
