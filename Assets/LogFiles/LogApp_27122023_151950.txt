@@ -1,5 +1,0 @@
-27/12/2023_15:19:50 - Environment Initialization (App Communication)
-27/12/2023_15:19:50 - Socket listener started
-27/12/2023_15:19:50 - Socket Conf |ip:127.0.0.1|port:8888
-27/12/2023_15:21:14 - Client Connected
-27/12/2023_15:21:17 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
