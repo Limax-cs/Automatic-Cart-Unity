@@ -307,12 +307,9 @@ def hamiltonian_path(graph: nx.Graph, items:np.array, origin: tuple = None) -> (
         flat_indices = np.argsort(adj_mat, axis=None)[:-len(coordinates)-2:2] #Drop diagonal, upper triangular and corners
         row_indices, col_indices = np.unravel_index(flat_indices, adj_mat.shape)
         i = 0
-        #print("flat indices: " + str(flat_indices) + " | adj mat: " + str(adj_mat.shape))
-        #print("coordinates: " + str(coordinates) + " | len = " + str(len(coordinates)))
-        #print("row_indices: " + str(row_indices) + " | len = " + str(len(row_indices)))
-        #print("col_indices: " + str(col_indices) + " | len = " + str(len(col_indices)))
+        print("flat indices: " + str(flat_indices) + " | adj mat: " + str(adj_mat.shape) + " | len: " + str(len(flat_indices)))
         
-        while (len(graph.edges) < len(coordinates)-1) and (i < len(row_indices)):#Check smallest edge weight at each iteration, need to avoid that edge connect start and end index
+        while (len(graph.edges) < len(coordinates)-1): # and (i < len(row_indices)):#Check smallest edge weight at each iteration, need to avoid that edge connect start and end index
             #print(f"Condition: len(graph.edges) [{len(graph.edges)}], len(coordinates)-1 [{len(coordinates)-1}], {len(graph.edges) < len(coordinates)-1} ")
             #print(f"i = {i}")
             row_index = row_indices[i]

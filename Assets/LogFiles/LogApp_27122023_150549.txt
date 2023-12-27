@@ -1,0 +1,30 @@
+27/12/2023_15:05:49 - Environment Initialization (App Communication)
+27/12/2023_15:05:49 - Socket listener started
+27/12/2023_15:05:49 - Socket Conf |ip:127.0.0.1|port:8888
+27/12/2023_15:06:51 - Client Connected
+27/12/2023_15:06:52 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+27/12/2023_15:07:24 - App Data |mode:A|status:Item Path|pathx:111&110&109&108&107&106&105&104&103&102&102|pathy:97&98&99&100&101&102&102&102&103&104&105|productsx:102&105&104&103&101&79&98&102&102&101&99&98&97&96&95&94&108&108&110&107&106&105&103|productsy:105&105&105&105&105&116&89&76&81&81&81&81&76&76&76&81&76&75&74&76&81&81&83|products:Raisin bread&Rye bread&Cinnamon bread&French bread&Zucchini bread&Frozen garlic bread&Sausage links&Gingerbread&Multigrain bread&Cornbread&White bread&Sourdough bread&Whole wheat bread&Amish bread&Olive bread&Challah bread&Banana bread&Anadama bread&Pumpernickel bread&Pita bread&Irish soda bread&Shortbread&Sour cream|map:
+27/12/2023_15:07:24 - Previous products removed
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
+27/12/2023_15:07:24 - Current products instantiated
