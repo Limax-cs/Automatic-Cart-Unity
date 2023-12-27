@@ -28,7 +28,7 @@ class MyGroceryListApp:
     def __init__(self):
 
         # Hyperparameters
-        self.test_mode = "B" # Mode: A - Works fine, B - Go to wrong places
+        self.test_mode = "A" # Mode: A - Works fine, B - Go to wrong places
 
         # Application initialization
         self.root = tk.Tk()
@@ -126,6 +126,7 @@ class MyGroceryListApp:
 
         self.create_menu(self.home_page, self.list_page, self.route_page)
         self.load_items() # load the supermarket items
+        self.graph = None
 
         # ROS Configuration
         #rospy.init_node('cart_app', anonymous=True)
@@ -284,8 +285,10 @@ class MyGroceryListApp:
         """
         Remove an existing item from the shopping list.
         """
-        selected_item = self.shopping_listbox.get(self.shopping_listbox.curselection())[3:] # the first part of the string is a number, a dot and a space
+        selected_item = self.shopping_listbox.get(self.shopping_listbox.curselection())[:] # the first part of the string is a number, a dot and a space
         if selected_item:
+            print(selected_item)
+            print(self.grocery_list)
             self.grocery_list.remove(selected_item)
             self.update_shopping_list()
         
@@ -311,115 +314,120 @@ class MyGroceryListApp:
         Show which item is next on the Route Page.
         """
 
-        print(self.grocery_list)
-        items, coordinates, length = hamiltonian_path(self.graph, list(set(self.grocery_list)), origin=(int(self.robot_data["x"]), int(self.robot_data["y"])))
-        self.grocery_list = items
-        print(self.grocery_list)
+        if self.graph is None:
+            say(f"Please, select the supermarket map first.", to_file=False)
+        else:
+            print(self.grocery_list)
+            items, coordinates, length = hamiltonian_path(self.graph, list(set(self.grocery_list)), origin=(int(self.robot_data["x"]), int(self.robot_data["y"])))
+            self.grocery_list = items
+            print(self.grocery_list)
+            print(items)
+            print(coordinates)
 
-        paths = [nx.dijkstra_path(self.graph, coordinates[i], coordinates[i+1]) for i in range(len(coordinates)-1)]
-        item_coords = get_coordinates(self.grocery_list, graph=self.graph)
-        im = draw_path(self.image, paths, only_return=True)
-        self.paths = paths
+            paths = [nx.dijkstra_path(self.graph, coordinates[i], coordinates[i+1]) for i in range(len(coordinates)-1)]
+            item_coords = get_coordinates(self.grocery_list, graph=self.graph)
+            im = draw_path(self.image, paths, only_return=True)
+            self.paths = paths
 
-        # Order groceries according to paths
-        ordered_grocery_list = []
-        ordered_coordinates = []
-        for i in range(len(self.paths)):
-            ordered_coordinates.append(self.paths[i][-1])
+            # Order groceries according to paths
+            ordered_grocery_list = []
+            ordered_coordinates = []
+            for i in range(len(self.paths)):
+                ordered_coordinates.append(self.paths[i][-1])
 
-        i = 0
-        while (i < len(ordered_coordinates[:-1])):
-            found = False
-            for j in range(len(item_coords[1:-1])):
-                if ordered_coordinates[i][0] == item_coords[j+1][0] and ordered_coordinates[i][1] == item_coords[j+1][1]:
-                    ordered_grocery_list.append(self.grocery_list[j])
-                    found = True
-            if found == False:
-                ordered_coordinates.pop(i)
-                print("Item out of the path")
+            i = 0
+            while (i < len(ordered_coordinates[:-1])):
+                found = False
+                for j in range(len(item_coords[1:-1])):
+                    if ordered_coordinates[i][0] == item_coords[j+1][0] and ordered_coordinates[i][1] == item_coords[j+1][1]:
+                        ordered_grocery_list.append(self.grocery_list[j])
+                        found = True
+                if found == False:
+                    ordered_coordinates.pop(i)
+                    print("Item out of the path")
+                else:
+                    i = i +1
+
+            self.grocery_list = ordered_grocery_list
+            item_coords = [item_coords[0]] + ordered_coordinates
+            print(self.grocery_list)
+
+            # Update data
+            self.route_path_im = ImageTk.PhotoImage(image=im)
+            self.route_path_lb = Label(self.route_page, image= self.route_path_im)
+            self.route_path_lb.grid(row=1, column=0, columnspan=2, pady=0)
+
+
+            # Update the next item on the route page
+            
+            if self.grocery_list:
+                next_item = self.grocery_list[0]
+                self.next_item_label.config(text=f"Next Item: {next_item}", font=('Kozuka Gothic Pro H', 10))
             else:
-                i = i +1
+                self.next_item_label.config(text="No items in the shopping list", font=('Kozuka Gothic Pro H', 10))
 
-        self.grocery_list = ordered_grocery_list
-        item_coords = [item_coords[0]] + ordered_coordinates
-        print(self.grocery_list)
+            # Display a confirmation message
 
-        # Update data
-        self.route_path_im = ImageTk.PhotoImage(image=im)
-        self.route_path_lb = Label(self.route_page, image= self.route_path_im)
-        self.route_path_lb.grid(row=1, column=0, columnspan=2, pady=0)
+            confirmation_label = Label(self.list_page, text="Shopping list sent! ", font=('Kozuka Gothic Pro H', 10), bg="#F3E9D2")
+            confirmation_label.grid(row=3, column=1)
 
+            order = tk.Listbox(self.list_page, width=15)
+            order.grid(row=4, column=1)
 
-        # Update the next item on the route page
-        
-        if self.grocery_list:
-            next_item = self.grocery_list[0]
-            self.next_item_label.config(text=f"Next Item: {next_item}", font=('Kozuka Gothic Pro H', 10))
-        else:
-            self.next_item_label.config(text="No items in the shopping list", font=('Kozuka Gothic Pro H', 10))
-
-        # Display a confirmation message
-
-        confirmation_label = Label(self.list_page, text="Shopping list sent! ", font=('Kozuka Gothic Pro H', 10), bg="#F3E9D2")
-        confirmation_label.grid(row=3, column=1)
-
-        order = tk.Listbox(self.list_page, width=15)
-        order.grid(row=4, column=1)
-
-        for i in range(len(items)):
-            order.insert(i, f"{i+1}. {items[i]}")
+            for i in range(len(items)):
+                order.insert(i, f"{i+1}. {items[i]}")
 
 
-        # Schedule a function to remove the confirmation message after 3000 milliseconds (3 seconds)
-        self.root.after(3000, lambda: confirmation_label.grid_forget())  
+            # Schedule a function to remove the confirmation message after 3000 milliseconds (3 seconds)
+            self.root.after(3000, lambda: confirmation_label.grid_forget())  
 
-        # ROS Message
-        #app_msg = App()
-        #app_msg.status = "Item Path"
-        #app_msg.pathx = [p[1] for p in paths[0]]
-        #app_msg.pathy = [p[0] for p in paths[0]]
-        #self.backend_pub.publish(app_msg)
+            # ROS Message
+            #app_msg = App()
+            #app_msg.status = "Item Path"
+            #app_msg.pathx = [p[1] for p in paths[0]]
+            #app_msg.pathy = [p[0] for p in paths[0]]
+            #self.backend_pub.publish(app_msg)
 
-        # Modify paths according to modes
-        if (self.test_mode == "B") and (np.random.randint(3) >= 1):
-            random_coords = get_random_product_location(self.graph)
-            print("New coordinates: " + str(random_coords))
-            # Update path
-            new_path = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), random_coords)
+            # Modify paths according to modes
+            if (self.test_mode == "B") and (np.random.randint(3) >= 1):
+                random_coords = get_random_product_location(self.graph)
+                print("New coordinates: " + str(random_coords))
+                # Update path
+                new_path = nx.dijkstra_path(self.graph, (int(round(self.robot_data["x"])), int(round(self.robot_data["y"]))), random_coords)
 
-            # TCP Message
-            app_data = {
-                        "mode": self.test_mode,
-                        "status": "Item Path",
-                        "pathx": [int(p[0]) for p in new_path],
-                        "pathy": [int(p[1]) for p in new_path],
-                        "productsx": [int(p[0]) for p in item_coords[1:-1]],
-                        "productsy": [int(p[1]) for p in item_coords[1:-1]],
-                        "productNames": self.grocery_list,
-                        "mapName": ""
-                    }
-        else:
-            # TCP Message
-            app_data = {
-                        "mode": self.test_mode,
-                        "status": "Item Path",
-                        "pathx": [int(p[0]) for p in self.paths[0]],
-                        "pathy": [int(p[1]) for p in self.paths[0]],
-                        "productsx": [int(p[0]) for p in item_coords[1:-1]],
-                        "productsy": [int(p[1]) for p in item_coords[1:-1]],
-                        "productNames": self.grocery_list,
-                        "mapName": ""
-                    }
+                # TCP Message
+                app_data = {
+                            "mode": self.test_mode,
+                            "status": "Item Path",
+                            "pathx": [int(p[0]) for p in new_path],
+                            "pathy": [int(p[1]) for p in new_path],
+                            "productsx": [int(p[0]) for p in item_coords[1:-1]],
+                            "productsy": [int(p[1]) for p in item_coords[1:-1]],
+                            "productNames": self.grocery_list,
+                            "mapName": ""
+                        }
+            else:
+                # TCP Message
+                app_data = {
+                            "mode": self.test_mode,
+                            "status": "Item Path",
+                            "pathx": [int(p[0]) for p in self.paths[0]],
+                            "pathy": [int(p[1]) for p in self.paths[0]],
+                            "productsx": [int(p[0]) for p in item_coords[1:-1]],
+                            "productsy": [int(p[1]) for p in item_coords[1:-1]],
+                            "productNames": self.grocery_list,
+                            "mapName": ""
+                        }
 
-        # Send the data
-        self.send_data(app_data)
+            # Send the data
+            self.send_data(app_data)
 
-        # Cancel following
-        if self.following:
-            self.following = False
-            say(f"Following mode Cancelled", to_file=False) # use TTS to inform user about calcelling following mode
+            # Cancel following
+            if self.following:
+                self.following = False
+                say(f"Following mode Cancelled", to_file=False) # use TTS to inform user about calcelling following mode
 
-        return items
+            return items
     
 
     # ROUTE PAGE

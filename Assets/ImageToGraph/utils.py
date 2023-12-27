@@ -276,7 +276,7 @@ def hamiltonian_path(graph: nx.Graph, items:np.array, origin: tuple = None) -> (
     adj_mat = np.empty((len(coordinates),len(coordinates)), dtype = np.float16)
     for i,node_coords in enumerate(coordinates):
         lengths = nx.single_source_dijkstra_path_length(graph,node_coords)
-        lengths = [lengths[key] for key in coordinates] #Assign distances
+        lengths = [lengths[key] if key in lengths.keys() else 10000 for key in coordinates] #Assign distances, avoid non-existing paths
         adj_mat[i,:] = lengths #Could also just fill upper diag and optimize search
         adj_mat[i,i] = 10000 #Avoid finding only self loops (arbitrary value here)
     adj_mat[0,len(coordinates)-1] = adj_mat[len(coordinates)-1,0] = 10000 #Avoid considering edge from start to end node
@@ -307,8 +307,14 @@ def hamiltonian_path(graph: nx.Graph, items:np.array, origin: tuple = None) -> (
         flat_indices = np.argsort(adj_mat, axis=None)[:-len(coordinates)-2:2] #Drop diagonal, upper triangular and corners
         row_indices, col_indices = np.unravel_index(flat_indices, adj_mat.shape)
         i = 0
+        #print("flat indices: " + str(flat_indices) + " | adj mat: " + str(adj_mat.shape))
+        #print("coordinates: " + str(coordinates) + " | len = " + str(len(coordinates)))
+        #print("row_indices: " + str(row_indices) + " | len = " + str(len(row_indices)))
+        #print("col_indices: " + str(col_indices) + " | len = " + str(len(col_indices)))
         
-        while len(graph.edges) < len(coordinates)-1:#Check smallest edge weight at each iteration, need to avoid that edge connect start and end index
+        while (len(graph.edges) < len(coordinates)-1) and (i < len(row_indices)):#Check smallest edge weight at each iteration, need to avoid that edge connect start and end index
+            #print(f"Condition: len(graph.edges) [{len(graph.edges)}], len(coordinates)-1 [{len(coordinates)-1}], {len(graph.edges) < len(coordinates)-1} ")
+            #print(f"i = {i}")
             row_index = row_indices[i]
             col_index = col_indices[i] 
             if visited[row_index] == 2 or visited[col_index] == 2 or (visited[0] == 1 and min(row_index, col_index) == 0) or (visited[-1] == 1 and max(row_index, col_index) == len(coordinates)-1):
