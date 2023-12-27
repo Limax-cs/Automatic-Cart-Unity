@@ -3,17 +3,7 @@ guid: a9d994656d22e2942a3d8426344038ac
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: DYED METAL_GREEN
-    second: {fileID: -9145767066369328865, guid: cc7f1d1006723354098ac093feb740ea, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: HARD PLASTIC_FRIDGE
-    second: {fileID: 481466579466538683, guid: facee5b34c32dd64ba783c24859b0ac2, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
