@@ -290,7 +290,7 @@ public class backend : MonoBehaviour
             { userInPath = true;}
           else if (hit5.collider.tag == "Costumer")
             { costumerInPath = true;}}
-        if(detect1b || detect2b || detect3b || detect4b || detect5b)
+        if(detect2b || detect3b || detect4b)
         { sthBack = true;}
 
         // Lidar Update status

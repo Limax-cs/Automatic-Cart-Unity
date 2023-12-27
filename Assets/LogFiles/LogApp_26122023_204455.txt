@@ -1,0 +1,11 @@
+26/12/2023_20:44:55 - Environment Initialization (App Communication)
+26/12/2023_20:44:55 - Socket listener started
+26/12/2023_20:44:55 - Socket Conf |ip:127.0.0.1|port:8888
+26/12/2023_20:45:27 - Client Connected
+26/12/2023_20:45:31 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+26/12/2023_20:45:44 - App Data |mode:B|status:Item Path|pathx:111&111&111&110&109&108&107&106&106|pathy:97&98&99&100&101&102&103&104&105|productsx:106&106&94&111|productsy:105&94&81&78|products:Amish bread&Avocados&Anadama bread&Acorn squash|map:
+26/12/2023_20:45:44 - Previous products removed
+26/12/2023_20:45:44 - Current products instantiated
+26/12/2023_20:45:44 - Current products instantiated
+26/12/2023_20:45:44 - Current products instantiated
+26/12/2023_20:45:44 - Current products instantiated

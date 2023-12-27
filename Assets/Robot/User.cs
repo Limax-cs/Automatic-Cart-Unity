@@ -80,15 +80,15 @@ public class User : MonoBehaviour
 
         // Move the user
         user.Move(moveUser * Time.deltaTime);
-        this.transform.Rotate(new Vector3(0,mouseX*1000,0)*Time.deltaTime);
+        this.transform.Rotate(new Vector3(0,-mouseX*400,0)*Time.deltaTime);
 
         // Move Camera
-        Vector3 newCamAngles = mainCamera.transform.localEulerAngles + new Vector3(mouseY*500*Time.deltaTime, 0 ,0);
+        Vector3 newCamAngles = mainCamera.transform.localEulerAngles + new Vector3(mouseY*150*Time.deltaTime, 0 ,0);
         //Debug.Log(newCamAngles);
-        if (newCamAngles[0]> 40 && newCamAngles[0] <= 180)
-        {newCamAngles[0] = 40;}
-        else if (newCamAngles[0] < 340 && newCamAngles[0] > 180)
-        {newCamAngles[0] = 340;}
+        if (newCamAngles[0]> 30 && newCamAngles[0] <= 180)
+        {newCamAngles[0] = 30;}
+        else if (newCamAngles[0] < 359 && newCamAngles[0] > 180)
+        {newCamAngles[0] = 359;}
         newCamAngles[1] = 0.0f;
         newCamAngles[2] = 0.0f;
         mainCamera.transform.localEulerAngles = newCamAngles;
@@ -101,7 +101,26 @@ public class User : MonoBehaviour
 
 
         // Update Products Collected
-        statusUI.text = "Products Collected: " + productCollCount + "/ " + productCount + " \n Products: " + string.Join(",", productList) + " \n Products Collected: " + string.Join(",", productCollected);
+        //statusUI.text = "Products Collected: " + productCollCount + "/ " + productCount + " \n Products: " + string.Join(",", productList) + " \n Products Collected: " + string.Join(",", productCollected);
+        statusUI.text = "Products Collected: " + productCollCount + "/ " + productCount;
+        foreach(string item in productList)
+        {
+            statusUI.text = statusUI.text + " \n" + item;
+            bool item_coll = false;
+
+            foreach(string item_collected in productCollected)
+            {
+                if (item == item_collected)
+                {
+                    item_coll = true;
+                }
+            }
+
+            if (item_coll)
+            {
+                statusUI.text = statusUI.text + " OK";
+            }
+        }
     }
 
     public void CamDirection()
