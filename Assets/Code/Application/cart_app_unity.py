@@ -35,9 +35,10 @@ class MyGroceryListApp:
         self.menubar = tk.Menu(self.root) # create a menu
         self.grocery_list = [] # start with an empty shopping list
         
-
         self.dir = os.path.join(current_path, 'ImageToGraph/') # set a directory for the images
         self.imagedir = '' # to be set with the use of the buttons
+        
+        self.root.iconphoto(False, PhotoImage(file=self.dir+'robotLogo.png'))
         
         # Set colors (color scheme: https://coolors.co/114b5f-1a936f-88d498-c6dabf-f3e9d2)
         app_background_color = "#F3E9D2"
@@ -818,7 +819,7 @@ class MyGroceryListApp:
         say(f"Oh! Ok...", to_file=False)
 
     def sayThreadDescription1(self):
-        say(f"Hi! Welcome to this test. Please, select a map.", to_file=False)
+        say(f"Hi! Welcome to this test... Please, select a map.", to_file=False)
 
     def sayThreadDescription2(self):
         say(f"Here you can select your shopping list.", to_file=False)
