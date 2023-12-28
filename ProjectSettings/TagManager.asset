@@ -12,6 +12,8 @@ TagManager:
   - User
   - Costumer
   - Door
+  - RobotTag
+  - PathPoints
   layers:
   - Default
   - TransparentFX

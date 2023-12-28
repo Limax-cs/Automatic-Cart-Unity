@@ -41494,7 +41494,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   range: 2
-  UserRange: 4
+  UserRange: 6
   pathxApp: 
   pathyApp: 
   pathxMap: []
@@ -41511,6 +41511,9 @@ MonoBehaviour:
   updateRate: 1
   port: 8888
   TCPaddress: 127.0.0.1
+  pathPrefab: {fileID: 3308991293057089884, guid: d4f19a3ac3fbe67409195765664e2b82, type: 3}
+  pathPoints: []
+  updatePath: 1
 --- !u!208 &1078317964
 NavMeshObstacle:
   m_ObjectHideFlags: 0
