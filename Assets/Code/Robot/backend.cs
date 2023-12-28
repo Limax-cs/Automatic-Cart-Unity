@@ -325,10 +325,22 @@ public class backend : MonoBehaviour
         Debug.DrawRay(transform.position, (user.transform.position - this.transform.position) * UserRange / Vector3.Distance(user.transform.position, this.transform.position), Color.green);
         bool detectUserProximity = Physics.Raycast(transform.position, (user.transform.position - this.transform.position)/Vector3.Distance(user.transform.position, this.transform.position), out hitUser, UserRange, layerMask);
         if(status=="Continue")
-        {   if (detectUserProximity)
+        {   
+            // Detect if the user advanced the robot
+            bool userAdvance = false;
+            for(int k=0; k < pathxMap.Count; k++)
+            {
+                float robotDist = (float)Math.Sqrt(Math.Pow(pathxMap[k] - this.transform.position[0], 2) + Math.Pow(pathyMap[k] - this.transform.position[2], 2));
+                float userDist = (float)Math.Sqrt(Math.Pow(pathxMap[k] - user.transform.position[0], 2) + Math.Pow(pathyMap[k] - user.transform.position[2], 2));
+
+                if (userDist < robotDist)
+                    userAdvance = true;
+            }
+            
+            if (detectUserProximity)
             {   if (hitUser.collider.tag == "User"){ status="Continue";}
-                else {status="Wait";}}
-            else {status="Wait";}}
+                else if (userAdvance == false) {status="Wait";}}
+            else if (userAdvance == false) {status="Wait";}}
 
         // Send Robot Position
         if (timeAcc > updateRate)
@@ -555,6 +567,7 @@ public class backend : MonoBehaviour
         timeAcc += Time.deltaTime;
 
         // Update path
+        /*
         if (status == "Continue" || status == "Wait")
         {
             Debug.Log("Updatable path");
@@ -574,7 +587,7 @@ public class backend : MonoBehaviour
         else
         {
             updatePath = true;
-        }
+        }*/
         
         
     }
