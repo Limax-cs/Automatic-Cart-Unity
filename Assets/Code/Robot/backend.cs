@@ -129,6 +129,7 @@ public class backend : MonoBehaviour
     public GameObject pathPrefab;
     public GameObject[] pathPoints;
     public bool updatePath = true;
+    public GameObject[] costumers;
 
     private void Start()
     {
@@ -682,6 +683,10 @@ public class backend : MonoBehaviour
 
                             // Update robot status
                             status = "Stop";
+
+                            // Remove previous customers
+                            costumers = GameObject.FindGameObjectsWithTag("Costumer");
+                            foreach(GameObject p in costumers) { Destroy(p); }
                         }
                         else if (data.status == "FollowMe")
                         {
