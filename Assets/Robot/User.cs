@@ -80,7 +80,7 @@ public class User : MonoBehaviour
 
         // Move the user
         user.Move(moveUser * Time.deltaTime);
-        this.transform.Rotate(new Vector3(0,-mouseX*400,0)*Time.deltaTime);
+        this.transform.Rotate(new Vector3(0,mouseX*400,0)*Time.deltaTime);
 
         // Move Camera
         Vector3 newCamAngles = mainCamera.transform.localEulerAngles + new Vector3(mouseY*150*Time.deltaTime, 0 ,0);

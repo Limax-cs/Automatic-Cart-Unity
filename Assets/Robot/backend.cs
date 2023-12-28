@@ -80,7 +80,8 @@ public class backend : MonoBehaviour
     private LayerMask layerMask;
     [SerializeField]
     [Min(1)]
-    public float range = 7.0f;
+    public float range = 2.0f;
+    public float UserRange = 10.0f;
     private RaycastHit hit1;
     private RaycastHit hit2;
     private RaycastHit hit3;
@@ -91,6 +92,7 @@ public class backend : MonoBehaviour
     private RaycastHit hit3b;
     private RaycastHit hit4b;
     private RaycastHit hit5b;
+    private RaycastHit hitUser;
 
     
 
@@ -228,16 +230,16 @@ public class backend : MonoBehaviour
         }
 
         // Lidar Draws        
-        Debug.DrawRay(transform.position, (-transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.red);
+        Debug.DrawRay(transform.position, (-transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.black);
         Debug.DrawRay(transform.position, (-(float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up) * range, Color.red);
         Debug.DrawRay(transform.position, transform.up * range, Color.red);
         Debug.DrawRay(transform.position, ((float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up) * range, Color.red);
-        Debug.DrawRay(transform.position, (transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.red);
-        Debug.DrawRay(transform.position, -(-transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.blue);
+        Debug.DrawRay(transform.position, (transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.yellow);
+        Debug.DrawRay(transform.position, -(-transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.black);
         Debug.DrawRay(transform.position, -(-(float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up) * range, Color.blue);
         Debug.DrawRay(transform.position, -transform.up * range, Color.blue);
         Debug.DrawRay(transform.position, -((float)Math.Sin(Math.PI/8)*transform.right + (float)Math.Cos(Math.PI/8)*transform.up) * range, Color.blue);
-        Debug.DrawRay(transform.position, -(transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.blue);
+        Debug.DrawRay(transform.position, -(transform.right + transform.up) * range / (float)Math.Sqrt(2), Color.yellow);
 
         // Lidar detections
         bool detect1 = Physics.Raycast(transform.position, (-transform.right + transform.up) / (float)Math.Sqrt(2), out hit1, range, layerMask);
@@ -255,7 +257,7 @@ public class backend : MonoBehaviour
         bool userInPath = false;
         bool costumerInPath = false;
         bool sthBack = false;
-        if (status == "UserInPath")
+        if (status == "UserInPath" || status == "Wait")
         {
             status = "Continue";
         }
@@ -313,6 +315,15 @@ public class backend : MonoBehaviour
             }      
         }
 
+        // Camera/Lidar detection of user
+        Debug.DrawRay(transform.position, (user.transform.position - this.transform.position) * UserRange / Vector3.Distance(user.transform.position, this.transform.position), Color.green);
+        bool detectUserProximity = Physics.Raycast(transform.position, (user.transform.position - this.transform.position)/Vector3.Distance(user.transform.position, this.transform.position), out hitUser, UserRange, layerMask);
+        if(status=="Continue")
+        {   if (detectUserProximity)
+            {   if (hitUser.collider.tag == "User"){ status="Continue";}
+                else {status="Wait";}}
+            else {status="Wait";}}
+
         // Send Robot Position
         if (timeAcc > updateRate)
         {
@@ -328,20 +339,19 @@ public class backend : MonoBehaviour
 
         // Move Robot
 
-        
-        if ((status == "Continue" || status == "FollowMe") && (costumerInPath == false))
+        // Compute distance and angle of next node
+        if (pathxMap.Count > 0 && pathyMap.Count > 0)
         {
-            
-            // Compute distance and angle of next node
-            if (pathxMap.Count > 0 && pathyMap.Count > 0)
-            {
-                // Direction
-                float dirx = (float)(this.transform.position[0] - pathxMap[0]);
-                float diry = (float)(this.transform.position[2] - pathyMap[0]);
+            // Direction
+            float dirx = (float)(this.transform.position[0] - pathxMap[0]);
+            float diry = (float)(this.transform.position[2] - pathyMap[0]);
 
-                // Angular coordinates
-                float distance = (float) Math.Sqrt(dirx*dirx + diry*diry);
-                float angle = (float) (Math.Atan2(diry, dirx)*180/Math.PI);
+            // Angular coordinates
+            float distance = (float) Math.Sqrt(dirx*dirx + diry*diry);
+            float angle = (float) (Math.Atan2(diry, dirx)*180/Math.PI);
+
+            if (status != "Stop" && status != "Wait")
+            {
 
                 // Remove graph node if it close to certain threshold
                 if (pathxMap.Count == 1 && pathyMap.Count == 1 && distance < distThresholdLast)
@@ -370,56 +380,135 @@ public class backend : MonoBehaviour
                     yaw = 360 + yaw;
                 }
 
-                //Debug.Log("Direction = (" + dirx + "," +diry + ") | Distance = " + distance + " | Angle = " + angle + " Rotation Z = " + (robotOrientation[2]) + "| Yaw = " + yaw);
-
-                
-                // Pid
-                if (Math.Sqrt(yaw*yaw) < 180/16)
+                //Linear Movement
+                if ((status == "Continue" || status == "FollowMe") && (costumerInPath == false))
                 {
-                    if (pathxMap.Count > 1 && pathyMap.Count > 1)
+                    // Pid
+                    if (Math.Sqrt(yaw*yaw) < 180/16)
                     {
-                        linear_velocity = P*linearVelMax;
+                        if (pathxMap.Count > 1 && pathyMap.Count > 1)
+                        {
+                            linear_velocity = P*linearVelMax;
+                        }
+                        else
+                        {
+                            linear_velocity = P*(float)Math.Min(Math.Max(distance, 0.2), linearVelMax);
+                        }
                     }
                     else
                     {
-                        linear_velocity = P*(float)Math.Min(Math.Max(distance, 0.2), linearVelMax);
+                        linear_velocity = 0.0f;
                     }
+                }
+                else if (status == "FollowMeBack")
+                {
+                    linear_velocity = -P*linearVelMax;
+                
                 }
                 else
                 {
                     linear_velocity = 0.0f;
                 }
-                
-                if (Math.Sqrt(yaw*yaw) > 180/16)
+
+                // Angular Movement
+                if (status == "Continue" || status == "FollowMe" || status == "UserInPath")
                 {
-                    if (yaw > 0.0)
+                    if (Math.Sqrt(yaw*yaw) > 180/16)
                     {
-                        angular_velocity = 1.2f;
+                        if (yaw > 0.0)
+                        {
+                            angular_velocity = 1.2f;
+                        }
+                        else
+                        {
+                            angular_velocity = -1.2f;
+                        }
+
+                        robotOrientation = robotOrientation + new Vector3(0, 0, 1)*angular_velocity;
                     }
                     else
                     {
-                        angular_velocity = -1.2f;
+                        angular_velocity = 0.0f;
+                        robotOrientation = new Vector3(-90, 0, -angle + 90);
                     }
-
-                    robotOrientation = robotOrientation + new Vector3(0, 0, 1)*angular_velocity;
                 }
                 else
                 {
                     angular_velocity = 0.0f;
-                    robotOrientation = new Vector3(-90, 0, -angle + 90);
                 }
+            }
+            else
+            {
+                linear_velocity = 0.0f;
+                angular_velocity = 0.0f;
+            }
 
+            
+        }
+        else if (status == "Continue")
+        {
+            status = "Destination";
+        }
+        else if (status == "Destination")
+        {
+            bool sthFrontAside = false;
+            bool sthBackAside = false;
+            bool userFrontAside = false;
+            bool userBackAside = false;
+            bool userFrontAsideL = false;
+            bool userBackAsideL = false;
+            bool userFrontAsideR = false;
+            bool userBackAsideR = false;
+
+            if (detect2 || detect3 || detect4)
+            { sthFrontAside = true;}
+            if (detect2b || detect3b || detect4b)
+            { sthBackAside = true;}
+
+            if(detect1){if (hit1.collider.tag == "User"){userFrontAside = true; userFrontAsideL = true;}}
+            if(detect2){if (hit2.collider.tag == "User"){userFrontAside = true; userFrontAsideL = true;}}
+            if(detect3){if (hit3.collider.tag == "User"){userFrontAside = true;}}
+            if(detect4){if (hit4.collider.tag == "User"){userFrontAside = true; userFrontAsideR = true;}}
+            if(detect5){if (hit5.collider.tag == "User"){userFrontAside = true; userFrontAsideR = true;}}
+
+            if(detect1b){if (hit1b.collider.tag == "User"){userBackAside = true; userBackAsideL = true;}}
+            if(detect2b){if (hit2b.collider.tag == "User"){userBackAside = true; userBackAsideL = true;}}
+            if(detect3b){if (hit3b.collider.tag == "User"){userBackAside = true;}}
+            if(detect4b){if (hit4b.collider.tag == "User"){userBackAside = true; userBackAsideR = true;}}
+            if(detect5b){if (hit5b.collider.tag == "User"){userBackAside = true; userBackAsideR = true;}}
+
+
+            if (userFrontAside && (sthBackAside == false))
+            {
+                linear_velocity = -2.0f;
+                angular_velocity = 0.0f;
+            }
+            else if (userBackAside && (sthFrontAside == false))
+            {
+                linear_velocity = 2.0f;
+                angular_velocity = 0.0f;
+            }
+            else if (userFrontAside && sthBackAside)
+            {
+                linear_velocity = 0.0f;
+                if (userFrontAsideL) { angular_velocity = 1.2f;}
+                else{ angular_velocity = -1.2f;}
+                robotOrientation = robotOrientation + new Vector3(0, 0, 1)*angular_velocity;
                 
             }
-            else if (status == "Continue")
+            else if (userBackAside && sthFrontAside)
             {
-                status = "Destination";
+                linear_velocity = 0.0f;
+                if (userBackAsideL) { angular_velocity = 1.2f;}
+                else{ angular_velocity = -1.2f;}
+                robotOrientation = robotOrientation + new Vector3(0, 0, 1)*angular_velocity;
             }
-        }
-        else if (status == "FollowMeBack")
-        {
-            linear_velocity = -P*linearVelMax;
-            angular_velocity = 0.0f;
+            else
+            {
+                linear_velocity = 0.0f;
+                angular_velocity = 0.0f;
+            }
+
         }
         else
         {

@@ -143,6 +143,9 @@ class MyGroceryListApp:
 
         # Robot communication
         self.userInPathCounter = 0
+        self.waitingCounter = 0
+        self.waitingCounterLong = 0
+        self.waiting = False
         self.sayDestination = True
         self.following = False
 
@@ -749,8 +752,41 @@ class MyGroceryListApp:
                         collect_thread = threading.Thread(target=self.sayThreadDestination) # use TTS to inform user about picking the item
                         collect_thread.start()
                         self.sayDestination = False
+                    elif self.sayDestination:
+                        collect_thread = threading.Thread(target=self.sayThreadDestinationFinal)
+                        collect_thread.start()
+                        self.sayDestination = False
                 else:
                     self.sayDestination = True
+
+                # Notify user to get follow the robot
+                if self.robot_data["status"] == "Wait":
+
+                    if (self.waitingCounterLong < 60) and (self.waiting == False):
+
+                        print('Hi')
+
+                        # Message
+                        if self.waitingCounter == 3:
+                            wait_thread = threading.Thread(target=self.sayThreadWait) 
+                            wait_thread.start()
+
+                        # Counter
+                        self.waitingCounter = self.waitingCounter + 1
+                        self.waitingCounterLong = self.waitingCounterLong + 1
+                        if self.waitingCounter > 10:
+                            self.waitingCounter = 0
+
+                    # Give up
+                    elif (self.waiting == False):
+                        wait_thread = threading.Thread(target=self.sayThreadWaitLong) 
+                        wait_thread.start()
+                        self.waiting = True
+
+                else:
+                    self.waitingCounter = 0
+                    self.waitingCounterLong = 0
+                    self.waiting = False
 
             except ConnectionResetError:
                 print("Connection with server closed.")
@@ -762,8 +798,32 @@ class MyGroceryListApp:
     def sayThreadDestination(self):
         say(f"We are at {self.grocery_list[0]}. Please, collect it!", to_file=False) # use TTS to inform user about picking the item
 
+    def sayThreadDestinationFinal(self):
+        say(f"Experiment finished. Thank you for attending this test.", to_file=False)
+
     def sayThreadMoveAway(self):
         say(f"Excuse me! Would you mind stepping aside? I need to path through.", to_file=False) # use TTS to inform user about picking the item
+    
+    def sayThreadWait(self):
+        randVal = random.randint(1,3)
+        if randVal == 1:
+            say(f"Here!", to_file=False)
+        elif randVal == 2:
+            say(f"Follow me!", to_file=False)
+        elif randVal == 3:
+            say(f"Come here!", to_file=False)
+
+    def sayThreadWaitLong(self):
+        say(f"Oh! Ok...", to_file=False)
+
+    def sayThreadDescription1(self):
+        say(f"Hi! Welcome to this test. Please, select a map.", to_file=False)
+
+    def sayThreadDescription2(self):
+        say(f"Here you can select your shopping list.", to_file=False)
+
+    def sayThreadDescription3(self):
+        say(f"Here, you can give me orders. Select Next or Continue to start the route.", to_file=False)
                         
 
     def communication_init(self):
