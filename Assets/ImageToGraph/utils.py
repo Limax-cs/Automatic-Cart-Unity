@@ -302,12 +302,13 @@ def hamiltonian_path(graph: nx.Graph, items:np.array, origin: tuple = None) -> (
     else: #Greedy algorithm that takes shortest outgoing edge
         graph = nx.Graph() #This will be a path graph built from the adj matrix
         graph.add_nodes_from(coordinates)
+        adj_mat[np.triu_indices(len(coordinates), 1)] = 10000
 
         visited = [0]*len(coordinates) #Keeps track of which nodes where visited in the algorith(all nodes except start and finish at most 2 times)
-        flat_indices = np.argsort(adj_mat, axis=None)[:-len(coordinates)-2:2] #Drop diagonal, upper triangular and corners
+        flat_indices = np.argsort(adj_mat, axis=None)[:-len(coordinates)-2] #Drop diagonal, upper triangular and corners
         row_indices, col_indices = np.unravel_index(flat_indices, adj_mat.shape)
         i = 0
-        print("flat indices: " + str(flat_indices) + " | adj mat: " + str(adj_mat.shape) + " | len: " + str(len(flat_indices)))
+        print(adj_mat)
         
         while (len(graph.edges) < len(coordinates)-1): # and (i < len(row_indices)):#Check smallest edge weight at each iteration, need to avoid that edge connect start and end index
             #print(f"Condition: len(graph.edges) [{len(graph.edges)}], len(coordinates)-1 [{len(coordinates)-1}], {len(graph.edges) < len(coordinates)-1} ")
