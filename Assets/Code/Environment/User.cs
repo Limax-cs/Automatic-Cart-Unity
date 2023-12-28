@@ -83,7 +83,7 @@ public class User : MonoBehaviour
         this.transform.Rotate(new Vector3(0,mouseX*400,0)*Time.deltaTime);
 
         // Move Camera
-        Vector3 newCamAngles = mainCamera.transform.localEulerAngles + new Vector3(mouseY*150*Time.deltaTime, 0 ,0);
+        Vector3 newCamAngles = mainCamera.transform.localEulerAngles + new Vector3(-mouseY*150*Time.deltaTime, 0 ,0);
         //Debug.Log(newCamAngles);
         if (newCamAngles[0]> 30 && newCamAngles[0] <= 180)
         {newCamAngles[0] = 30;}
