@@ -14,6 +14,10 @@ public class CostumerBehaviour : MonoBehaviour
     public float timeCounter = 0;
     public Animator animator;
 
+    public GameObject[] user;
+    public GameObject[] cart;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +27,9 @@ public class CostumerBehaviour : MonoBehaviour
         shelves4 = GameObject.FindGameObjectsWithTag("shelve_shop4");
         doors = GameObject.FindGameObjectsWithTag("Door");
         animator.SetFloat("velocityFront", 3.0f);
+
+        cart = GameObject.FindGameObjectsWithTag("Cart");
+        user = GameObject.FindGameObjectsWithTag("User");
         
         //agent.destination= goal.position; 
 
@@ -76,6 +83,11 @@ public class CostumerBehaviour : MonoBehaviour
             if (goals.Count == 1 && Vector3.Distance(this.transform.position, goals[0].transform.position) < 3)
             {
                 goals.RemoveAt(0);
+            }
+            else if (Vector3.Distance(user[0].transform.position, goals[0].transform.position) < 2 || Vector3.Distance(cart[0].transform.position, goals[0].transform.position) < 2)
+            {
+                goals.RemoveAt(0);
+                timeCounter = 0;
             }
             else if(Vector3.Distance(this.transform.position, goals[0].transform.position) < 2)
             {

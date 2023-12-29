@@ -15625,6 +15625,7 @@ GameObject:
   - component: {fileID: 450968150}
   - component: {fileID: 450968153}
   - component: {fileID: 450968152}
+  - component: {fileID: 450968154}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -15697,6 +15698,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450968149}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &450968154
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450968149}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &453070127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7533038090828063015, guid: 0510e29d71c1ad04cab7e1aa4b9b62cc, type: 3}
@@ -41390,6 +41407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shopping_cart
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 407f62b3f9d594741939b362afa34d90, type: 3}
+      propertyPath: m_TagString
+      value: Cart
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -41514,6 +41535,7 @@ MonoBehaviour:
   pathPrefab: {fileID: 3308991293057089884, guid: d4f19a3ac3fbe67409195765664e2b82, type: 3}
   pathPoints: []
   updatePath: 1
+  costumers: []
 --- !u!208 &1078317964
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -41527,9 +41549,9 @@ NavMeshObstacle:
   m_Extents: {x: 0.003, y: 0.0035, z: 0.005}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0
 --- !u!4 &1078317965 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 407f62b3f9d594741939b362afa34d90, type: 3}
@@ -45906,7 +45928,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.5, y: 1, z: 0.5}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1160253171
@@ -59434,6 +59456,7 @@ GameObject:
   - component: {fileID: 1448795382}
   - component: {fileID: 1448795384}
   - component: {fileID: 1448795383}
+  - component: {fileID: 1448795385}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -59506,6 +59529,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448795381}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1448795385
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448795381}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1449817461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4328125300524300961, guid: 443b128c0d3997b45ae7e5a45ae89ddd, type: 3}
