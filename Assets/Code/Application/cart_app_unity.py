@@ -28,7 +28,7 @@ class MyGroceryListApp:
     def __init__(self):
 
         # Hyperparameters
-        self.test_mode = "B" # Mode: A - Works fine, B - Go to wrong places
+        self.test_mode = "A" # Mode: A - Works fine, B - Go to wrong places
 
         # Application initialization
         self.root = tk.Tk()
