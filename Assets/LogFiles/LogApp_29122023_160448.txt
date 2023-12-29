@@ -1,0 +1,4 @@
+29/12/2023_16:04:48 - Environment Initialization (App Communication)
+29/12/2023_16:04:48 - Socket listener started
+29/12/2023_16:04:48 - Socket Conf |ip:127.0.0.1|port:8888
+29/12/2023_16:06:54 - Client Connected
