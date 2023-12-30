@@ -1,0 +1,40 @@
+29/12/2023_15:46:57 - Environment Initialization (App Communication)
+29/12/2023_15:46:57 - Socket listener started
+29/12/2023_15:46:57 - Socket Conf |ip:127.0.0.1|port:8888
+29/12/2023_15:47:03 - Client Connected
+29/12/2023_15:47:16 - App Data |mode:B|status:World Init|pathx:83|pathy:96|productsx:|productsy:|products:|map:Model4
+29/12/2023_15:48:14 - App Data |mode:B|status:Item Path|pathx:83&84&85&86&87&88&89&90&91&92&93&94&95&96&97&98&99&100&101&102&103&104&105&106&107&108&109&110&111&112&113&114&115&116&117&118&119&120&121&122&123&123|pathy:96&96&97&98&98&98&98&98&98&98&98&98&98&98&98&98&99&99&99&99&99&99&99&99&99&99&99&99&99&100&101&102&102&102&102&102&102&102&102&103&104&105|productsx:107&107&111&114&118|productsy:101&93&91&105&105|products:Potatoes&Frozen spinach&Salmon&Milkshakes&Coke|map:
+29/12/2023_15:48:14 - Previous products removed
+29/12/2023_15:48:14 - Current products instantiated
+29/12/2023_15:48:14 - Current products instantiated
+29/12/2023_15:48:14 - Current products instantiated
+29/12/2023_15:48:14 - Current products instantiated
+29/12/2023_15:48:14 - Current products instantiated
+29/12/2023_15:48:31 - App Data |mode:B|status:Next Item|pathx:83&84&85&86&87&88&89&90&91&92&93&94&95&96&97&98&99&100&101&102&103&104&105&106&107&107|pathy:96&96&97&98&98&98&98&98&98&98&98&98&98&98&98&98&99&99&99&99&99&99&99&99&100&101|productsx:|productsy:|products:|map:
+29/12/2023_15:49:10 - App Data |mode:B|status:Next Item|pathx:108&107&106&105&105&105&106&107&107|pathy:100&100&99&98&97&96&95&94&93|productsx:|productsy:|products:|map:
+29/12/2023_15:49:53 - App Data |mode:B|status:Next Item|pathx:105&106&107&108&109&110&111&112&113&114&115&116&117&118&119&120&121&122&122|pathy:98&99&99&99&99&99&99&98&97&96&96&96&96&96&96&95&95&95&94|productsx:|productsy:|products:|map:
+29/12/2023_15:50:08 - App Data |mode:B|status:Next Item|pathx:105&106&107&108&109&110&111&112&113&113&112|pathy:98&99&99&99&99&99&100&101&102&103&103|productsx:|productsy:|products:|map:
+29/12/2023_15:50:22 - App Data |mode:B|status:FollowMe|pathx:106&107&108&109&110&111&112|pathy:99&99&99&99&99&99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:50:23 - App Data |mode:B|status:FollowMe|pathx:106&107&108&109&110|pathy:99&99&99&99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:50:24 - App Data |mode:B|status:FollowMe|pathx:106&107&108&109|pathy:99&99&99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:50:25 - App Data |mode:B|status:FollowMe|pathx:106&107&108|pathy:99&99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:50:26 - App Data |mode:B|status:FollowMe|pathx:106&107&108|pathy:99&99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:50:29 - App Data |mode:B|status:Pause|pathx:|pathy:|productsx:|productsy:|products:|map:
+29/12/2023_15:50:34 - App Data |mode:B|status:FollowMe|pathx:106&107|pathy:99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:50:35 - App Data |mode:B|status:FollowMe|pathx:106&107|pathy:99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:50:36 - App Data |mode:B|status:FollowMe|pathx:106&107|pathy:99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:50:37 - App Data |mode:B|status:FollowMe|pathx:106&107|pathy:99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:50:40 - App Data |mode:B|status:Resume|pathx:105&104&103&102&101&100&99|pathy:98&98&98&98&98&97&97|productsx:|productsy:|products:|map:
+29/12/2023_15:50:43 - App Data |mode:B|status:Resume|pathx:105&106&107&108&109&110&111&112&113&114&115&116&117&118&119&119|pathy:98&99&99&99&99&99&99&98&97&96&96&96&96&96&96&97|productsx:|productsy:|products:|map:
+29/12/2023_15:51:02 - App Data |mode:B|status:FollowMe|pathx:106&107|pathy:99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:51:03 - App Data |mode:B|status:FollowMe|pathx:105&106|pathy:99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:51:04 - App Data |mode:B|status:FollowMe|pathx:105&104|pathy:99&100|productsx:|productsy:|products:|map:
+29/12/2023_15:51:05 - App Data |mode:B|status:FollowMe|pathx:104&103&102|pathy:98&98&99|productsx:|productsy:|products:|map:
+29/12/2023_15:51:06 - App Data |mode:B|status:FollowMe|pathx:104&103&102&101&100&99|pathy:98&98&98&98&98&98|productsx:|productsy:|products:|map:
+29/12/2023_15:51:07 - App Data |mode:B|status:FollowMe|pathx:104&103&102&101&100&99&98|pathy:98&98&98&98&98&98&98|productsx:|productsy:|products:|map:
+29/12/2023_15:51:08 - App Data |mode:B|status:FollowMe|pathx:104&103&102&101&100&99|pathy:98&98&98&98&98&98|productsx:|productsy:|products:|map:
+29/12/2023_15:51:09 - App Data |mode:B|status:FollowMe|pathx:104&103&102&101|pathy:98&98&98&98|productsx:|productsy:|products:|map:
+29/12/2023_15:51:10 - App Data |mode:B|status:FollowMe|pathx:104|pathy:98|productsx:|productsy:|products:|map:
+29/12/2023_15:51:11 - App Data |mode:B|status:FollowMe|pathx:104|pathy:98|productsx:|productsy:|products:|map:
+29/12/2023_15:51:19 - App Data |mode:B|status:Next Item|pathx:105&105&105&106&107&108&109&110&111&112&112&111|pathy:98&97&96&95&95&95&95&95&94&93&92&92|productsx:|productsy:|products:|map:
+29/12/2023_15:51:24 - App Data |mode:B|status:Next Item|pathx:105&106&107&108&109&110&111&112&113&114&115&116&117&117|pathy:98&99&99&99&99&99&99&98&97&96&96&96&95&94|productsx:|productsy:|products:|map:

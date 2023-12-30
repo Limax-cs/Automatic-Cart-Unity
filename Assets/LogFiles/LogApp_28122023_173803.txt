@@ -1,0 +1,16 @@
+28/12/2023_17:38:03 - Environment Initialization (App Communication)
+28/12/2023_17:38:03 - Socket listener started
+28/12/2023_17:38:03 - Socket Conf |ip:127.0.0.1|port:8888
+28/12/2023_17:41:00 - Client Connected
+28/12/2023_17:41:09 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+28/12/2023_17:41:38 - App Data |mode:A|status:Item Path|pathx:111&111&111&111&110&109&108&108&108&108&108&108&108&108&108&107&106|pathy:97&98&99&100&101&102&103&104&105&106&107&108&109&110&111&112&112|productsx:106&99&105&102|productsy:112&113&83&81|products:White wine&Wok&Whipped cream&Whole wheat bread|map:
+28/12/2023_17:41:38 - Previous products removed
+28/12/2023_17:41:38 - Current products instantiated
+28/12/2023_17:41:38 - Current products instantiated
+28/12/2023_17:41:38 - Current products instantiated
+28/12/2023_17:41:38 - Current products instantiated
+28/12/2023_17:42:07 - App Data |mode:A|status:Next Item|pathx:111&111&111&111&110&109&108&108&108&108&108&108&108&108&107&106|pathy:98&99&100&101&102&103&104&105&106&107&108&109&110&111&112&112|productsx:|productsy:|products:|map:
+28/12/2023_17:42:42 - App Data |mode:A|status:Next Item|pathx:107&106&105&104&103&102&101&100&99&99|pathy:113&114&114&114&114&114&114&114&114&113|productsx:|productsy:|products:|map:
+28/12/2023_17:43:43 - App Data |mode:A|status:Next Item|pathx:97&98&99&100&101&102&103&104&105&106&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&107&106&105&105|pathy:114&114&114&114&114&114&114&114&114&114&113&112&111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&96&95&94&93&92&91&90&89&88&87&86&85&84&83|productsx:|productsy:|products:|map:
+28/12/2023_17:44:41 - App Data |mode:A|status:Next Item|pathx:104&105&106&107&107&107&106&105&104&103&102&102|pathy:84&84&84&83&82&81&80&80&80&80&80&81|productsx:|productsy:|products:|map:
+28/12/2023_17:45:13 - App Data |mode:A|status:Destination|pathx:101&102&103&104&105&106&107&107&108&108&108&108&108&108&109&110&111|pathy:80&80&80&80&80&80&81&82&83&84&85&86&87&88&89&90&91|productsx:|productsy:|products:|map:

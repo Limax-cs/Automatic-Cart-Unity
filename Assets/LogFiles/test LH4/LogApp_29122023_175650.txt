@@ -1,0 +1,12 @@
+29/12/2023_17:56:50 - Environment Initialization (App Communication)
+29/12/2023_17:56:50 - Socket listener started
+29/12/2023_17:56:50 - Socket Conf |ip:127.0.0.1|port:8888
+29/12/2023_17:56:56 - Client Connected
+29/12/2023_17:57:04 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+29/12/2023_18:00:22 - App Data |mode:B|status:Item Path|pathx:111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&96&95&94&94|pathy:98&98&99&100&101&102&102&102&102&102&102&102&102&102&102&102&103&104&105|productsx:106&106&88&93&101|productsy:105&111&105&93&99|products:Multigrain bread&Tea&Milk&Strawberries&Broccoli|map:
+29/12/2023_18:00:22 - Previous products removed
+29/12/2023_18:00:22 - Current products instantiated
+29/12/2023_18:00:22 - Current products instantiated
+29/12/2023_18:00:22 - Current products instantiated
+29/12/2023_18:00:22 - Current products instantiated
+29/12/2023_18:00:22 - Current products instantiated

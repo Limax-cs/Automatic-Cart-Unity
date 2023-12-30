@@ -1,0 +1,14 @@
+29/12/2023_15:41:39 - Environment Initialization (App Communication)
+29/12/2023_15:41:39 - Socket listener started
+29/12/2023_15:41:39 - Socket Conf |ip:127.0.0.1|port:8888
+29/12/2023_15:41:53 - Client Connected
+29/12/2023_15:42:21 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+29/12/2023_15:42:46 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+29/12/2023_15:42:48 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+29/12/2023_15:44:26 - App Data |mode:B|status:Item Path|pathx:111&111&111&111&111&111&111&110&109&109&109&109&109&109&109&109&108&107&106&105&104&103&102&102|pathy:98&97&96&95&94&93&92&91&90&89&88&87&86&85&84&83&82&81&80&80&80&80&80&81|productsx:98&96&102&102&102|productsy:111&93&89&83&76|products:Champagne&Lettuce&Bison burgers&American cheese&Hamburger buns|map:
+29/12/2023_15:44:26 - Previous products removed
+29/12/2023_15:44:26 - Current products instantiated
+29/12/2023_15:44:26 - Current products instantiated
+29/12/2023_15:44:26 - Current products instantiated
+29/12/2023_15:44:26 - Current products instantiated
+29/12/2023_15:44:26 - Current products instantiated
