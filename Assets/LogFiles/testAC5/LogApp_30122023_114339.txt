@@ -1,0 +1,34 @@
+30/12/2023_11:43:39 - Environment Initialization (App Communication)
+30/12/2023_11:43:39 - Socket listener started
+30/12/2023_11:43:39 - Socket Conf |ip:127.0.0.1|port:8888
+30/12/2023_11:43:56 - Client Connected
+30/12/2023_11:44:04 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+30/12/2023_11:45:32 - App Data |mode:B|status:Item Path|pathx:111&111&111&111&111&111&111&110&110&110&110&110&110&110&110&110&110&111|pathy:98&99&100&101&102&103&104&105&106&107&108&109&110&111&112&113&114&114|productsx:101&94&94&88&100&106|productsy:111&105&89&84&83&93|products:Cola&Rye bread&Duck breast&Frozen yogurt&Condensed milk&Honeydews|map:
+30/12/2023_11:45:32 - Previous products removed
+30/12/2023_11:45:32 - Current products instantiated
+30/12/2023_11:45:32 - Current products instantiated
+30/12/2023_11:45:32 - Current products instantiated
+30/12/2023_11:45:32 - Current products instantiated
+30/12/2023_11:45:32 - Current products instantiated
+30/12/2023_11:45:32 - Current products instantiated
+30/12/2023_11:46:02 - App Data |mode:B|status:Next Item|pathx:111&111&111&111&110&109&108&108&108&107&106&105&104&103&102&101&101|pathy:98&99&100&101&102&103&104&105&106&107&108&108&108&108&109&110&111|productsx:|productsy:|products:|map:
+30/12/2023_11:46:44 - App Data |mode:B|status:Next Item|pathx:99&98&97&96&95&94&93&92&91&91&91&92&93&94&94|pathy:110&110&110&110&110&110&109&108&107&106&105&104&104&104&105|productsx:|productsy:|products:|map:
+30/12/2023_11:47:12 - App Data |mode:B|status:Next Item|pathx:95&94&93&92&91&91&91&91&91&91&91&91&91&92&93&94&94|pathy:104&104&103&102&101&100&99&98&97&96&95&94&93&92&91&90&89|productsx:|productsy:|products:|map:
+30/12/2023_11:47:51 - App Data |mode:B|status:Next Item|pathx:94&95&96&97&98&99&100&101&102&103&104&105&106&107&107&107&107&107&107&107&107&107&108&109&110&111|pathy:90&90&90&90&90&90&90&90&90&90&90&90&90&89&88&87&86&85&84&83&82&81&80&79&78&78|productsx:|productsy:|products:|map:
+30/12/2023_11:48:56 - App Data |mode:B|status:Next Item|pathx:110&110&110&110&109&108&107&107&106&105&104&103&102&101&100&99&98&97&97|pathy:76&77&78&79&80&81&82&83&84&84&84&84&84&84&84&84&84&84&83|productsx:|productsy:|products:|map:
+30/12/2023_11:49:33 - App Data |mode:B|status:Next Item|pathx:97&98&99&100&101&102&103&104&105&106&107&107&107&107&107&106&106|pathy:84&84&84&84&84&84&84&85&86&86&87&88&89&90&91&92&93|productsx:|productsy:|products:|map:
+30/12/2023_11:50:13 - App Data |mode:B|status:Destination|pathx:105&106&107&108&109&110&111|pathy:92&92&92&92&92&92&91|productsx:|productsy:|products:|map:
+30/12/2023_11:50:40 - App Data |mode:B|status:Resume|pathx:109&110&111|pathy:93&92&91|productsx:|productsy:|products:|map:
+30/12/2023_11:50:46 - App Data |mode:B|status:FollowMe|pathx:109&109|pathy:92&91|productsx:|productsy:|products:|map:
+30/12/2023_11:50:47 - App Data |mode:B|status:FollowMe|pathx:109&109&109&109&109|pathy:92&91&90&89&88|productsx:|productsy:|products:|map:
+30/12/2023_11:50:48 - App Data |mode:B|status:FollowMe|pathx:109&109&109&109&110|pathy:90&89&88&87&86|productsx:|productsy:|products:|map:
+30/12/2023_11:50:49 - App Data |mode:B|status:FollowMe|pathx:109&109&109&109&109&109|pathy:89&88&87&86&85&84|productsx:|productsy:|products:|map:
+30/12/2023_11:50:50 - App Data |mode:B|status:FollowMe|pathx:109&109&109&109&108&107|pathy:87&86&85&84&83&82|productsx:|productsy:|products:|map:
+30/12/2023_11:50:51 - App Data |mode:B|status:FollowMe|pathx:109&109&109&108&107|pathy:86&85&84&83&82|productsx:|productsy:|products:|map:
+30/12/2023_11:50:52 - App Data |mode:B|status:FollowMe|pathx:109&108&107|pathy:84&83&82|productsx:|productsy:|products:|map:
+30/12/2023_11:50:53 - App Data |mode:B|status:FollowMe|pathx:108&107|pathy:83&82|productsx:|productsy:|products:|map:
+30/12/2023_11:50:54 - App Data |mode:B|status:FollowMe|pathx:108&107|pathy:83&82|productsx:|productsy:|products:|map:
+30/12/2023_11:50:55 - App Data |mode:B|status:FollowMe|pathx:108&107|pathy:83&82|productsx:|productsy:|products:|map:
+30/12/2023_11:50:56 - App Data |mode:B|status:FollowMe|pathx:108&107|pathy:83&82|productsx:|productsy:|products:|map:
+30/12/2023_11:50:57 - App Data |mode:B|status:FollowMe|pathx:108&107|pathy:83&82|productsx:|productsy:|products:|map:
+30/12/2023_11:50:58 - App Data |mode:B|status:FollowMe|pathx:108&107|pathy:83&82|productsx:|productsy:|products:|map:
