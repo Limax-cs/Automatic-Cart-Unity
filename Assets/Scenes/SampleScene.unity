@@ -41515,7 +41515,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   range: 2
-  UserRange: 6
+  UserRange: 8
   pathxApp: 
   pathyApp: 
   pathxMap: []
@@ -45905,7 +45905,7 @@ MonoBehaviour:
   animator: {fileID: 1261841162}
   mainCamera: {fileID: 309216432}
   rotationConstant: 10
-  userSpeed: 3
+  userSpeed: 1.6
   JumpForce: 10
   gravity: 9.81
   InAirFriction: 0.995
