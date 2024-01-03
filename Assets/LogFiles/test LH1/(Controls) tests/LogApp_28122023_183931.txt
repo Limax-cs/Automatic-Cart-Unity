@@ -1,0 +1,18 @@
+28/12/2023_18:39:31 - Environment Initialization (App Communication)
+28/12/2023_18:39:31 - Socket listener started
+28/12/2023_18:39:31 - Socket Conf |ip:127.0.0.1|port:8888
+28/12/2023_18:39:41 - Client Connected
+28/12/2023_18:39:55 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+28/12/2023_18:39:59 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+28/12/2023_18:40:01 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+28/12/2023_18:40:04 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+28/12/2023_18:40:06 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+28/12/2023_18:41:04 - App Data |mode:A|status:Item Path|pathx:111&111&111&111&110&109&108&108&108&108&108&108&108&108&108&107&106|pathy:97&98&99&100&101&102&103&104&105&106&107&108&109&110&111&112&112|productsx:106&104&87&95&97&102|productsy:112&111&108&101&93&81|products:Beer&Sparkling water&Frozen french fries&Watermelons&Pears&Chocolate chip cookies|map:
+28/12/2023_18:41:04 - Previous products removed
+28/12/2023_18:41:04 - Current products instantiated
+28/12/2023_18:41:04 - Current products instantiated
+28/12/2023_18:41:04 - Current products instantiated
+28/12/2023_18:41:04 - Current products instantiated
+28/12/2023_18:41:04 - Current products instantiated
+28/12/2023_18:41:04 - Current products instantiated
+28/12/2023_18:42:48 - App Data |mode:A|status:Pause|pathx:|pathy:|productsx:|productsy:|products:|map:

@@ -1,0 +1,11 @@
+28/12/2023_18:45:10 - Environment Initialization (App Communication)
+28/12/2023_18:45:10 - Socket listener started
+28/12/2023_18:45:10 - Socket Conf |ip:127.0.0.1|port:8888
+28/12/2023_18:45:23 - Client Connected
+28/12/2023_18:45:35 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+28/12/2023_18:45:43 - App Data |mode:A|status:Item Path|pathx:111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&96&95&94&93&92&91&90&89&88|pathy:97&97&97&97&97&97&97&97&97&97&97&97&97&97&97&97&97&97&97&97&98&99&100&100|productsx:88&88&101|productsy:100&94&83|products:Almond milk&Condensed milk&Oat milk|map:
+28/12/2023_18:45:43 - Previous products removed
+28/12/2023_18:45:43 - Current products instantiated
+28/12/2023_18:45:43 - Current products instantiated
+28/12/2023_18:45:43 - Current products instantiated
+28/12/2023_18:45:50 - App Data |mode:A|status:Next Item|pathx:111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&96&95&94&93&92&91&90&89&88|pathy:98&98&98&98&98&98&98&98&98&98&98&98&98&98&98&98&98&98&98&98&98&99&100&100|productsx:|productsy:|products:|map:
