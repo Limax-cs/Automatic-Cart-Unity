@@ -1,0 +1,19 @@
+5/1/2024_11:04:23 - Environment Initialization (App Communication)
+5/1/2024_11:04:23 - Socket listener started
+5/1/2024_11:04:23 - Socket Conf |ip:127.0.0.1|port:8888
+5/1/2024_11:04:56 - Client Connected
+5/1/2024_11:04:59 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+5/1/2024_11:05:03 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+5/1/2024_11:05:07 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+5/1/2024_11:05:11 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+5/1/2024_11:05:16 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+5/1/2024_11:05:20 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+5/1/2024_11:06:04 - App Data |mode:A|status:Item Path|pathx:111&111&111&111&110&109&108&108&108&108&107&106&105&104&103&102&101&101|pathy:97&98&99&100&101&102&103&104&105&106&107&108&108&108&108&109&110&111|productsx:101&104&99&100&88&92&93|productsy:111&117&105&99&93&83&76|products:Whiskey&Ice cube trays&Brownies&Broccoli&Yogurt&Duck breast&French bread|map:
+5/1/2024_11:06:04 - Previous products removed
+5/1/2024_11:06:04 - Current products instantiated
+5/1/2024_11:06:04 - Current products instantiated
+5/1/2024_11:06:04 - Current products instantiated
+5/1/2024_11:06:04 - Current products instantiated
+5/1/2024_11:06:04 - Current products instantiated
+5/1/2024_11:06:04 - Current products instantiated
+5/1/2024_11:06:04 - Current products instantiated

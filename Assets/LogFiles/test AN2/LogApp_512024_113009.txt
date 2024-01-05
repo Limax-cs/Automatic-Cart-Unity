@@ -1,0 +1,14 @@
+5/1/2024_11:30:09 - Environment Initialization (App Communication)
+5/1/2024_11:30:09 - Socket listener started
+5/1/2024_11:30:09 - Socket Conf |ip:127.0.0.1|port:8888
+5/1/2024_11:30:14 - Client Connected
+5/1/2024_11:30:21 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+5/1/2024_11:30:24 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+5/1/2024_11:30:27 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+5/1/2024_11:31:39 - App Data |mode:B|status:Item Path|pathx:111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&96&95&94&93&92&91&91&90&89&88&87&86&85&84&83&82&82&82&82&82&82&82&82&82&82&82&81&80&79|pathy:98&98&99&100&101&102&102&102&102&102&102&102&102&102&102&102&102&102&103&104&105&106&107&108&109&109&110&111&112&113&114&115&116&117&118&119&120&121&122&123&124&125&126&126|productsx:102&98&106&105&106|productsy:111&111&83&83&87|products:Beer&Water&Cottage cheese&Yogurt&Pork belly|map:
+5/1/2024_11:31:39 - Previous products removed
+5/1/2024_11:31:39 - Current products instantiated
+5/1/2024_11:31:39 - Current products instantiated
+5/1/2024_11:31:39 - Current products instantiated
+5/1/2024_11:31:39 - Current products instantiated
+5/1/2024_11:31:39 - Current products instantiated
