@@ -1,0 +1,239 @@
+5/1/2024_17:13:36 - Environment Initialization
+5/1/2024_17:13:36 - Socket listener started
+5/1/2024_17:13:36 - Socket Conf |ip:127.0.0.1|port:8888
+5/1/2024_17:13:36 - Configuration |imageSize:(300.00, 220.00)|mapOrigin:(10.00, 10.00)|imageScale:1,2|linearVelMax:2|gravity:9,81|range:2|distThr:0,1|distThrLast:1,4|P:1|I0|D0|updateRate:1
+5/1/2024_17:13:36 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,8|robotLocY:1|robotLocZ:13,8|grounded:False|linearVel:0|angularVel:0
+5/1/2024_17:13:36 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:36 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:36 - User data |userSpeed:1,6|userRotX:0|userRotY:0|userRotZ:0|userRotW:1|userLocX:50,63|userLocY:1,35|userLocZ:11,73
+5/1/2024_17:13:36 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,8|robotLocY:0,799876|robotLocZ:13,8|grounded:False|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:0|userRotZ:0|userRotW:1|userLocX:50,63|userLocY:1,346076|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,8|robotLocY:0,5997519|robotLocZ:13,8|grounded:False|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:0,09410832|userRotZ:0|userRotW:0,995562|userLocX:50,63|userLocY:1,338228|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,8|robotLocY:0,3996279|robotLocZ:13,8|grounded:False|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:0,09410832|userRotZ:0|userRotW:0,995562|userLocX:50,63|userLocY:1,338228|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80003|robotLocY:0,3991256|robotLocZ:13,8|grounded:False|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,822271|userRotZ:0|userRotW:0,5690961|userLocX:50,63|userLocY:1,282741|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80006|robotLocY:0,3990261|robotLocZ:13,8|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,822271|userRotZ:0|userRotW:0,5690961|userLocX:50,63|userLocY:1,282741|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80009|robotLocY:0,3990075|robotLocZ:13,80001|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,6748948|userRotZ:0|userRotW:0,737914|userLocX:50,63|userLocY:1,234204|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80011|robotLocY:0,3990026|robotLocZ:13,80001|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,6537536|userRotZ:0|userRotW:0,7567074|userLocX:50,63|userLocY:1,214583|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80014|robotLocY:0,3990008|robotLocZ:13,80001|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,626857|userRotZ:0|userRotW:0,7791344|userLocX:50,63|userLocY:1,166137|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80017|robotLocY:0,3989989|robotLocZ:13,80001|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,6210588|userRotZ:0|userRotW:0,783764|userLocX:50,63|userLocY:1,150652|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80019|robotLocY:0,3990001|robotLocZ:13,80001|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5992737|userRotZ:0|userRotW:0,8005442|userLocX:50,63|userLocY:1,085909|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80022|robotLocY:0,3990014|robotLocZ:13,80001|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5978834|userRotZ:0|userRotW:0,8015831|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80024|robotLocY:0,3989995|robotLocZ:13,80002|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5793741|userRotZ:0|userRotW:0,8150617|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80027|robotLocY:0,3990007|robotLocZ:13,80002|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5764194|userRotZ:0|userRotW:0,817154|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,8003|robotLocY:0,3989989|robotLocZ:13,80002|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5692742|userRotZ:0|userRotW:0,8221477|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80032|robotLocY:0,3990001|robotLocZ:13,80002|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5597076|userRotZ:0|userRotW:0,8286901|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80035|robotLocY:0,3990013|robotLocZ:13,80002|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,548359|userRotZ:0|userRotW:0,836243|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80038|robotLocY:0,399001|robotLocZ:13,80002|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5401056|userRotZ:0|userRotW:0,8415973|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,8004|robotLocY:0,3989992|robotLocZ:13,80003|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,538433|userRotZ:0|userRotW:0,8426684|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80043|robotLocY:0,3990004|robotLocZ:13,80003|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5368348|userRotZ:0|userRotW:0,8436874|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80046|robotLocY:0,3990001|robotLocZ:13,80003|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5322109|userRotZ:0|userRotW:0,8466119|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80048|robotLocY:0,3990013|robotLocZ:13,80003|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5322109|userRotZ:0|userRotW:0,8466119|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80051|robotLocY:0,3989995|robotLocZ:13,80003|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5308615|userRotZ:0|userRotW:0,8474587|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80054|robotLocY:0,3990007|robotLocZ:13,80003|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5288457|userRotZ:0|userRotW:0,848718|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80057|robotLocY:0,3989989|robotLocZ:13,80004|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5232788|userRotZ:0|userRotW:0,8521616|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80059|robotLocY:0,3990001|robotLocZ:13,80004|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5216972|userRotZ:0|userRotW:0,8531308|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80062|robotLocY:0,3990013|robotLocZ:13,80004|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5216972|userRotZ:0|userRotW:0,8531308|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80065|robotLocY:0,3989979|robotLocZ:13,80004|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5144938|userRotZ:0|userRotW:0,8574941|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80068|robotLocY:0,3989992|robotLocZ:13,80004|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5144938|userRotZ:0|userRotW:0,8574941|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80071|robotLocY:0,3990004|robotLocZ:13,80004|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5144938|userRotZ:0|userRotW:0,8574941|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80074|robotLocY:0,3990016|robotLocZ:13,80004|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5144938|userRotZ:0|userRotW:0,8574941|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80077|robotLocY:0,3990013|robotLocZ:13,80005|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80079|robotLocY:0,3989995|robotLocZ:13,80005|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80082|robotLocY:0,3990007|robotLocZ:13,80005|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80084|robotLocY:0,3989988|robotLocZ:13,80005|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80087|robotLocY:0,399|robotLocZ:13,80005|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,8009|robotLocY:0,3990013|robotLocZ:13,80006|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80092|robotLocY:0,3989994|robotLocZ:13,80006|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80095|robotLocY:0,3990006|robotLocZ:13,80006|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80097|robotLocY:0,3989988|robotLocZ:13,80006|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,801|robotLocY:0,399|robotLocZ:13,80006|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80103|robotLocY:0,3990012|robotLocZ:13,80006|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80105|robotLocY:0,3989994|robotLocZ:13,80006|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80108|robotLocY:0,3990006|robotLocZ:13,80007|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80111|robotLocY:0,3989988|robotLocZ:13,80007|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80113|robotLocY:0,399|robotLocZ:13,80007|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
+5/1/2024_17:13:39 - Robot data |status:Stop|robotOrientationX:-90|robotOrientationY:0|robotOrientationZ:90|robotLocX:49,80116|robotLocY:0,3990012|robotLocZ:13,80007|grounded:True|linearVel:0|angularVel:0
+5/1/2024_17:13:39 - Path data |pathXapp:|pathYapp:|pathXmap:|pathYmap:
+5/1/2024_17:13:39 - Lidar data|userInPath:False|sthBack:False|detect1:True|detect2:False|detect3:False|detect4:False|detect5:False|detect1b:False|detect2b:False|detect3b:False|detect4b:False|detect5b:True
+5/1/2024_17:13:39 - User data |userSpeed:1,6|userRotX:0|userRotY:-0,5109363|userRotZ:0|userRotW:0,8596186|userLocX:50,63|userLocY:1,080001|userLocZ:11,73
+5/1/2024_17:13:39 - Product data |Count:0|CollCount:0|List:|Collected:
