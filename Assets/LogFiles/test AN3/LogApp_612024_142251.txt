@@ -1,0 +1,13 @@
+6/1/2024_14:22:51 - Environment Initialization (App Communication)
+6/1/2024_14:22:51 - Socket listener started
+6/1/2024_14:22:51 - Socket Conf |ip:127.0.0.1|port:8888
+6/1/2024_14:23:15 - Client Connected
+6/1/2024_14:23:21 - App Data |mode:B|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
+6/1/2024_14:25:54 - App Data |mode:B|status:Item Path|pathx:111&110&109&108&107&106&105&104&103&102&101&100&99&99|pathy:97&97&97&97&97&97&97&97&97&97&97&97&96&95|productsx:99&92&88&100&108&111|productsy:95&101&122&81&75&86|products:Strawberries&Tomatoes&Calamari&Biscuits&Raisin bread&Avocados|map:
+6/1/2024_14:25:54 - Previous products removed
+6/1/2024_14:25:54 - Current products instantiated
+6/1/2024_14:25:54 - Current products instantiated
+6/1/2024_14:25:54 - Current products instantiated
+6/1/2024_14:25:54 - Current products instantiated
+6/1/2024_14:25:54 - Current products instantiated
+6/1/2024_14:25:54 - Current products instantiated
