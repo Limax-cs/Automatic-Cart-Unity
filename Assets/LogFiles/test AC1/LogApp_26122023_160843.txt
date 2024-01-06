@@ -15,7 +15,6 @@
 26/12/2023_16:12:47 - App Data |mode:A|status:Next Item|pathx:85&86&87&88&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&89&88|pathy:128&127&126&125&124&123&122&121&120&119&118&117&116&115&114&113&112&111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&96&95&94&93&92&91&90&89&88&87&87|productsx:|productsy:|products:|map:
 26/12/2023_16:14:30 - App Data |mode:A|status:Next Item|pathx:89&89&89&89&89&89&90&91&92&93&94&94|pathy:87&86&85&84&83&82&81&80&79&78&77&76|productsx:|productsy:|products:|map:
 26/12/2023_16:15:23 - App Data |mode:A|status:Next Item|pathx:94&94&93&92&91&91&91&92&93&94&95&96&96|pathy:77&78&79&80&81&82&83&84&84&84&85&86&87|productsx:|productsy:|products:|map:
-26/12/2023_16:16:37 - App Data |mode:A|status:World Init|pathx:111|pathy:98|productsx:|productsy:|products:|map:Model3
 26/12/2023_16:16:44 - App Data |mode:A|status:Item Path|pathx:111&110&109&108&107&106&105&104&103&102&101&100&99&98&97&96&95&95|pathy:97&96&95&94&93&92&92&92&92&92&92&92&92&92&92&91&90&89|productsx:95|productsy:89|products:Rabbit meat|map:
 26/12/2023_16:16:44 - Previous products removed
 26/12/2023_16:16:44 - Current products instantiated
