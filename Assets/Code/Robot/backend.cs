@@ -267,7 +267,7 @@ public class backend : MonoBehaviour
         {
             status = "Continue";
         }
-        else if (status == "FollowMeWait")
+        else if (status == "FollowMeWait" || status == "FollowMeBack")
         {
             status = "FollowMe";
         }
