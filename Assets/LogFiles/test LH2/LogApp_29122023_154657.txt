@@ -3,7 +3,7 @@
 29/12/2023_15:46:57 - Socket Conf |ip:127.0.0.1|port:8888
 29/12/2023_15:47:03 - Client Connected
 29/12/2023_15:47:16 - App Data |mode:B|status:World Init|pathx:83|pathy:96|productsx:|productsy:|products:|map:Model4
-29/12/2023_15:48:14 - App Data |mode:B|status:Item Path|pathx:83&84&85&86&87&88&89&90&91&92&93&94&95&96&97&98&99&100&101&102&103&104&105&106&107&108&109&110&111&112&113&114&115&116&117&118&119&120&121&122&123&123|pathy:96&96&97&98&98&98&98&98&98&98&98&98&98&98&98&98&99&99&99&99&99&99&99&99&99&99&99&99&99&100&101&102&102&102&102&102&102&102&102&103&104&105|productsx:107&107&111&114&118|productsy:101&93&91&105&105|products:Potatoes&Frozen spinach&Salmon&Milkshakes&Coke|map:
+29/12/2023_15:48:14 - App Data |mode:B|status:Item Path|pathx:83&84&85&86&87&88&89&90&91&92&93&94&95&96&97&98&99&100&101&102&103&104&105&106&107&108&109&110&111&112&113&114&115&116&117&118&119&120&121&122&123&123|pathy:96&96&97&98&98&98&98&98&98&98&98&98&98&98&98&98&99&99&99&99&99&99&99&99&99&99&99&99&99&100&101&102&102&102&102&102&102&102&102&103&104&105|productsx:107&107&111&104&108|productsy:101&93&91&105&105|products:Potatoes&Frozen spinach&Salmon&Milkshakes&Coke|map:
 29/12/2023_15:48:14 - Previous products removed
 29/12/2023_15:48:14 - Current products instantiated
 29/12/2023_15:48:14 - Current products instantiated
