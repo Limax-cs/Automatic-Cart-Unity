@@ -83,6 +83,7 @@ def map_evenly(coords, items):
         dict: Returns a mapping between each coordinate and item to be placed there.
     """
     # Shuffle the first array to ensure random distribution
+    random.seed(42)
     random.shuffle(items)
 
     # Determine the amount of items each node gets
@@ -269,7 +270,10 @@ def hamiltonian_path(graph: nx.Graph, items:np.array, origin: tuple = None) -> (
     Returns:
         (np.array,np.array,int): Returns two numpy arrays containing items and nodes in the correct order and path length
     """
-    coordinates = get_coordinates(items, graph)
+    if not isinstance(items[0],tuple):
+        coordinates = get_coordinates(items, graph)
+    else:
+        coordinates = items
     if origin is not None:
         coordinates[0] = origin
 
@@ -279,12 +283,12 @@ def hamiltonian_path(graph: nx.Graph, items:np.array, origin: tuple = None) -> (
         lengths = [lengths[key] if key in lengths.keys() else 10000 for key in coordinates] #Assign distances, avoid non-existing paths
         adj_mat[i,:] = lengths #Could also just fill upper diag and optimize search
         adj_mat[i,i] = 10000 #Avoid finding only self loops (arbitrary value here)
-    adj_mat[0,len(coordinates)-1] = adj_mat[len(coordinates)-1,0] = 10000 #Avoid considering edge from start to end node
+    adj_mat[0,len(coordinates)-1] = adj_mat[len(coordinates)-1,0] = 10000 #Avoid considering edge from start to end node 
 
     if len(coordinates)<=11: #For 11 items takes 1.5 seconds to brute force
         perms = list(permutations(range(1,len(coordinates)-1))) 
         best_perm = []
-        best_perm_len = adj_mat[0,0]*len(coordinates)
+        best_perm_len = 10000*len(coordinates)
 
         for perm in perms:
             perm = (0,)+perm+(len(coordinates)-1,)
